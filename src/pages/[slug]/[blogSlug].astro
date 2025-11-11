@@ -7,18 +7,18 @@ import BlogPost from '../../components/blog/BlogPost.astro';
 
 interface Props {
   slug: string;
-  'blog-slug': string;
+  blogSlug: string;
 }
 
 export async function getStaticPaths() {
-  const params: Array<{ params: { slug: string; 'blog-slug': string } }> = [];
+  const params: Array<{ params: { slug: string; blogSlug: string } }> = [];
   
   // Generate category-based blog post routes (same as old site)
   blogData.blogPosts.forEach((post) => {
     params.push({
       params: {
         slug: post.category.slug,
-        'blog-slug': post.slug,
+        blogSlug: post.slug,
       },
     });
   });
@@ -26,7 +26,7 @@ export async function getStaticPaths() {
   return params;
 }
 
-const { slug: categorySlug, 'blog-slug': blogSlug } = Astro.params;
+const { slug: categorySlug, blogSlug: blogSlug } = Astro.params;
 
 const blogPost = blogData.blogPosts.find((post) => 
   post.slug === blogSlug && post.category.slug === categorySlug
