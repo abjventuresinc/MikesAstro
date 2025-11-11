@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { generateMetadataFromConfig, generateDynamicStructuredData } from "../lib/seo-metadata.js";
+import { generateMetadataFromConfig, generateStructuredData } from "../lib/seo-metadata.js";
 
 // Custom hero and sections
 import MikesCustomHero from "../components/home/MikesCustomHero.astro";
@@ -16,14 +16,9 @@ import InfiniteTestimonialSlider from "../components/ui/testimonials3/infinite-t
 import CTASection from "../components/sections/cta-section.astro";
 import ServiceAreasThinSection from "../components/sections/service-areas-thin-section.astro";
 
-// ✅ Generate metadata & structured data
+// ✅ Generate metadata & structured data (matching old site exactly)
 const metadata = generateMetadataFromConfig('/');
-const structuredData = generateDynamicStructuredData('/', {
-  isHomepage: true,
-  breadcrumbs: [
-    { name: "Home", url: "/" }
-  ]
-});
+const structuredData = generateStructuredData('/');
 
 // ✅ Testimonials
 const mikesTestimonials = [
@@ -102,12 +97,13 @@ const mikesTestimonials = [
 ];
 ---
 
-<BaseLayout>
-  <!-- ✅ Structured Data -->
+<BaseLayout metadata={metadata}>
+  <!-- ✅ Structured Data (matching old site exactly) -->
   {structuredData.map((script) => (
-    <script type={script.type}>
-      {script.children}
-    </script>
+    <script
+      type={script.type}
+      set:html={script.children}
+    />
   ))}
 
   <!-- ✅ Main Page Content -->
