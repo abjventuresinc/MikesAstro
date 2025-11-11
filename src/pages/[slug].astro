@@ -39,9 +39,22 @@ export async function getStaticPaths() {
 
 const { slug } = Astro.params;
 
-// Check for service routes first
+// Check for old blog post URLs and redirect to new structure first
+const oldBlogPost = blogData.blogPosts.find((post) => post.slug === slug);
+if (oldBlogPost) {
+  // Redirect to new category-based URL structure
+  return Astro.redirect(`/${oldBlogPost.category.slug}/${oldBlogPost.slug}`, 301);
+}
+
+// Check for service routes
 const service = servicesData.services.find((s) => s.slug === slug);
+let metadata;
+let structuredData;
+let pageType = 'not-found';
+let blogCategoryData;
+
 if (service) {
+  pageType = 'service';
   // Generate FAQs for schema
   const faqs = [
     {
@@ -64,7 +77,7 @@ if (service) {
 
   // Generate metadata
   const keywords = service.seo.keywords?.split(',').map(k => k.trim()) || service.features;
-  const metadata = generateDynamicMetadata(`/${slug}/`, {
+  metadata = generateDynamicMetadata(`/${slug}/`, {
     title: service.seo.metaTitle,
     description: service.seo.metaDescription,
     content: service.description,
@@ -72,7 +85,7 @@ if (service) {
   });
 
   // Generate structured data
-  const structuredData = generateDynamicStructuredData(`/${slug}/`, {
+  structuredData = generateDynamicStructuredData(`/${slug}/`, {
     serviceData: {
       name: service.name,
       description: service.description,
@@ -91,23 +104,12 @@ if (service) {
       { name: service.name, url: `${siteConfig.url}/${slug}/` },
     ],
   });
-
-  return (
-    <BaseLayout metadata={metadata}>
-      {structuredData.map((script) => (
-        <script
-          type={script.type}
-          set:html={script.children}
-        />
-      ))}
-      <ServicePage slug={slug} />
-    </BaseLayout>
-  );
 }
 
 // Check for blog category routes
 const blogCategory = blogData.categories.find((category) => category.slug === slug);
-if (blogCategory) {
+if (blogCategory && pageType === 'not-found') {
+  pageType = 'blog-category';
   const postsInCategory = blogData.blogPosts
     .filter(post => post.category.slug === slug)
     .map(post => ({
@@ -119,7 +121,7 @@ if (blogCategory) {
 
   // Generate metadata
   const keywords = ['blog', 'articles', blogCategory.name.toLowerCase(), 'garage door tips', 'garage door maintenance', 'garage door repair'];
-  const metadata = generateDynamicMetadata(`/${slug}/`, {
+  metadata = generateDynamicMetadata(`/${slug}/`, {
     title: `${blogCategory.name} Articles | ${siteConfig.name}`,
     description: `Expert ${blogCategory.name.toLowerCase()} tips, guides, and insights for maintaining beautiful garage doors and garage door systems.`,
     content: blogCategory.description,
@@ -127,7 +129,7 @@ if (blogCategory) {
   });
 
   // Generate structured data
-  const structuredData = generateDynamicStructuredData(`/${slug}/`, {
+  structuredData = generateDynamicStructuredData(`/${slug}/`, {
     breadcrumbs: [
       { name: 'Home', url: siteConfig.url },
       { name: 'Blog', url: `${siteConfig.url}/blog/` },
@@ -135,39 +137,22 @@ if (blogCategory) {
     ],
   });
 
-  return (
-    <BaseLayout metadata={metadata}>
-      {structuredData.map((script) => (
-        <script
-          type={script.type}
-          set:html={script.children}
-        />
-      ))}
-      <BlogCategoryIndex
-        category={blogCategory}
-        posts={postsInCategory}
-        featuredPosts={featuredPosts}
-        regularPosts={regularPosts}
-        allCategories={blogData.categories}
-        allTags={blogData.tags}
-      />
-    </BaseLayout>
-  );
-}
-
-// Check for old blog post URLs and redirect to new structure
-const oldBlogPost = blogData.blogPosts.find((post) => post.slug === slug);
-if (oldBlogPost) {
-  // Redirect to new category-based URL structure
-  return Astro.redirect(`/${oldBlogPost.category.slug}/${oldBlogPost.slug}`, 301);
+  // Store blog category data for template (variables are available in template)
+  blogCategoryData = {
+    category: blogCategory,
+    posts: postsInCategory,
+    featuredPosts: featuredPosts,
+    regularPosts: regularPosts,
+  };
 }
 
 // Check for city routes
 const city = citiesData.cities.find((c) => c.slug === slug);
-if (city) {
+if (city && pageType === 'not-found') {
+  pageType = 'city';
   // Generate metadata
   const keywords = city.seo.keywords?.split(',').map(k => k.trim()) || [city.name, 'garage doors', 'garage door services', 'garage door repair'];
-  const metadata = generateDynamicMetadata(`/${slug}/`, {
+  metadata = generateDynamicMetadata(`/${slug}/`, {
     title: city.seo.metaTitle,
     description: city.seo.metaDescription,
     content: city.description,
@@ -175,7 +160,7 @@ if (city) {
   });
 
   // Generate structured data
-  const structuredData = generateDynamicStructuredData(`/${slug}/`, {
+  structuredData = generateDynamicStructuredData(`/${slug}/`, {
     cityData: {
       name: city.name,
       state: city.state,
@@ -190,21 +175,53 @@ if (city) {
       { name: `${city.name}, ${city.state}`, url: `${siteConfig.url}/${slug}/` },
     ],
   });
-
-  return (
-    <BaseLayout metadata={metadata}>
-      {structuredData.map((script) => (
-        <script
-          type={script.type}
-          set:html={script.children}
-        />
-      ))}
-      <CityPage slug={slug} />
-    </BaseLayout>
-  );
 }
 
-// Not found
-return Astro.redirect('/404', 404);
+// Handle not found
+if (pageType === 'not-found') {
+  return Astro.redirect('/404', 404);
+}
 ---
 
+{pageType === 'service' && (
+  <BaseLayout metadata={metadata}>
+    {structuredData.map((script) => (
+      <script
+        type={script.type}
+        set:html={script.children}
+      />
+    ))}
+    <ServicePage slug={slug} />
+  </BaseLayout>
+)}
+
+{pageType === 'blog-category' && blogCategoryData && (
+  <BaseLayout metadata={metadata}>
+    {structuredData.map((script) => (
+      <script
+        type={script.type}
+        set:html={script.children}
+      />
+    ))}
+    <BlogCategoryIndex
+      category={blogCategoryData.category}
+      posts={blogCategoryData.posts}
+      featuredPosts={blogCategoryData.featuredPosts}
+      regularPosts={blogCategoryData.regularPosts}
+      allCategories={blogData.categories}
+      allTags={blogData.tags}
+    />
+  </BaseLayout>
+)}
+
+{pageType === 'city' && (
+  <BaseLayout metadata={metadata}>
+    {structuredData.map((script) => (
+      <script
+        type={script.type}
+        set:html={script.children}
+      />
+    ))}
+    <CityPage slug={slug} />
+  </BaseLayout>
+)}

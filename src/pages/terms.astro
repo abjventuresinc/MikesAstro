@@ -1,0 +1,119 @@
+---
+// src/pages/terms.astro
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { generateDynamicMetadata, generateDynamicStructuredData } from "../lib/seo-metadata.js";
+import { siteConfig } from "../lib/seo-config.js";
+import DynamicHeader from "../components/global/DynamicHeader.astro";
+
+// Generate metadata
+const metadata = generateDynamicMetadata("/terms/", {
+  title: "Terms & Conditions | Mike's Garage Door Repair Center",
+  description: "Read our terms and conditions for using our garage door repair services.",
+  content: "Terms and Conditions for Mike's Garage Door Repair Center",
+  keywords: ["terms and conditions", "service terms", "legal"],
+});
+
+// Generate structured data
+const structuredData = generateDynamicStructuredData("/terms/", {
+  breadcrumbs: [
+    { name: "Home", url: siteConfig.url },
+    { name: "Terms & Conditions", url: `${siteConfig.url}/terms/` },
+  ],
+});
+---
+
+<BaseLayout metadata={metadata}>
+  {structuredData.map((script) => (
+    <script type={script.type} set:html={script.children} />
+  ))}
+  
+  <DynamicHeader
+    title="Terms & Conditions"
+    description="Terms and conditions for our garage door services"
+    image="/assets/images/Mike_s Garage Door Repair Center 1.webp"
+    breadcrumbs={[
+      { label: "Home", href: "/" },
+      { label: "Terms & Conditions", href: "/terms/" },
+    ]}
+  />
+
+  <section class="py-16 md:py-20 px-4 bg-white">
+    <div class="container mx-auto max-w-4xl">
+      <div class="prose prose-lg max-w-none">
+        <h2 class="text-3xl font-bold mb-6">Terms & Conditions</h2>
+        <p class="text-gray-600 mb-4">Last updated: {new Date().toLocaleDateString()}</p>
+        
+        <div class="space-y-6 text-gray-700">
+          <div>
+            <h3 class="text-2xl font-semibold mb-4">Agreement to Terms</h3>
+            <p>
+              By accessing or using Mike's Garage Door Repair Center's services, you agree to be bound by these 
+              Terms and Conditions. If you disagree with any part of these terms, you may not access our services.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-2xl font-semibold mb-4">Services</h3>
+            <p>
+              We provide garage door installation, repair, maintenance, and related services. All services are 
+              subject to availability and our professional assessment of the work required.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-2xl font-semibold mb-4">Pricing and Payment</h3>
+            <p>
+              All prices are quoted in advance and are subject to change based on the actual work required. 
+              Payment is due upon completion of services unless other arrangements have been made in writing.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-2xl font-semibold mb-4">Warranties</h3>
+            <p>
+              We provide warranties on parts and workmanship as specified in your service agreement. Warranties 
+              do not cover damage caused by misuse, accidents, or normal wear and tear.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-2xl font-semibold mb-4">Liability</h3>
+            <p>
+              Our liability is limited to the cost of the services provided. We are not liable for any indirect, 
+              incidental, or consequential damages arising from our services.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-2xl font-semibold mb-4">Cancellation Policy</h3>
+            <p>
+              Appointments may be cancelled or rescheduled with at least 24 hours notice. Cancellations with less 
+              than 24 hours notice may be subject to a cancellation fee.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-2xl font-semibold mb-4">Modifications</h3>
+            <p>
+              We reserve the right to modify these terms at any time. Continued use of our services after 
+              modifications constitutes acceptance of the updated terms.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-2xl font-semibold mb-4">Contact Information</h3>
+            <p>
+              For questions about these Terms & Conditions, please contact us:
+            </p>
+            <p class="mt-4">
+              <strong>Mike's Garage Door Repair Center</strong><br />
+              Email: service@mikesgaragedoorrepaircenter.com<br />
+              Phone: (817) 859-8877
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+

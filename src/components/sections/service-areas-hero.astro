@@ -1,0 +1,104 @@
+---
+import { MapPin, Clock, Phone, Star, CheckCircle, ArrowRight } from '@lucide/astro';
+import { LOCATIONS } from '@/lib/business-config.js';
+
+// Get top 6 cities for display
+const topCities = LOCATIONS.slice(0, 6);
+---
+
+<section class="relative min-h-[80vh] flex items-center justify-center overflow-hidden hero-bg-light-base pt-20">
+  <!-- Background Image with Overlay -->
+  <div class="absolute inset-0 z-0">
+    <img
+      src="/assets/images/Mike_s Garage Door Repair Center 5.webp"
+      alt="Professional garage door services across Dallas-Fort Worth metroplex"
+      class="object-cover w-full h-full opacity-15"
+      loading="eager"
+      decoding="async"
+    />
+    <div class="absolute inset-0 hero-overlay"></div>
+  </div>
+
+  <!-- Content -->
+  <div class="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="max-w-6xl mx-auto text-center">
+      <!-- Trust Badge -->
+      <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 mb-8">
+        <Star class="w-5 h-5 text-yellow-400 fill-current" />
+        <span class="text-white font-semibold">Serving 44+ Cities in Texas</span>
+      </div>
+
+      <!-- Main Headline -->
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+        Garage Door Services in{' '}
+        <span class="text-primary-300">Dallas-Fort Worth</span>
+      </h1>
+
+      <!-- Subheadline -->
+      <p class="text-xl md:text-2xl text-white/90 mb-8 max-w-4xl mx-auto leading-relaxed">
+        The truth is, we've been transforming homes and businesses across the metroplex for over a decade. 
+        And the thing is, our passion for excellence shows in every project we touch.
+      </p>
+
+      <!-- Key Benefits -->
+      <div class="grid md:grid-cols-3 gap-6 mb-12">
+        <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
+          <Clock class="w-8 h-8 text-primary-300 mx-auto mb-4" />
+          <h3 class="text-white font-semibold text-lg mb-2">24/7 Emergency Service</h3>
+          <p class="text-white/80 text-sm">We're there when you need us most, day or night</p>
+        </div>
+        <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
+          <MapPin class="w-8 h-8 text-primary-300 mx-auto mb-4" />
+          <h3 class="text-white font-semibold text-lg mb-2">44+ Cities Covered</h3>
+          <p class="text-white/80 text-sm">From Bedford to Dallas, we serve your entire area</p>
+        </div>
+        <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
+          <Star class="w-8 h-8 text-primary-300 mx-auto mb-4" />
+          <h3 class="text-white font-semibold text-lg mb-2">5-Star Rated</h3>
+          <p class="text-white/80 text-sm">Thousands of satisfied customers can't be wrong</p>
+        </div>
+      </div>
+
+      <!-- CTA Buttons -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+        <a
+          href="tel:+18178598877"
+          class="inline-flex items-center gap-2 bg-primary hover:bg-primary-hover text-white px-8 py-4 text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
+        >
+          <Phone class="w-5 h-5" />
+          Call 817-859-8877
+        </a>
+        <a
+          href="/contact/"
+          class="inline-flex items-center gap-2 border-2 border-white bg-white/10 backdrop-blur-sm hover:bg-white hover:text-secondary text-white px-8 py-4 text-lg font-semibold rounded-lg transition-all duration-300"
+        >
+          Get Free Quote
+          <ArrowRight class="w-5 h-5" />
+        </a>
+      </div>
+
+      <!-- Top Cities Grid -->
+      <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+        <h3 class="text-white text-2xl font-bold mb-6">Serving These Cities</h3>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+          {topCities.map((city) => (
+            <div class="flex items-center gap-2 text-white/90 hover:text-white transition-colors">
+              <CheckCircle class="w-4 h-4 text-primary-300 flex-shrink-0" />
+              <span class="text-sm font-medium">{city.city}</span>
+            </div>
+          ))}
+        </div>
+        <div class="mt-6">
+          <a
+            href="#all-cities"
+            class="inline-flex items-center gap-2 text-primary-300 hover:text-primary-200 font-semibold transition-colors"
+          >
+            View All 44 Cities
+            <ArrowRight class="w-4 h-4" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

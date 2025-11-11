@@ -1,0 +1,140 @@
+---
+// src/pages/about.astro
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { generateDynamicMetadata, generateDynamicStructuredData } from "../lib/seo-metadata.js";
+import { siteConfig } from "../lib/seo-config.js";
+import DynamicHeader from "../components/global/DynamicHeader.astro";
+import CTASection from "../components/sections/cta-section.astro";
+
+// Generate metadata
+const metadata = generateDynamicMetadata("/about/", {
+  title: "About Mike's Garage Door Repair Bedford TX | Family-Owned",
+  description: "Learn about Mike's Garage Door - Bedford's trusted experts since 2010. Family-owned & insured. Quality service you can count on!",
+  content: "Mike's Garage Door Repair Center has been serving the Dallas-Fort Worth area since 2010. We're a family-owned business committed to providing exceptional garage door services.",
+  keywords: ["about Mike's Garage Door", "Bedford TX garage door", "family-owned garage door company", "DFW garage door experts"],
+});
+
+// Generate structured data
+const structuredData = generateDynamicStructuredData("/about/", {
+  breadcrumbs: [
+    { name: "Home", url: siteConfig.url },
+    { name: "About", url: `${siteConfig.url}/about/` },
+  ],
+});
+---
+
+<BaseLayout metadata={metadata}>
+  {structuredData.map((script) => (
+    <script type={script.type} set:html={script.children} />
+  ))}
+  
+  <DynamicHeader
+    title="About Mike's Garage Door Repair Center"
+    description="Family-owned since 2010, serving Dallas-Fort Worth with professional garage door services."
+    image="/assets/images/Mike_s Garage Door Repair Center 1.webp"
+    breadcrumbs={[
+      { label: "Home", href: "/" },
+      { label: "About", href: "/about/" },
+    ]}
+  />
+
+  <!-- Our Story Section -->
+  <section class="py-20 md:py-28 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <div class="inline-flex items-center gap-2 bg-primary/10 rounded-full px-5 py-2 mb-6">
+              <span class="font-semibold text-primary">Our Story</span>
+            </div>
+
+            <h2 class="text-4xl md:text-5xl font-black text-gray-900 mb-6">
+              Built on Trust,
+              <span class="block text-primary">Driven by Excellence</span>
+            </h2>
+
+            <div class="space-y-6 text-lg text-gray-600 leading-relaxed">
+              <p>
+                It all started in 2018 when Mike noticed a problem: too many DFW homeowners were getting 
+                overcharged for simple garage door repairs. The service was often impersonal and rushed, 
+                with little understanding of North Texas climate challenges.
+              </p>
+              <p>
+                Mike decided to do things differently. He built a company on three simple 
+                principles: honest pricing, quality workmanship, and treating every customer like family. 
+                This approach has worked across the DFW metroplex.
+              </p>
+              <p>
+                Today, we're proud to serve 45+ cities across Dallas-Fort Worth. Our team has grown, 
+                but our values haven't changed. We're still the same family-owned business that 
+                puts your needs first, answers calls at 2 AM, and treats your home with respect.
+              </p>
+              <p class="font-semibold text-gray-900">
+                That's the Mike's difference. That's why DFW trusts us.
+              </p>
+            </div>
+          </div>
+          <div class="relative">
+            <img
+              src="/assets/images/Mike_s Garage Door Repair Center 5.webp"
+              alt="Mike's Garage Door Repair Center team"
+              class="rounded-lg shadow-xl"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Values Section -->
+  <section class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            Our Core Values
+          </h2>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            The principles that guide everything we do
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-white p-8 rounded-lg shadow-md">
+            <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+              <span class="text-2xl">❤️</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Customer First</h3>
+            <p class="text-gray-600">
+              Every decision we make starts with one question: What's best for our DFW customers? This approach has built lasting relationships across Bedford, Arlington, and all 45 communities we serve.
+            </p>
+          </div>
+
+          <div class="bg-white p-8 rounded-lg shadow-md">
+            <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+              <span class="text-2xl">🛡️</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Quality Guaranteed</h3>
+            <p class="text-gray-600">
+              We use only premium parts and stand behind every installation and repair. Our workmanship warranty means you're protected, and we're committed to getting it right the first time.
+            </p>
+          </div>
+
+          <div class="bg-white p-8 rounded-lg shadow-md">
+            <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+              <span class="text-2xl">🤝</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Honest & Transparent</h3>
+            <p class="text-gray-600">
+              No hidden fees, no upselling, no surprises. We provide upfront pricing and honest recommendations. If we can fix it, we'll tell you. If you need a replacement, we'll explain why.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTASection />
+</BaseLayout>
+

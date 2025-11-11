@@ -4,7 +4,7 @@ import DynamicHeader from '@/components/global/DynamicHeader.astro';
 import ServicesSidebar from '@/components/ui/service-sidebar/ServicesSidebar.astro';
 import FAQSection from '@/components/sections/faq-section.astro';
 import CTASection from '@/components/sections/cta-section.astro';
-import { CheckCircle, ArrowRight, Star, Shield, Clock, Award, Users, Wrench } from 'lucide-astro';
+import { CheckCircle, ArrowRight, Star, Shield, Clock, Award, Users, Wrench } from '@lucide/astro';
 
 interface Props {
   slug: string;
@@ -362,4 +362,5 @@ const contentBlocks = parseContent(service.content);
     overflow: hidden;
   }
 </style>
+
 

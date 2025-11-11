@@ -1,0 +1,74 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+  cta1Text?: string;
+  cta1Link?: string;
+  cta2Text?: string;
+  cta2Link?: string;
+  backgroundImage?: string;
+}
+
+const {
+  title,
+  subtitle,
+  cta1Text,
+  cta1Link,
+  cta2Text,
+  cta2Link,
+  backgroundImage = "/assets/images/Mike_s Garage Door Repair Center 1.webp"
+} = Astro.props;
+---
+
+<section class="relative min-h-[60vh] flex items-center justify-center overflow-hidden pt-20" style="background: linear-gradient(to bottom right, hsl(219, 77%, 64%), hsl(219, 77%, 58%), hsl(219, 77%, 64%));">
+  <!-- Background Image -->
+  <div class="absolute inset-0 z-0">
+    <img
+      src={backgroundImage}
+      alt={title}
+      class="object-cover w-full h-full opacity-60"
+      loading="eager"
+      decoding="async"
+    />
+    <div class="absolute inset-0" style="background: linear-gradient(to bottom right, hsl(219, 77%, 64%, 0.7), hsl(219, 77%, 58%, 0.7), hsl(219, 77%, 64%, 0.7));"></div>
+    <div class="absolute inset-0" style="background-color: rgb(0 0 0 / 0.2);"></div>
+  </div>
+
+  <!-- Content -->
+  <div class="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="max-w-4xl mx-auto text-center">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+        {title}
+      </h1>
+
+      {subtitle && (
+        <p class="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed">
+          {subtitle}
+        </p>
+      )}
+
+      <!-- CTA Buttons -->
+      {(cta1Text || cta2Text) && (
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          {cta1Text && cta1Link && (
+            <a
+              href={cta1Link}
+              class="inline-flex items-center justify-center gap-2 font-semibold text-lg px-8 py-4 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 bg-[#4B6FFF] text-white hover:bg-[#3B5DE8]"
+            >
+              {cta1Text}
+            </a>
+          )}
+          {cta2Text && cta2Link && (
+            <a
+              href={cta2Link}
+              class="inline-flex items-center justify-center gap-2 font-semibold text-lg px-8 py-4 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 border-2 border-white bg-white/10 backdrop-blur-sm hover:bg-white hover:text-secondary text-white"
+            >
+              {cta2Text}
+            </a>
+          )}
+        </div>
+      )}
+    </div>
+  </div>
+</section>
+

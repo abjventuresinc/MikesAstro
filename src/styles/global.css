@@ -22,9 +22,20 @@
     --secondary-foreground: 0 0% 100%;
     --secondary-hover: 240 5% 10%;
 
-    /* --- Accent Colors (optional, for gradients or details) --- */
-    --accent: 42 100% 62%;
-    --accent-foreground: 0 0% 9%;
+    /* --- Accent Colors (matching original site - same as primary for gradient) --- */
+    --accent: 219 77% 64%;
+    --accent-foreground: 0 0% 98%;
+
+    /* --- Text Colors (matching original site) --- */
+    --text-light: 0 0% 96%;
+
+    /* --- Hero Background Colors (matching original site) --- */
+    --hero-gradient-start: #1E1F3B;
+    --hero-gradient-mid: #2C3E8C;
+    --hero-gradient-end: #4B6FFF;
+    --hero-overlay-start: rgb(30 31 59 / 0.95);
+    --hero-overlay-mid: rgb(44 62 140 / 0.85);
+    --hero-overlay-end: rgb(75 111 255 / 0.9);
   }
 
   /* ✅ Apply root defaults */
@@ -38,6 +49,29 @@
 
   a {
     text-decoration: none;
+  }
+}
+
+/* Global Hero Background Utilities */
+@layer utilities {
+  /* Hero background base gradient - matches original site */
+  .hero-bg-base {
+    background: linear-gradient(to bottom right, #1E1F3B, #2C3E8C, #4B6FFF);
+  }
+
+  /* Hero background with light base (for sections with light background) */
+  .hero-bg-light-base {
+    background: linear-gradient(to bottom right, rgb(249 250 251), rgb(255 255 255), rgb(243 244 246));
+  }
+
+  /* Hero overlay gradient - matches original site */
+  .hero-overlay {
+    background: linear-gradient(to right, rgb(30 31 59 / 0.95), rgb(44 62 140 / 0.85), rgb(75 111 255 / 0.9));
+  }
+
+  /* Hero overlay for light backgrounds */
+  .hero-overlay-light {
+    background: linear-gradient(to right, rgb(30 31 59 / 0.95), rgb(44 62 140 / 0.85), rgb(75 111 255 / 0.9));
   }
 }
 

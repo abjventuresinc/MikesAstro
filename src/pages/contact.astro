@@ -1,0 +1,222 @@
+---
+// src/pages/contact.astro
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { generateDynamicMetadata, generateDynamicStructuredData } from "../lib/seo-metadata.js";
+import { siteConfig } from "../lib/seo-config.js";
+import { CONTACT } from "../lib/business-config.js";
+import DynamicHeader from "../components/global/DynamicHeader.astro";
+import { Phone, Mail, MapPin, Clock } from "lucide-astro";
+
+// Generate metadata
+const metadata = generateDynamicMetadata("/contact/", {
+  title: `Contact Mike's Garage Door Repair Bedford TX | ${CONTACT.phone}`,
+  description: "Get in touch for a free consultation and quote. We serve Bedford, Dallas, Fort Worth, and all surrounding areas with professional garage door services.",
+  content: "Contact Mike's Garage Door Repair Center for all your garage door needs. Call us, email us, or fill out our contact form for a free quote.",
+  keywords: ["contact garage door repair", "Bedford TX garage door", "garage door service contact", "DFW garage door repair"],
+});
+
+// Generate structured data
+const structuredData = generateDynamicStructuredData("/contact/", {
+  breadcrumbs: [
+    { name: "Home", url: siteConfig.url },
+    { name: "Contact", url: `${siteConfig.url}/contact/` },
+  ],
+});
+---
+
+<BaseLayout metadata={metadata}>
+  {structuredData.map((script) => (
+    <script type={script.type} set:html={script.children} />
+  ))}
+  
+  <DynamicHeader
+    title="Contact Mike's Garage Door Repair Center"
+    description="Get in touch for a free consultation and quote. We serve Bedford, Dallas, Fort Worth, and all surrounding areas with professional garage door services."
+    image="/assets/images/Mike_s Garage Door Repair Center 1.webp"
+    breadcrumbs={[
+      { label: "Home", href: "/" },
+      { label: "Contact", href: "/contact/" },
+    ]}
+  />
+
+  <!-- Quick Contact Section -->
+  <section class="py-16 md:py-20 lg:py-24 px-4 bg-background">
+    <div class="container mx-auto max-w-7xl">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12 md:mb-16">
+          <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
+            Ready to Get Started?
+          </h2>
+          <div class="w-24 h-1 bg-primary mx-auto mb-8"></div>
+          <p class="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            Choose the best way to reach us. We're here to help with all your garage door needs.
+          </p>
+        </div>
+
+        <!-- Contact Options Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12">
+          <!-- Phone - Most Prominent -->
+          <div class="bg-primary text-white p-8 text-center group hover:shadow-2xl transition-all duration-300 rounded-xl">
+            <div class="bg-white/20 p-4 w-16 h-16 mx-auto mb-6 rounded-lg flex items-center justify-center">
+              <Phone class="w-8 h-8 text-white" />
+            </div>
+            <h3 class="text-2xl font-bold mb-3">Call Now</h3>
+            <p class="text-white/90 mb-6 text-sm">Talk to us right away</p>
+            <a 
+              href={`tel:${CONTACT.phone.replace(/\D/g, '')}`}
+              class="inline-flex items-center justify-center bg-white text-primary hover:bg-white/90 px-6 py-3 font-semibold transition-colors text-lg w-full rounded-lg"
+            >
+              {CONTACT.phone}
+            </a>
+            <p class="text-xs text-white/80 font-medium mt-4">Emergency help available 24/7</p>
+          </div>
+
+          <!-- Quick Quote Form -->
+          <div class="lg:col-span-2 w-full">
+            <div class="bg-white border border-gray-200 rounded-xl p-6 lg:p-8 h-full flex flex-col shadow-md hover:shadow-lg transition-shadow">
+              <h3 class="text-2xl font-bold mb-4 text-gray-900">Get Your Free Quote</h3>
+              <div class="w-16 h-1 bg-primary mb-6"></div>
+              <p class="text-gray-600 mb-6 text-sm">
+                Fill out this form and we'll send you a personalized quote within 24 hours.
+              </p>
+              <div class="w-full" style="min-height: 630px; height: auto;">
+                <iframe
+                  src="https://api.leadconnectorhq.com/widget/form/5mrT5cbMZCuRJA0ZEFoa"
+                  style="width: 100%; height: 100%; min-height: 630px; border: none; border-radius: 3px;"
+                  id="inline-5mrT5cbMZCuRJA0ZEFoa"
+                  title="Contact Form"
+                  class="rounded-lg w-full"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Information & Hours -->
+  <section class="py-16 md:py-20 lg:py-24 px-4 bg-background">
+    <div class="container mx-auto max-w-7xl">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12 md:mb-16">
+          <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+            Contact Information
+          </h2>
+          <div class="w-24 h-1 bg-primary mx-auto mb-8"></div>
+          <p class="text-xl text-gray-600">
+            Here's how you can reach us.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <!-- Contact Info Card -->
+          <div class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all duration-300">
+            <h3 class="text-xl font-semibold mb-4 text-gray-900">Get In Touch</h3>
+            <div class="w-12 h-1 bg-primary mb-4"></div>
+            <div class="space-y-4">
+              <div class="flex items-center gap-3">
+                <Phone class="w-5 h-5 text-primary" />
+                <a href={`tel:${CONTACT.phone.replace(/\D/g, '')}`} class="text-gray-700 hover:text-primary transition-colors">
+                  {CONTACT.phone}
+                </a>
+              </div>
+              <div class="flex items-center gap-3">
+                <Mail class="w-5 h-5 text-primary" />
+                <a href={`mailto:${CONTACT.email}`} class="text-gray-700 hover:text-primary transition-colors">
+                  {CONTACT.email}
+                </a>
+              </div>
+              <div class="flex items-start gap-3">
+                <MapPin class="w-5 h-5 text-primary mt-1" />
+                <div class="text-gray-700">
+                  <p class="font-medium">{CONTACT.address}</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <Clock class="w-5 h-5 text-primary" />
+                <span class="text-gray-700">7:00 AM - 11:00 PM, 7 Days a Week</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Additional Info Card -->
+          <div class="space-y-6">
+            <div class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all duration-300">
+              <h3 class="text-xl font-semibold mb-4 text-gray-900">Where We Work</h3>
+              <div class="w-12 h-1 bg-primary mb-4"></div>
+              <p class="text-gray-600 mb-6 leading-relaxed">
+                We're proud to serve the greater Dallas-Fort Worth area, including Bedford, Dallas, Fort Worth, Arlington, and all surrounding communities.
+              </p>
+              <a
+                href="/service-areas/"
+                class="inline-flex items-center text-primary font-semibold hover:text-primary/80 transition-colors"
+              >
+                See All Areas We Serve
+                <span class="ml-2">→</span>
+              </a>
+            </div>
+
+            <div class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all duration-300">
+              <h3 class="text-xl font-semibold mb-4 text-gray-900">Why Choose Mike's?</h3>
+              <div class="w-12 h-1 bg-primary mb-4"></div>
+              <ul class="space-y-3 text-gray-600">
+                <li class="flex items-center">
+                  <span class="w-2 h-2 bg-primary mr-3 flex-shrink-0 rounded-full"></span>
+                  <span class="font-medium">Fully Licensed and Insured</span>
+                </li>
+                <li class="flex items-center">
+                  <span class="w-2 h-2 bg-primary mr-3 flex-shrink-0 rounded-full"></span>
+                  <span class="font-medium">Same Day Service Available</span>
+                </li>
+                <li class="flex items-center">
+                  <span class="w-2 h-2 bg-primary mr-3 flex-shrink-0 rounded-full"></span>
+                  <span class="font-medium">Emergency Service 24/7</span>
+                </li>
+                <li class="flex items-center">
+                  <span class="w-2 h-2 bg-primary mr-3 flex-shrink-0 rounded-full"></span>
+                  <span class="font-medium">Quality Workmanship Guaranteed</span>
+                </li>
+                <li class="flex items-center">
+                  <span class="w-2 h-2 bg-primary mr-3 flex-shrink-0 rounded-full"></span>
+                  <span class="font-medium">Free Estimates on All Services</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Appointment Booking Section -->
+  <section class="py-16 md:py-20 lg:py-24 px-4 bg-gray-50 border-t border-gray-200">
+    <div class="container mx-auto max-w-7xl">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12 md:mb-16">
+          <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+            Schedule Your Garage Door Service
+          </h2>
+          <div class="w-24 h-1 bg-primary mx-auto mb-8"></div>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            Pick a time that works for you. We'll be there to help with your garage door needs.
+          </p>
+        </div>
+        
+        <div class="bg-white border border-gray-200 rounded-xl p-6 lg:p-8 w-full shadow-md">
+          <div class="w-full min-h-[500px] sm:min-h-[600px] lg:min-h-[700px] h-auto">
+            <iframe 
+              src="https://api.leadconnectorhq.com/widget/booking/NouzX9J9fTQn6OabCTOl" 
+              style="width: 100%; min-height: 500px; height: auto; border: none; overflow: hidden; max-width: 100%;" 
+              scrolling="no" 
+              id="NouzX9J9fTQn6OabCTOl_1761257830701"
+              title="Schedule Appointment"
+              class="w-full h-full"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+

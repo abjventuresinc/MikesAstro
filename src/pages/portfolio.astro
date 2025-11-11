@@ -2,7 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { generateMetadataFromConfig, generateStructuredData } from "../lib/seo-metadata.js";
 import portfolioData from '@/data/portfolio.json';
-import { Grid3x3, Phone, Award, ZoomIn, ArrowRight, X, ChevronLeft, ChevronRight } from 'lucide-astro';
+import { Grid3x3, Phone, Award, ZoomIn, ArrowRight, X, ChevronLeft, ChevronRight } from '@lucide/astro';
 
 // Generate metadata
 const metadata = generateMetadataFromConfig('/portfolio/');
@@ -416,4 +416,5 @@ const { projects: portfolioProjects, stats } = portfolioData;
     });
   })();
 </script>
+
 

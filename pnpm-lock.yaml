@@ -8,15 +8,15 @@ importers:
 
   .:
     dependencies:
+      '@lucide/astro':
+        specifier: ^0.553.0
+        version: 0.553.0(astro@5.15.4(@types/node@24.10.0)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.53.0)(typescript@5.9.3))
       '@tailwindcss/vite':
         specifier: ^4.1.17
         version: 4.1.17(vite@6.4.1(@types/node@24.10.0)(jiti@2.6.1)(lightningcss@1.30.2))
       astro:
         specifier: ^5.15.4
         version: 5.15.4(@types/node@24.10.0)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.53.0)(typescript@5.9.3)
-      lucide-astro:
-        specifier: ^0.553.0
-        version: 0.553.0(astro@5.15.4(@types/node@24.10.0)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.53.0)(typescript@5.9.3))
       sharp:
         specifier: ^0.34.5
         version: 0.34.5
@@ -389,6 +389,11 @@ packages:
 
   '@jridgewell/trace-mapping@0.3.31':
     resolution: {integrity: sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==}
+
+  '@lucide/astro@0.553.0':
+    resolution: {integrity: sha512-yiHpOKGBPOy+pmZfkQmZcFAETU8FvkqWdoLCboSZGuZ1zgwFHGxBmr/brmk5PxVFOUnImzsRFGzAX2O2A88hmQ==}
+    peerDependencies:
+      astro: ^4 || ^5
 
   '@oslojs/encoding@1.1.0':
     resolution: {integrity: sha512-70wQhgYmndg4GCPxPPxPGevRKqTIJ2Nh4OkiMWmDAVYsTQ+Ta7Sq+rPevXyXGdzr30/qZBnyOalCszoMxlyldQ==}
@@ -1094,11 +1099,6 @@ packages:
 
   lru-cache@10.4.3:
     resolution: {integrity: sha512-JNAzZcXrCt42VGLuYz0zfAzDfAvJWW6AfYlDBQyDV5DClI2m5sAmK+OIO7s59XfsRsWHp02jAJrRadPRGTt6SQ==}
-
-  lucide-astro@0.553.0:
-    resolution: {integrity: sha512-aFQtl5mfjU78S2QRFWaUOIrlYDLifkB2Bk0l3PWL5eN2lBgVMpNEqRaug6pqqPfwvSa6AksM/WSe8wqbbilj9w==}
-    peerDependencies:
-      astro: '>=2.7.1'
 
   magic-string@0.30.21:
     resolution: {integrity: sha512-vd2F4YUyEXKGcLHoq+TEyCjxueSeHnFxyyjNp80yg0XV4vUhnDer/lvvlqM/arB5bXQN5K2/3oinyCRyx8T2CQ==}
@@ -1986,6 +1986,10 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
 
+  '@lucide/astro@0.553.0(astro@5.15.4(@types/node@24.10.0)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.53.0)(typescript@5.9.3))':
+    dependencies:
+      astro: 5.15.4(@types/node@24.10.0)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.53.0)(typescript@5.9.3)
+
   '@oslojs/encoding@1.1.0': {}
 
   '@rollup/pluginutils@5.3.0(rollup@4.53.0)':
@@ -2730,10 +2734,6 @@ snapshots:
   longest-streak@3.1.0: {}
 
   lru-cache@10.4.3: {}
-
-  lucide-astro@0.553.0(astro@5.15.4(@types/node@24.10.0)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.53.0)(typescript@5.9.3)):
-    dependencies:
-      astro: 5.15.4(@types/node@24.10.0)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.53.0)(typescript@5.9.3)
 
   magic-string@0.30.21:
     dependencies:

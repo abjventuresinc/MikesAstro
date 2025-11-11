@@ -1,7 +1,7 @@
 ---
 import DynamicBentoGrid from '../ui/bento-grid/DynamicBentoGrid.astro'
 import Button from '../ui/Button.astro'
-import { ArrowRight, CheckCircle } from 'lucide-astro'
+import { ArrowRight, CheckCircle } from '@lucide/astro'
 import { CORE_SERVICES, BUSINESS_INFO } from '../../lib/business-config.js'
 
 // Props interface
@@ -117,7 +117,7 @@ const bentoGridItems = CORE_SERVICES.slice(0, 5).map((service, index) => ({
           {ctaText}
           <ArrowRight class="w-4 h-4 ml-2" />
         </Button>
-        <Button size="lg" variant="outline" href="/garage-door-services/">
+        <Button size="lg" variant="outline" href="/services/">
           View All Services
         </Button>
       </div>

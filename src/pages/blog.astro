@@ -3,7 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { generateMetadataFromConfig, generateStructuredData } from "../lib/seo-metadata.js";
 import blogData from '@/data/blog-posts.json';
 import DynamicHeader from '@/components/global/DynamicHeader.astro';
-import { Search, Filter, Clock, ArrowRight, Calendar } from 'lucide-astro';
+import { Search, Filter, Clock, ArrowRight, Calendar } from '@lucide/astro';
 
 // Generate metadata
 const metadata = generateMetadataFromConfig('/blog/');
@@ -581,4 +581,5 @@ const POSTS_PER_PAGE = 5;
     overflow: hidden;
   }
 </style>
+
 

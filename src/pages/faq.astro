@@ -3,7 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { generateMetadataFromConfig, generateDynamicStructuredData } from "../lib/seo-metadata.js";
 import faqData from '@/data/faq.json';
 import servicesData from '@/data/services.json';
-import { HelpCircle, Phone, Star, Clock, Shield, Award, Search, ChevronDown, ChevronUp, ArrowRight } from 'lucide-astro';
+import { HelpCircle, Phone, Star, Clock, Shield, Award, Search, ChevronDown, ChevronUp, ArrowRight } from '@lucide/astro';
 
 // Generate metadata
 const metadata = generateMetadataFromConfig('/faq/');
@@ -417,4 +417,5 @@ const faqCategories = [
     transform: rotate(0deg);
   }
 </style>
+
 

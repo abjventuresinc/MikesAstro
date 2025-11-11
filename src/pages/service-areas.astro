@@ -1,0 +1,29 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { generateMetadataFromConfig, generateStructuredData } from "../lib/seo-metadata.js";
+import ServiceAreasHero from "@/components/sections/service-areas-hero.astro";
+import ServiceAreasContent from "@/components/sections/service-areas-content.astro";
+import CTASection from "@/components/sections/cta-section.astro";
+
+// Generate metadata
+const metadata = generateMetadataFromConfig('/service-areas/');
+
+// Generate structured data for service areas page
+const structuredData = generateStructuredData('/service-areas/');
+---
+
+<BaseLayout metadata={metadata}>
+  <!-- Add structured data scripts -->
+  {structuredData.map((script) => (
+    <script
+      type={script.type}
+      set:html={script.children}
+    />
+  ))}
+  
+  <div class="min-h-screen">
+    <ServiceAreasHero />
+    <ServiceAreasContent />
+    <CTASection />
+  </div>
+</BaseLayout>
