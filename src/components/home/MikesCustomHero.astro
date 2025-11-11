@@ -1,0 +1,521 @@
+---
+import { Image } from "astro:assets";
+import { Phone, Clock, Shield, Star, ArrowRight } from "lucide-astro";
+
+import heroBackground from "@/assets/images/mikes-garage-door-repair-1.webp";
+import heroCardImage from "@/assets/images/mikes-garage-door-repair-2.webp";
+
+const stats = [
+  { value: "1000+", label: "Happy Customers" },
+  { value: "24/7", label: "Emergency Service" },
+  { value: "44", label: "Cities Served" },
+];
+
+const serviceAreas = ["Bedford", "Dallas", "Fort Worth", "Arlington", "+40 More Cities"];
+---
+
+<section class="hero-section">
+  <!-- Background -->
+  <div class="hero-background">
+    <Image
+      src={heroBackground}
+      alt="Professional garage door installation and repair in Bedford, TX"
+      class="hero-background-image"
+      loading="eager"
+      format="webp"
+      quality={80}
+    />
+    <div class="hero-background-overlay"></div>
+  </div>
+
+  <!-- Content -->
+  <div class="hero-content">
+    <div class="hero-grid">
+      <!-- Left Column -->
+      <div class="hero-left">
+        <!-- Trust Badge -->
+        <div class="trust-badge">
+          <Star class="trust-badge-icon" />
+          <span>Bedford's Most Trusted Since Day One</span>
+        </div>
+
+        <!-- Headline -->
+        <div class="headline-section">
+          <h1 class="headline">
+            Your Garage Door Problem?
+            <span class="headline-accent">We've Got This.</span>
+          </h1>
+          <p class="headline-description">
+            From broken springs at dawn to emergency repairs at midnight,
+            Mike's team delivers fast, reliable garage door solutions when you need them most.
+          </p>
+        </div>
+
+        <!-- Benefits -->
+        <div class="benefits-grid">
+          <div class="benefit-card">
+            <div class="benefit-icon-wrapper">
+              <Clock class="benefit-icon" />
+            </div>
+            <div>
+              <h3 class="benefit-title">Open 7 AM - 11 PM</h3>
+              <p class="benefit-description">Every day of the week</p>
+            </div>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-icon-wrapper">
+              <Shield class="benefit-icon" />
+            </div>
+            <div>
+              <h3 class="benefit-title">Licensed & Insured</h3>
+              <p class="benefit-description">Fully certified professionals</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA Buttons -->
+        <div class="cta-buttons">
+          <a href="/contact" class="btn-primary">
+            <Phone class="btn-icon" /> Call 817-859-8877
+          </a>
+          <a href="/services" class="btn-secondary">
+            View All Services <ArrowRight class="btn-icon" />
+          </a>
+        </div>
+
+        <!-- Service Areas -->
+        <div class="service-areas">
+          <p class="service-areas-label">Serving the Greater Dallas-Fort Worth Area</p>
+          <div class="service-areas-list">
+            {serviceAreas.map(area => (
+              <span class="service-area-tag">{area}</span>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column -->
+      <div class="hero-right">
+        <div class="image-card-wrapper">
+          <div class="image-card">
+            <Image
+              src={heroCardImage}
+              alt="Mike's Garage Door Repair Center team installing premium garage door in Bedford, TX"
+              width={600}
+              height={700}
+              class="image-card-image"
+              loading="lazy"
+              format="webp"
+              quality={85}
+            />
+            <div class="image-card-gradient"></div>
+
+            <!-- Stats Card -->
+            <div class="stats-card">
+              <div class="stats-grid">
+                {stats.map(stat => (
+                  <div class="stat-item">
+                    <div class="stat-value">{stat.value}</div>
+                    <div class="stat-label">{stat.label}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <!-- Decorative Glows -->
+          <div class="glow glow-primary"></div>
+          <div class="glow glow-secondary"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Hero Section */
+  .hero-section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: linear-gradient(to bottom right, #1E1F3B, #2C3E8C, #4B6FFF);
+    padding-top: 5rem;
+  }
+
+  /* Background */
+  .hero-background {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .hero-background-image {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    opacity: 0.2;
+  }
+
+  .hero-background-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to right,
+      rgb(30 31 59 / 0.9),
+      rgb(44 62 140 / 0.85),
+      rgb(75 111 255 / 0.9)
+    );
+  }
+
+  /* Content */
+  .hero-content {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 5rem 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .hero-content {
+      padding: 5rem 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .hero-content {
+      padding: 5rem 2rem;
+    }
+  }
+
+  .hero-grid {
+    display: grid;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  @media (min-width: 1024px) {
+    .hero-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  /* Left Column */
+  .hero-left {
+    color: rgb(255 255 255 / 0.95);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  /* Trust Badge */
+  .trust-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgb(255 255 255 / 0.1);
+    backdrop-filter: blur(4px);
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    border: 1px solid rgb(255 255 255 / 0.2);
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  }
+
+  .trust-badge-icon {
+    width: 1rem;
+    height: 1rem;
+    color: hsl(var(--accent));
+    fill: hsl(var(--accent));
+  }
+
+  .trust-badge span {
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+
+  /* Headline */
+  .headline-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .headline {
+    font-size: 2.25rem;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  @media (min-width: 640px) {
+    .headline {
+      font-size: 3rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .headline {
+      font-size: 3.75rem;
+    }
+  }
+
+  .headline-accent {
+    display: block;
+    margin-top: 0.5rem;
+    color: hsl(var(--primary));
+  }
+
+  .headline-description {
+    font-size: 1.25rem;
+    color: rgb(255 255 255 / 0.8);
+    line-height: 1.75;
+    max-width: 36rem;
+  }
+
+  @media (min-width: 640px) {
+    .headline-description {
+      font-size: 1.5rem;
+    }
+  }
+
+  /* Benefits */
+  .benefits-grid {
+    display: grid;
+    gap: 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .benefits-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .benefit-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    background: rgb(255 255 255 / 0.1);
+    backdrop-filter: blur(4px);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid rgb(255 255 255 / 0.2);
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  }
+
+  .benefit-icon-wrapper {
+    background: hsl(var(--primary) / 0.2);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+  }
+
+  .benefit-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: hsl(var(--primary));
+  }
+
+  .benefit-title {
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0.25rem;
+  }
+
+  .benefit-description {
+    font-size: 0.875rem;
+    color: rgb(229 231 235);
+  }
+
+  /* CTA Buttons */
+  .cta-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .cta-buttons {
+      flex-direction: row;
+    }
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    font-size: 1.125rem;
+    padding: 1.5rem 2rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s;
+  }
+
+  .btn-primary {
+    background: hsl(var(--primary));
+    color: white;
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  }
+
+  .btn-primary:hover {
+    background: hsl(var(--primary-hover));
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+    transform: scale(1.05);
+  }
+
+  .btn-secondary {
+    background: rgb(255 255 255 / 0.1);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgb(255 255 255 / 0.3);
+    color: white;
+  }
+
+  .btn-secondary:hover {
+    background: white;
+    color: hsl(var(--secondary));
+  }
+
+  .btn-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
+  /* Service Areas */
+  .service-areas {
+    padding-top: 1.5rem;
+    border-top: 1px solid rgb(255 255 255 / 0.2);
+  }
+
+  .service-areas-label {
+    color: rgb(229 231 235);
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .service-areas-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    font-size: 0.75rem;
+  }
+
+  .service-area-tag {
+    background: rgb(255 255 255 / 0.1);
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+  }
+
+  /* Right Column */
+  .hero-right {
+    display: none;
+  }
+
+  @media (min-width: 1024px) {
+    .hero-right {
+      display: block;
+    }
+  }
+
+  .image-card-wrapper {
+    position: relative;
+  }
+
+  .image-card {
+    position: relative;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+    border: 1px solid rgb(255 255 255 / 0.2);
+    backdrop-filter: blur(24px);
+    background: rgb(255 255 255 / 0.05);
+  }
+
+  .image-card-image {
+    object-fit: cover;
+    width: 100%;
+    height: 500px;
+    border-radius: 1rem;
+  }
+
+  .image-card-gradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to top,
+      rgb(0 0 0 / 0.6),
+      transparent,
+      transparent
+    );
+  }
+
+  /* Stats Card */
+  .stats-card {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    right: 1.5rem;
+    background: white;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .stat-value {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: hsl(var(--primary));
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+    color: rgb(75 85 99);
+    margin-top: 0.25rem;
+  }
+
+  /* Decorative Glows */
+  .glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(64px);
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .glow-primary {
+    top: -1rem;
+    right: -1rem;
+    width: 8rem;
+    height: 8rem;
+    background: hsl(var(--primary));
+    opacity: 0.4;
+  }
+
+  .glow-secondary {
+    bottom: -1rem;
+    left: -1rem;
+    width: 10rem;
+    height: 10rem;
+    background: hsl(var(--secondary));
+    opacity: 0.3;
+    animation-delay: 2s;
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+</style>

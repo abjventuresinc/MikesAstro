@@ -1,0 +1,19 @@
+---
+// src/layouts/BaseLayout.astro
+import "../styles/global.css";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mike's Garage Door Repair</title>
+    <meta name="description" content="Reliable garage door repair services in Texas. Available 24/7 for emergency repairs." />
+    <link rel="icon" href="/favicon.svg" />
+  </head>
+
+  <body class="bg-background text-foreground antialiased">
+    <slot /> <!-- ✅ This replaces `{children}` -->
+  </body>
+</html>

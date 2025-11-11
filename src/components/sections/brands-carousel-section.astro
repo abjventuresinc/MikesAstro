@@ -1,0 +1,147 @@
+---
+const brands = [
+  {
+    name: "Amarr",
+    logo: "/assets/brands/brands we work with Amarr logo.webp",
+    alt: "Amarr Garage Doors Logo"
+  },
+  {
+    name: "Clopay",
+    logo: "/assets/brands/brands we work with Clopay-GoldBar.webp",
+    alt: "Clopay Garage Doors Logo"
+  },
+  {
+    name: "LiftMaster",
+    logo: "/assets/brands/brands we work with Liftmaster garage doors-Logo.webp",
+    alt: "LiftMaster Garage Door Openers Logo"
+  },
+  {
+    name: "CHI Overhead Doors",
+    logo: "/assets/brands/brands we work with CHI overhead doors logo.webp",
+    alt: "CHI Overhead Doors Logo"
+  },
+  {
+    name: "Wayne Dalton",
+    logo: "/assets/brands/Brands we work with Wayne Dalton logo.webp",
+    alt: "Wayne Dalton Garage Doors Logo"
+  },
+  {
+    name: "Raynor",
+    logo: "/assets/brands/brands we work with raynor garage doors logo.webp",
+    alt: "Raynor Garage Doors Logo"
+  },
+  {
+    name: "Genie",
+    logo: "/assets/brands/brands we work with Genie The Brand you Trust garage door logo.webp",
+    alt: "Genie Garage Door Openers Logo"
+  },
+  {
+    name: "Overhead Door",
+    logo: "/assets/brands/brands we work with overhead-door-logo.webp",
+    alt: "Overhead Door Corporation Logo"
+  },
+  {
+    name: "Guardian",
+    logo: "/assets/brands/brands we wortk with Guardian access and door hardware garage door logo.webp",
+    alt: "Guardian Access and Door Hardware Logo"
+  },
+  {
+    name: "Arrow Tru-Line",
+    logo: "/assets/brands/brands we work with Arrow Tru-Line garage doors logo.webp",
+    alt: "Arrow Tru-Line Garage Doors Logo"
+  }
+]
+---
+
+<section class="py-16 px-4 bg-bg-secondary">
+  <div class="container mx-auto max-w-7xl">
+    <div class="text-center mb-12 brands-header">
+      <h2 class="text-2xl md:text-3xl font-bold text-foreground mb-4">
+        Trusted Brands We Work With
+      </h2>
+      <p class="text-muted-foreground max-w-2xl mx-auto">
+        We're proud to install, repair, and service garage doors from the industry's most respected manufacturers.
+      </p>
+    </div>
+
+    <div class="relative overflow-hidden brands-carousel">
+      <!-- Gradient overlays for smooth fade effect -->
+      <div class="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-bg-secondary to-transparent z-10" />
+      <div class="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-bg-secondary to-transparent z-10" />
+      
+      <!-- Auto-scrolling brands -->
+      <div class="flex animate-scroll">
+        <!-- First set of brands -->
+        <div class="flex items-center space-x-16 flex-shrink-0">
+          {brands.map((brand) => (
+            <div class="flex items-center justify-center h-20 w-40 opacity-70 hover:opacity-100 transition-opacity duration-300 brand-item">
+              <img
+                src={brand.logo}
+                alt={brand.alt}
+                width={160}
+                height={80}
+                style="height: auto; width: auto; max-height: 4rem;"
+                class="object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+          ))}
+        </div>
+        
+        <!-- Duplicate set for seamless loop -->
+        <div class="flex items-center space-x-16 flex-shrink-0 ml-16">
+          {brands.map((brand) => (
+            <div class="flex items-center justify-center h-20 w-40 opacity-70 hover:opacity-100 transition-opacity duration-300 brand-item">
+              <img
+                src={brand.logo}
+                alt={brand.alt}
+                width={160}
+                height={80}
+                style="height: auto; width: auto; max-height: 4rem;"
+                class="object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
+  .animate-scroll {
+    animation: scroll 25s linear infinite;
+  }
+  
+  .animate-scroll:hover {
+    animation-play-state: paused;
+  }
+
+  .brands-header {
+    opacity: 1;
+  }
+
+  .brands-carousel {
+    opacity: 1;
+  }
+
+  .brand-item {
+    transition: transform 0.3s ease;
+  }
+
+  .brand-item:hover {
+    transform: scale(1.05);
+  }
+</style>

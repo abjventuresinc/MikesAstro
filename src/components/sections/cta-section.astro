@@ -1,0 +1,115 @@
+---
+import { ArrowRight, Phone, Calendar } from 'lucide-astro'
+import Button from '../ui/Button.astro'
+
+interface Props {
+  city?: string;
+  cityData?: {
+    sectionContent?: {
+      cta?: {
+        heading?: string;
+        subheading?: string;
+        primaryCTA?: string;
+        secondaryCTA?: string;
+      };
+    };
+  };
+}
+
+const { city, cityData } = Astro.props;
+
+// Get city-specific CTA content or use defaults
+const ctaContent = cityData?.sectionContent?.cta;
+const heading = ctaContent?.heading || `Ready to Start Your Project${city ? ` in ${city}` : ''}?`;
+const subheading = ctaContent?.subheading || (city 
+  ? `Join hundreds of satisfied ${city} customers who trust us with their most important projects. Get your free consultation today and experience the difference local expertise makes.`
+  : `Get your free consultation today and let's bring your vision to life with professional expertise you can trust.`
+);
+const secondaryCTA = ctaContent?.secondaryCTA || 'Free Consultation';
+---
+
+<section class="py-24 px-4 relative overflow-hidden cta-section" style="background: linear-gradient(to bottom right, #1E1F3B, #2C3E8C, #4B6FFF);">
+  <!-- Background Image -->
+  <div class="absolute inset-0">
+    <img
+      src="/assets/images/Mike_s Garage Door Repair Center 18.webp"
+      alt="Professional garage door service background"
+      class="object-cover w-full h-full opacity-20"
+      loading="lazy"
+      decoding="async"
+    />
+    <!-- Gradient overlay matching hero -->
+    <div class="absolute inset-0" style="background: linear-gradient(to right, rgb(30 31 59 / 0.9), rgb(44 62 140 / 0.85), rgb(75 111 255 / 0.9));" />
+  </div>
+
+  <!-- Background decorative elements -->
+  <div class="absolute inset-0 overflow-hidden">
+    <div class="absolute -top-40 -right-40 w-80 h-80 rounded-full bg-white/10 blur-3xl cta-decoration-1" />
+    <div class="absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-primary/20 blur-3xl cta-decoration-2" />
+  </div>
+
+  <div class="container mx-auto max-w-4xl relative z-10">
+    <div class="text-center cta-content">
+      <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight" style="color: rgb(255 255 255 / 0.95);">
+        {heading}
+      </h2>
+      
+      <p class="text-xl max-w-2xl mx-auto leading-relaxed mb-12" style="color: rgb(255 255 255 / 0.8);">
+        {subheading}
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="tel:+18178598877" class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 transition-all duration-200 ease-out shadow-xl hover:shadow-2xl active:scale-[0.98] transform-gpu bg-white text-primary hover:bg-gray-100 h-11 rounded-md px-8 group">
+          <Phone class="w-4 h-4 mr-2" />
+          Call 817-859-8877
+          <ArrowRight class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+        </a>
+        <a href="/contact" class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 transition-all duration-200 ease-out shadow-xl hover:shadow-2xl active:scale-[0.98] transform-gpu border-2 border-white bg-primary text-white hover:bg-primary/90 h-11 rounded-md px-8 group">
+          <Calendar class="w-4 h-4 mr-2" />
+          {secondaryCTA}
+          <ArrowRight class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cta-section {
+    position: relative;
+  }
+
+  .cta-content {
+    opacity: 1;
+  }
+
+  @keyframes float1 {
+    0%, 100% {
+      transform: scale(1) translate(0, 0);
+      opacity: 0.3;
+    }
+    50% {
+      transform: scale(1.2) translate(10px, -10px);
+      opacity: 0.5;
+    }
+  }
+
+  @keyframes float2 {
+    0%, 100% {
+      transform: scale(1.2) translate(0, 0);
+      opacity: 0.5;
+    }
+    50% {
+      transform: scale(1) translate(-10px, 10px);
+      opacity: 0.3;
+    }
+  }
+
+  .cta-decoration-1 {
+    animation: float1 8s ease-in-out infinite;
+  }
+
+  .cta-decoration-2 {
+    animation: float2 10s ease-in-out infinite;
+  }
+</style>

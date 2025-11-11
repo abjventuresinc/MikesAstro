@@ -1,0 +1,1500 @@
+{
+  "services": [
+    {
+      "id": "garage-door-installation",
+      "name": "Garage Door Installation",
+      "slug": "garage-door-installation",
+      "description": "Reliable garage door installation across the DFW metroplex. From Bedford to Frisco, we deliver durable solutions built for North Texas weather and your family's needs.",
+      "content": "Living in the Dallas-Fort Worth area means dealing with everything from scorching summer heat to occasional ice storms. Our garage door installations are specifically designed to handle North Texas' unique climate challenges while enhancing your home's curb appeal.\n\n## Our DFW Installation Process\n\n### 1. Local Consultation & Design\n- Free in-home assessment across Bedford, Arlington, Plano, and surrounding areas\n- Climate-appropriate material recommendations\n- Style matching for your neighborhood\n- Transparent pricing with no surprises\n\n### 2. Weather-Resistant Installation\n- Heat-resistant hardware for Texas summers\n- Proper insulation for energy efficiency\n- Wind-resistant components for storm season\n- Temperature-adaptive seals and tracks\n\n### 3. Final Testing & Support\n- Comprehensive functionality testing\n- Safety inspection meeting local codes\n- Operation demonstration for your family\n- Ongoing maintenance guidance\n\n## Why Choose Mike's for Installation\n\n- **Local Expertise**: We understand DFW's climate and building codes\n- **Durable Materials**: Doors built to withstand North Texas weather\n- **Community Focus**: Serving Bedford neighbors since day one\n- **Fair Pricing**: Honest, upfront costs with no hidden fees",
+      "category": "Core Services",
+      "duration": "1-2 days",
+      "priceRange": "$800 - $3,500+",
+      "isCore": true,
+      "parentService": null,
+      "features": [
+        "Free Consultation",
+        "Professional Installation",
+        "Quality Guarantee",
+        "Warranty Included",
+        "Expert Team"
+      ],
+      "seo": {
+        "metaTitle": "Garage Door Installation in Dallas-Fort Worth, TX",
+        "metaDescription": "Professional garage door installation in Dallas-Fort Worth, TX. Expert setup, quality products & satisfaction guaranteed. Free consultation!",
+        "keywords": "garage door installation, new garage door, residential installation, commercial installation, Dallas Fort Worth TX, Bedford TX, Mike's Garage Door Repair"
+      },
+      "featuredImage": "/assets/images/Mike_s Garage Door Repair Center 1.webp",
+      "gallery": [
+        "/assets/images/Mike_s Garage Door Repair Center 1.webp",
+        "/assets/images/Mike_s Garage Door Repair Center 2.webp",
+        "/assets/images/Mike_s Garage Door Repair Center 3.webp"
+      ],
+      "contentVariations": {
+        "opening": "Your home's first impression matters in Bedford, Arlington, and throughout the DFW area. Whether you're building new in Frisco, replacing an aging door in Plano, or upgrading for better energy efficiency, our team combines North Texas-tested materials with local expertise to create garage doors that stand up to our climate.",
+        "whyChoose": "Every installation detail matters when you're dealing with North Texas weather extremes. We've installed over 85 garage doors across the DFW metroplex, from Southlake's upscale neighborhoods to Arlington's family communities. Our experience shows in every measurement, every seal, every component chosen specifically for our region's unique challenges.",
+        "closing": "Ready to enhance your home's entrance with a door built for DFW? Let's create a garage door that boosts your property value, reduces energy costs, and makes your neighbors take notice. Schedule your free Bedford-area consultation today."
+      },
+      "uniqueFaqs": [
+        {
+          "question": "What garage door materials work best in North Texas?",
+          "answer": "For DFW's climate, we recommend steel doors with proper insulation for energy efficiency, aluminum for modern homes in areas like Southlake and Colleyville, and wood doors with weather-resistant finishes for traditional neighborhoods. We work with manufacturers like Clopay, Amarr, and Wayne Dalton to ensure materials can handle our temperature swings and occasional severe weather."
+        },
+        {
+          "question": "How long does installation take in the DFW area?",
+          "answer": "Most single-car installations in Bedford, Arlington, and surrounding areas take 4-6 hours. Double-car garages typically require 6-8 hours. Custom projects or homes in areas like Highland Park may need 1-2 days. We factor in North Texas weather conditions and provide accurate timelines during your free consultation."
+        },
+        {
+          "question": "Do you work around my family's schedule?",
+          "answer": "Absolutely! We understand DFW families are busy. We recommend being home for the initial consultation and final walkthrough, but our experienced crews work independently during installation. We'll contact you when ready for the final inspection and demonstration of your new garage door's features."
+        },
+        {
+          "question": "What's included in your installation service?",
+          "answer": "Our complete installation includes removal and disposal of your old door (if applicable), professional installation of the new door and all hardware, precision spring balancing, safety sensor setup, opener installation or connection, operation testing, and a comprehensive demonstration. We also provide warranty documentation and maintenance recommendations."
+        },
+        {
+          "question": "Can you match my garage door to my home's style?",
+          "answer": "Absolutely! We specialize in architectural matching. During your consultation, we'll assess your home's style, whether it's traditional, contemporary, craftsman, colonial, or modern, and recommend garage door designs, colors, and window options that complement your home's character perfectly. We can also match existing trim colors and design elements."
+        }
+      ]
+    },
+    {
+      "id": "residential-garage-door-installation",
+      "name": "Residential Garage Door Installation",
+      "slug": "residential-garage-door-installation",
+      "description": "Residential garage door installation designed for DFW homes. From Bedford to Frisco, we create doors that enhance your neighborhood's character while standing up to North Texas weather.",
+      "content": "Your home's garage door is often the first thing neighbors notice in Bedford, Arlington, and throughout the DFW area. Our residential installations combine local style preferences with North Texas climate considerations to create doors that look great and perform reliably year-round.\n\n## DFW Residential Features\n\n- Style matching for your neighborhood's character\n- Energy-efficient insulation for Texas heat and cold\n- Weather-resistant materials and finishes\n- Smart opener integration for modern convenience\n- Local installation expertise guaranteed\n\n## Popular DFW Styles\n\n- Traditional raised panel (perfect for Bedford homes)\n- Carriage house designs (popular in Southlake)\n- Modern contemporary (growing in Frisco and Plano)\n- Custom wood doors (Highland Park and University Park)\n- Steel and aluminum options (great for Arlington)",
+      "category": "Installation Services",
+      "duration": "1 day",
+      "priceRange": "$800 - $2,500",
+      "isCore": false,
+      "parentService": "garage-door-installation",
+      "features": [
+        "Custom Design",
+        "Energy Efficient",
+        "Style Matching",
+        "Smart Integration",
+        "Professional Install"
+      ],
+      "seo": {
+        "metaTitle": "Residential Garage Door Installation",
+        "metaDescription": "Expert residential garage door installation in Dallas-Fort Worth. Custom designs & professional setup for your home. Free consultation available!",
+        "keywords": "residential garage door, home garage door installation, custom garage door, Dallas Fort Worth TX, Bedford TX"
+      },
+      "featuredImage": "/assets/images/Mike_s Garage Door Repair Center 4.webp",
+      "gallery": [
+        "/assets/images/Mike_s Garage Door Repair Center 4.webp",
+        "/assets/images/Mike_s Garage Door Repair Center 5.webp",
+        "/assets/images/Mike_s Garage Door Repair Center 6.webp"
+      ],
+      "contentVariations": {
+        "opening": "Your Bedford, Arlington, or Frisco home deserves a garage door that enhances its beauty while handling North Texas weather. Residential installation isn't just about function—it's about creating the perfect first impression that reflects your family's style and increases your home's value in the DFW market. From charming carriage house designs in Southlake to sleek modern styles in Plano, we help you choose the door that makes your house feel like home.",
+        "whyChoose": "Residential installation in the DFW area requires understanding both local style preferences and climate challenges. We know your home is your sanctuary, so we work around your family's schedule, protect your landscaping, and ensure every detail matches your neighborhood's character. Our residential specialists blend functionality with aesthetics, creating doors that look beautiful while providing the security and convenience your family needs in North Texas.",
+        "closing": "Ready to transform your home's entrance with a door built for DFW? Let's create a garage door that enhances your curb appeal, matches your home's style, and provides years of reliable service through North Texas weather. Schedule your free Bedford-area design consultation today."
+      },
+      "uniqueFaqs": [
+        {
+          "question": "What garage door styles work best in my DFW neighborhood?",
+          "answer": "We consider your home's architecture, neighborhood character, and North Texas climate. Traditional Bedford homes often suit carriage house or raised panel doors, while modern Frisco and Plano homes work well with contemporary aluminum designs. We'll show you options that complement your home's existing features while considering our region's weather patterns."
+        },
+        {
+          "question": "How do residential doors differ from commercial in the DFW area?",
+          "answer": "Residential doors prioritize aesthetics, quiet operation, and energy efficiency for daily family use in DFW homes. They're designed for 1,500-3,000 cycles annually with features like insulation for Texas heat, decorative hardware, and smooth operation. Commercial doors focus on durability and high-cycle operation (10,000+ cycles) for frequent business use in warehouses and industrial areas."
+        },
+        {
+          "question": "Can you match my home's existing color scheme?",
+          "answer": "Absolutely! We can match virtually any color found in DFW homes, including custom paint colors, wood stains, and metallic finishes. We'll take color samples from your home's trim, shutters, or other features to ensure perfect coordination. Most manufacturers offer hundreds of color options, and we can arrange custom color matching for unique DFW home styles."
+        },
+        {
+          "question": "How long does residential installation take?",
+          "answer": "Most single-car residential installations are completed in 4-6 hours, while double-car garages typically take 6-8 hours. Custom doors or complex configurations may require 1-2 days. We work efficiently to minimize disruption to your daily routine and always clean up thoroughly afterward."
+        },
+        {
+          "question": "Do residential garage doors come with warranties?",
+          "answer": "Yes, residential doors typically include 1-3 year manufacturer warranties on materials and hardware, plus our installation warranty. Springs carry separate warranties (1-3 years depending on cycle rating), and we provide extended warranty options for additional peace of mind."
+        }
+      ]
+    },
+    {
+      "id": "commercial-garage-door-installation",
+      "name": "Commercial Garage Door Installation",
+      "slug": "commercial-garage-door-installation",
+      "description": "Commercial garage door installation for DFW businesses. From Arlington warehouses to Dallas distribution centers, we deliver heavy-duty solutions built for North Texas industrial demands.",
+      "content": "DFW's thriving business environment demands reliable commercial garage doors that can handle high-traffic operations. We specialize in durable, weather-resistant solutions for warehouses, loading docks, and commercial properties across the metroplex.\n\n## DFW Commercial Solutions\n\n- High-cycle industrial doors for busy operations\n- Loading dock equipment for distribution centers\n- Security features and access control systems\n- Automatic operation systems for efficiency\n- Local maintenance programs available\n\n## DFW Industries We Serve\n\n- Warehouses and distribution centers (Arlington, Grand Prairie)\n- Retail and shopping centers (Dallas, Fort Worth)\n- Auto repair shops (throughout DFW)\n- Storage facilities (Bedford, Euless, Hurst)\n- Manufacturing plants (Dallas, Fort Worth, Arlington)",
+      "category": "Installation Services",
+      "duration": "1-2 days",
+      "priceRange": "$1,500 - $5,000+",
+      "isCore": false,
+      "parentService": "garage-door-installation",
+      "features": [
+        "Heavy-Duty Construction",
+        "High-Cycle Operation",
+        "Security Features",
+        "Automatic Systems",
+        "Commercial Grade"
+      ],
+      "seo": {
+        "metaTitle": "Commercial Garage Door Installation",
+        "metaDescription": "Professional commercial garage door installation for businesses & warehouses. Heavy-duty solutions & expert service. Get your quote!",
+        "keywords": "commercial garage door, industrial door installation, warehouse doors, Mike's Garage Door Repair Center"
+      },
+      "featuredImage": "/assets/images/Mike_s Garage Door Repair Center 7.webp",
+      "gallery": [
+        "/assets/images/Mike_s Garage Door Repair Center 7.webp",
+        "/assets/images/Mike_s Garage Door Repair Center 8.webp",
+        "/assets/images/Mike_s Garage Door Repair Center 9.webp"
+      ],
+      "contentVariations": {
+        "opening": "When your DFW business depends on reliable access, you need commercial garage doors built for North Texas industrial demands. Commercial installation requires specialized expertise in high-cycle operation, security features, and materials that can handle our climate extremes. We understand that downtime costs money, so we deliver solutions that keep your Arlington warehouse or Dallas distribution center running smoothly.",
+        "whyChoose": "Commercial doors in the DFW area face unique challenges: constant use, heavy loads, security requirements, and North Texas weather extremes. Our commercial specialists understand these demands and install doors designed for industrial environments. We work with your schedule, coordinate with your operations team, and ensure installations meet all Texas safety and building code requirements.",
+        "closing": "Don't let door problems disrupt your DFW business operations. Our commercial garage door solutions are built to handle the demands of your industry while providing reliable, long-term performance in North Texas. Contact us today for a commercial consultation and see how the right door system can improve your operational efficiency."
+      },
+      "uniqueFaqs": [
+        {
+          "question": "What makes a garage door suitable for DFW commercial use?",
+          "answer": "Commercial doors in the DFW area are designed for high-cycle operation (10,000+ cycles annually), heavy-duty construction, and North Texas weather resistance. They feature industrial-grade springs, reinforced tracks, commercial openers, and often include security features like key locks or access control systems. They're built to handle frequent use and our region's climate extremes."
+        },
+        {
+          "question": "How do you handle installation during DFW business hours?",
+          "answer": "We coordinate with your operations team to minimize disruption to your DFW business. For most Arlington warehouses and Dallas distribution centers, we can complete installation during off-hours, weekends, or scheduled downtime. We provide advance notice, work efficiently, and ensure your business can resume normal operations immediately after installation."
+        },
+        {
+          "question": "What security features are available for commercial doors?",
+          "answer": "Commercial doors can include key locks, access control systems, security bars, reinforced panels, and tamper-resistant hardware. We can integrate with existing security systems and provide options ranging from basic key locks to advanced access control with card readers or keypads."
+        },
+        {
+          "question": "Do commercial doors require special permits or inspections?",
+          "answer": "Depending on your location and door specifications, commercial installations may require building permits and inspections. We handle all permit applications and coordinate inspections to ensure compliance with local building codes and safety regulations."
+        },
+        {
+          "question": "What maintenance is required for commercial doors?",
+          "answer": "Commercial doors need more frequent maintenance due to heavy use,typically quarterly inspections and lubrication. We offer commercial maintenance programs that include regular service visits, priority emergency response, and detailed service reports to help you plan maintenance around your business operations."
+        }
+      ]
+    },
+    {
+      "id": "custom-garage-door-design",
+      "name": "Custom Garage Door Design",
+      "slug": "custom-garage-door-design",
+      "description": "Custom garage door design services to create unique, personalized doors that perfectly match your vision and architecture.",
+      "content": "Create a truly unique entrance with our custom garage door design services. From concept to installation, we work with you to design and build a garage door that reflects your personal style.\n\n## Custom Design Process\n\n### Design Consultation\n- Review your vision and requirements\n- Architectural style matching\n- Material and finish selection\n- CAD rendering and visualization\n\n### Fabrication & Installation\n- Precision manufacturing\n- Quality material sourcing\n- Expert installation\n- Final detailing and finishing\n\n## Customization Options\n\n- Unique window configurations\n- Custom hardware and handles\n- Decorative glass inserts\n- Hand-crafted wood details\n- Custom paint and stain finishes",
+      "category": "Installation Services",
+      "duration": "2-4 weeks",
+      "priceRange": "$2,500 - $8,000+",
+      "isCore": false,
+      "parentService": "garage-door-installation",
+      "features": [
+        "100% Custom Design",
+        "CAD Visualization",
+        "Premium Materials",
+        "Artisan Craftsmanship",
+        "Unique Creation"
+      ],
+      "seo": {
+        "metaTitle": "Custom Garage Door Design | Personalized Doors",
+        "metaDescription": "Custom garage door design with personalized solutions & expert craftsmanship. Create your dream garage door today!",
+        "keywords": "custom garage door, garage door design, personalized garage door, Mike's Garage Door Repair Center"
+      },
+      "featuredImage": "/assets/images/Mike_s Garage Door Repair Center 10.webp",
+      "gallery": [
+        "/assets/images/Mike_s Garage Door Repair Center 10.webp",
+        "/assets/images/Mike_s Garage Door Repair Center 11.webp",
+        "/assets/images/Mike_s Garage Door Repair Center 12.webp"
+      ],
+      "contentVariations": {
+        "opening": "When standard garage doors don't capture your vision, custom design brings your unique style to life. Whether you're building a luxury home, restoring a historic property, or simply want something truly one-of-a-kind, our custom garage door design service transforms your ideas into a stunning reality that perfectly complements your architecture.",
+        "whyChoose": "Custom design requires artistic vision combined with technical expertise. Our design team works with architects, interior designers, and homeowners to create doors that are both beautiful and functional. From initial concept sketches to final installation, we guide you through every step of the creative process, ensuring your custom door exceeds expectations.",
+        "closing": "Ready to create something truly unique? Our custom design process begins with understanding your vision and ends with a garage door that's perfectly yours. Schedule your design consultation today and let's bring your dream door to life."
+      },
+      "uniqueFaqs": [
+        {
+          "question": "What's the process for custom garage door design?",
+          "answer": "Our custom design process includes: initial consultation to understand your vision, concept sketches and material selection, detailed CAD drawings and 3D renderings, prototype development (if needed), fabrication in our specialized workshop, and professional installation. The entire process typically takes 4-8 weeks depending on complexity."
+        },
+        {
+          "question": "What materials can be used for custom doors?",
+          "answer": "We work with wood (cedar, mahogany, oak), steel, aluminum, glass, fiberglass, and composite materials. Custom doors can combine multiple materials,for example, wood frames with glass panels, or steel construction with wood overlays. We source premium materials and can accommodate special requests for exotic woods or unique finishes."
+        },
+        {
+          "question": "Can you match historical architectural styles?",
+          "answer": "Yes, we specialize in historical reproductions and can match specific architectural periods like Victorian, Craftsman, Colonial, or Art Deco styles. We research period-appropriate hardware, window configurations, and design elements to create authentic-looking doors that meet modern performance standards."
+        },
+        {
+          "question": "How much do custom garage doors cost?",
+          "answer": "Custom doors range from $3,000-$15,000+ depending on materials, complexity, and size. Simple custom designs start around $3,000, while elaborate doors with exotic materials, intricate details, or special hardware can exceed $15,000. We provide detailed quotes after the design consultation."
+        },
+        {
+          "question": "Do custom doors come with warranties?",
+          "answer": "Custom doors include manufacturer warranties on materials (1-3 years) plus our installation warranty. We also provide extended warranty options and maintenance programs specifically designed for custom doors to protect your investment long-term."
+        }
+      ]
+    },
+    {
+      "id": "garage-door-repair",
+      "name": "Garage Door Repair",
+      "slug": "garage-door-repair",
+      "description": "Reliable garage door repair across the DFW metroplex. From Bedford to Frisco, we fix all garage door issues quickly with same-day service available.",
+      "content": "When your garage door breaks down in North Texas, you need fast, reliable repair service. Our DFW-area technicians provide same-day solutions for all types of garage door problems, from Arlington to Plano and everywhere in between.\n\n## Common DFW Repairs We Handle\n\n### Mechanical Issues\n- Broken springs and cables (common in our temperature swings)\n- Track misalignment from foundation settling\n- Roller replacement for smooth operation\n- Hinge repairs for proper movement\n\n### Operational Problems\n- Door won't open or close properly\n- Noisy operation (especially in hot weather)\n- Uneven movement from track issues\n- Safety sensor problems\n\n### Structural Repairs\n- Panel replacement for weather damage\n- Weather seal replacement for energy efficiency\n- Frame repair from foundation shifts\n- Hardware replacement for worn components\n\n## Our DFW Repair Promise\n\n- **Fast Response**: Same-day service across Bedford, Arlington, and surrounding areas\n- **Local Expertise**: We understand North Texas garage door challenges\n- **Quality Parts**: Premium components built for our climate\n- **Fair Pricing**: Upfront, honest estimates with no surprises",
+      "category": "Core Services",
+      "duration": "1-4 hours",
+      "priceRange": "$125 - $500+",
+      "isCore": true,
+      "parentService": null,
+      "features": [
+        "Same-Day Service",
+        "Expert Technicians",
+        "Quality Parts",
+        "Fair Pricing",
+        "Warranty Included"
+      ],
+      "seo": {
+        "metaTitle": "Fast Garage Door Repair Services in Dallas-Fort Worth, TX",
+        "metaDescription": "Professional garage door repair in Dallas-Fort Worth, TX. Same-day service for springs, cables, panels & more.",
+        "keywords": "garage door repair, broken garage door, emergency repair, garage door fix, Dallas Fort Worth TX, Mike's Garage Door Repair Center"
+      },
+      "featuredImage": "/assets/images/Mike_s Garage Door Repair Center 13.webp",
+      "gallery": [
+        "/assets/images/Mike_s Garage Door Repair Center 13.webp",
+        "/assets/images/Mike_s Garage Door Repair Center 14.webp",
+        "/assets/images/Mike_s Garage Door Repair Center 15.webp"
+      ],
+      "contentVariations": {
+        "opening": "When your garage door breaks down in Bedford, Arlington, or anywhere in the DFW area, every minute counts. A malfunctioning garage door isn't just inconvenient—it's a security risk that can strand your vehicle or leave your home vulnerable. Our rapid-response repair service gets your door working safely again, often the same day you call.",
+        "whyChoose": "Garage door problems in North Texas rarely happen at convenient times, especially during our extreme weather. That's why we maintain fully-stocked service vehicles and trained technicians ready to diagnose and fix issues quickly across the metroplex. From broken springs that prevent opening to doors that won't close properly, we've seen and solved every garage door problem imaginable in DFW homes and businesses.",
+        "closing": "Don't let a broken garage door disrupt your day or compromise your security. Our expert technicians are standing by with the parts, tools, and knowledge to restore your garage door's function quickly and reliably across the DFW area. Call now for same-day repair service."
+      },
+      "uniqueFaqs": [
+        {
+          "question": "How quickly can you respond to repair calls in the DFW area?",
+          "answer": "We offer same-day service for most repair calls across Bedford, Arlington, Plano, and surrounding DFW areas when you contact us in the morning. Emergency situations, like a door stuck open or posing a security risk, receive priority response, typically within 1-2 hours during business hours. We maintain a fleet of fully-stocked service vehicles specifically to provide fast repair response throughout the metroplex."
+        },
+        {
+          "question": "What are the most common garage door repairs in North Texas?",
+          "answer": "The most frequent repairs in our area include broken springs (accounts for about 40% of calls, often due to temperature swings), malfunctioning openers, broken cables, damaged rollers and hinges, bent or misaligned tracks from foundation settling, and broken panels from weather damage. Most of these repairs can be completed in a single visit, and we stock the most common parts on our service vehicles."
+        },
+        {
+          "question": "Should I repair or replace my garage door in the DFW area?",
+          "answer": "Generally, if your door is less than 10-15 years old and the damage is isolated (broken spring, damaged panel, faulty opener), repair is the economical choice. However, if you're facing multiple issues, significant structural damage, or your door is very old and struggling with North Texas weather, replacement might be more cost-effective long-term. We'll provide honest assessment and both options during our service call."
+        },
+        {
+          "question": "Do you provide warranties on repair work?",
+          "answer": "Yes, all our repair work comes with a service warranty, typically 90 days on labor and manufacturer warranties on all replacement parts. Springs carry a 1-3 year warranty depending on the cycle rating, and major components like openers include manufacturer warranties up to 10 years. We stand behind our work completely."
+        },
+        {
+          "question": "Can you repair any brand of garage door?",
+          "answer": "Yes, we service and repair all major garage door brands including Clopay, Amarr, Wayne Dalton, CHI, Raynor, Overhead Door, and many others. We also repair doors installed by other companies and can work with older or discontinued models. Our technicians carry universal parts and can source specialized components when needed."
+        }
+      ]
+    },
+    {
+      "id": "broken-spring-repair",
+      "name": "Broken Spring Repair",
+      "slug": "broken-spring-repair",
+      "description": "Expert garage door spring replacement across the DFW area. Fast service to restore your garage door's functionality with North Texas-tested components.",
+      "content": "Broken garage door springs are one of the most common issues DFW homeowners face, especially with our temperature extremes. Our expert technicians provide fast, professional spring replacement to get your door working safely again across Bedford, Arlington, and surrounding areas.\n\n## DFW Spring Repair Service\n\n- Torsion spring replacement (most common in our area)\n- Extension spring replacement\n- High-cycle spring upgrades for heavy use\n- Dual spring systems for larger doors\n- Safety cable installation for security\n\n## Why Springs Break in North Texas\n\n- Normal wear and tear from daily use\n- Extreme temperature changes (common in DFW)\n- Rust and corrosion from humidity\n- Improper maintenance\n- End of lifespan (7-10 years typical)\n\n## Our Spring Replacement Process\n\n1. Safe spring tension release\n2. Old spring removal\n3. Shaft and bearing inspection\n4. New spring installation\n5. Proper tension adjustment for North Texas conditions\n6. Full system testing",
+      "category": "Repair Services",
+      "duration": "1-2 hours",
+      "priceRange": "$150 - $300",
+      "isCore": false,
+      "parentService": "garage-door-repair",
+      "features": [
+        "Same-Day Service",
+        "Quality Springs",
+        "Safety First",
+        "Proper Tensioning",
+        "Warranty Included"
+      ],
+      "seo": {
+        "metaTitle": "Broken Spring Repair | Garage Door Spring Replacement TX",
+        "metaDescription": "Fast garage door spring repair & replacement. Expert technicians & quality parts. Same-day service available - call Mikes now!",
+        "keywords": "broken garage door spring, spring replacement, torsion spring repair, Mikes Garage Doors"
+      },
+      "featuredImage": "/assets/images/Mike_s Garage Door Repair Center 16.webp",
+      "gallery": [
+        "/assets/images/Mike_s Garage Door Repair Center 16.webp",
+        "/assets/images/Mike_s Garage Door Repair Center 17.webp",
+        "/assets/images/Mike_s Garage Door Repair Center 18.webp"
+      ],
+      "contentVariations": {
+        "opening": "A broken garage door spring means your door won't open, and that's not just inconvenient, it's potentially dangerous. Springs are under extreme tension and should only be replaced by trained professionals. Our same-day spring replacement service gets you back in operation quickly and safely, with springs rated for years of trouble-free performance.",
+        "whyChoose": "Spring replacement isn't DIY territory, it requires specialized tools and training. We replace hundreds of springs annually, understanding exactly which spring type, size, and cycle rating your door needs. We also know that when one spring breaks, its mate is likely near failure too, so we recommend replacing both springs together to prevent another breakdown weeks later.",
+        "closing": "Don't stay trapped in or out of your garage. Call now for same-day spring replacement service. We stock a complete range of spring sizes and can typically complete replacement within 1-2 hours of arrival."
+      },
+      "uniqueFaqs": [
+        {
+          "question": "Why did my garage door spring break?",
+          "answer": "Garage door springs have a finite lifespan measured in cycles (one open/close = one cycle). Standard springs are rated for 10,000 cycles (about 7-10 years for typical use). Springs break due to normal wear, metal fatigue, rust and corrosion, extreme temperature changes, or lack of lubrication. If your door is 7+ years old and has never had springs replaced, it's within expected lifespan."
+        },
+        {
+          "question": "Can I open my garage door with a broken spring?",
+          "answer": "Never attempt to open a garage door with a broken spring manually or with the opener. The door becomes extremely heavy (150-400+ lbs) without spring assistance and can fall suddenly, causing injury or property damage. If your spring breaks with the door closed, leave it closed and call for service. If it's open when the spring breaks, don't close it, we can secure it in place during repair."
+        },
+        {
+          "question": "Should I replace both springs even if only one broke?",
+          "answer": "Yes, strongly recommended. When one spring breaks, the other has experienced the same cycles and stress and will likely break soon, often within weeks or months. Replacing both springs together saves you the inconvenience and cost of a second service call soon after. It also ensures balanced door operation since both springs are equally tensioned and new."
+        },
+        {
+          "question": "What are high-cycle springs and are they worth it?",
+          "answer": "High-cycle springs are rated for 25,000-30,000 cycles (compared to standard 10,000-cycle springs), lasting 2-3 times longer. They cost about 30-50% more but provide significantly better value over time. We recommend high-cycle springs for frequently-used doors (multiple family members, home businesses) or doors in hard-to-reach garages. For most homeowners, they're an excellent long-term investment."
+        },
+        {
+          "question": "How long does spring replacement take?",
+          "answer": "For experienced professionals, typical spring replacement takes 1-2 hours including removal of old springs, installation of new springs, precise tension adjustment, balance testing, and safety checks. Unusual door configurations or additional issues discovered during service may extend this time. We'll provide an accurate estimate when we assess your specific situation."
+        }
+      ]
+    },
+    {
+      "id": "cable-replacement",
+      "name": "Cable Replacement",
+      "slug": "cable-replacement",
+      "description": "Professional garage door cable replacement services. Quick repairs for broken, frayed, or damaged cables.",
+      "content": "Damaged garage door cables can prevent your door from operating safely. We provide expert cable replacement services to restore proper function and ensure safe operation.\n\n## Cable Issues We Fix\n\n- Broken cables\n- Frayed or worn cables\n- Cables off the drum\n- Uneven cable tension\n- Rusted cables\n\n## Cable Replacement Benefits\n\n- Restores smooth operation\n- Prevents further damage\n- Ensures safe door function\n- Extends system lifespan\n- Improves door balance\n\n## What We Do\n\n1. Inspect both cables and drums\n2. Release door tension safely\n3. Remove damaged cables\n4. Install new premium cables\n5. Adjust tension properly\n6. Test door operation",
+      "category": "Repair Services",
+      "duration": "1-2 hours",
+      "priceRange": "$125 - $250",
+      "isCore": false,
+      "parentService": "garage-door-repair",
+      "features": [
+        "Quality Cables",
+        "Professional Service",
+        "Safety Inspection",
+        "Proper Tension",
+        "Same-Day Available"
+      ],
+      "seo": {
+        "metaTitle": "Cable Replacement | Garage Door Cable Repair | Mikes TX",
+        "metaDescription": "Professional garage door cable replacement & repair. Fast, reliable service for broken or damaged cables. Contact Mikes today!",
+        "keywords": "garage door cable replacement, broken cable, cable repair, Mikes Garage Doors"
+      },
+      "featuredImage": "/assets/images/Mike_s Garage Door Repair Center 19.webp",
+      "gallery": [
+        "/assets/images/Mike_s Garage Door Repair Center 19.webp",
+        "/assets/images/Mike_s Garage Door Repair Center 20.webp",
+        "/assets/images/Mike_s Garage Door Repair Center 21.webp"
+      ],
+      "contentVariations": {
+        "opening": "When garage door cables break, your door becomes dangerous and unusable. Cable replacement isn't just a repair,it's a critical safety service that restores your door's safe operation. These high-tension cables are under extreme stress, and when they fail, they can cause serious injury or property damage if not handled by professionals.",
+        "whyChoose": "Cable replacement requires specialized tools, safety equipment, and knowledge of spring tension systems. Our technicians are trained in safe cable replacement procedures and understand the critical relationship between cables, springs, and door balance. We replace cables with premium-grade materials and ensure proper tension for safe, smooth operation.",
+        "closing": "Don't risk injury with broken cables. Our professional cable replacement service gets your door working safely again with high-quality materials and proper installation. Call now for same-day cable replacement service."
+      },
+      "uniqueFaqs": [
+        {
+          "question": "How do I know if my garage door cables need replacement?",
+          "answer": "Signs include frayed or broken cables, door operation issues, visible wear or rust, or if cables appear loose or slack. Never attempt to operate a door with damaged cables,they're under extreme tension and can cause serious injury. If you suspect cable problems, call for professional inspection immediately."
+        },
+        {
+          "question": "Why do garage door cables break?",
+          "answer": "Cables break due to normal wear over time (typically 7-10 years), rust and corrosion, lack of lubrication, extreme temperature changes, or if the door becomes unbalanced. High-use doors may need cable replacement more frequently. Regular maintenance can extend cable life significantly."
+        },
+        {
+          "question": "Can I replace garage door cables myself?",
+          "answer": "No, cable replacement is extremely dangerous and should only be performed by trained professionals. Cables are under high tension and can cause serious injury if mishandled. Our technicians use specialized tools and safety equipment to replace cables safely and correctly."
+        },
+        {
+          "question": "How long does cable replacement take?",
+          "answer": "Professional cable replacement typically takes 1-2 hours including removal of old cables, installation of new cables, proper tension adjustment, and safety testing. We also inspect the entire door system to identify any other potential issues that could cause future problems."
+        },
+        {
+          "question": "What type of cables do you use for replacement?",
+          "answer": "We use premium-grade steel cables specifically designed for garage doors, typically 1/8\" or 3/32\" diameter depending on door weight and spring system. Our cables are corrosion-resistant and rated for the specific tension requirements of your door system."
+        }
+      ]
+    },
+    {
+      "id": "track-alignment",
+      "name": "Track Alignment",
+      "slug": "track-alignment",
+      "description": "Expert garage door track alignment across the DFW area. Fix binding, scraping, and uneven door operation with North Texas-tested solutions.",
+      "content": "Misaligned garage door tracks can cause serious operational issues and safety hazards, especially in North Texas where foundation settling is common. Our professional track alignment service ensures smooth, safe door operation across Bedford, Arlington, and surrounding DFW areas.\n\n## Track Problems We Fix in DFW\n\n- Bent or damaged tracks from foundation settling\n- Misaligned track sections from temperature changes\n- Gaps between track and rollers\n- Track mounting issues from structural shifts\n- Debris in tracks from North Texas weather\n\n## Signs You Need Track Alignment\n\n- Door binds or sticks (common in hot weather)\n- Scraping or grinding noises\n- Uneven door movement\n- Door comes off track\n- Visible track damage\n\n## Our DFW Alignment Process\n\n1. Inspect entire track system\n2. Identify alignment issues\n3. Loosen mounting bolts\n4. Straighten and align tracks\n5. Secure tracks properly for North Texas conditions\n6. Test door operation\n7. Lubricate moving parts",
+      "category": "Repair Services",
+      "duration": "1-2 hours",
+      "priceRange": "$150 - $350",
+      "isCore": false,
+      "parentService": "garage-door-repair",
+      "features": [
+        "Expert Alignment",
+        "Track Repair",
+        "Safety Inspection",
+        "Smooth Operation",
+        "Professional Service"
+      ],
+      "seo": {
+        "metaTitle": "Track Alignment | Garage Door Track Repair | Bedford TX",
+        "metaDescription": "Professional garage door track alignment & repair in Bedford, Arlington & DFW. Fix binding, scraping & uneven operation. Expert service today!",
+        "keywords": "garage door track alignment, track repair, bent track, Bedford TX, Arlington TX, DFW garage door repair"
+      },
+      "featuredImage": "/assets/images/Mike_s Garage Door Repair Center 22.webp",
+      "gallery": [
+        "/assets/images/Mike_s Garage Door Repair Center 22.webp",
+        "/assets/images/Mike_s Garage Door Repair Center 23.webp",
+        "/assets/images/Mike_s Garage Door Repair Center 24.webp"
+      ],
+      "contentVariations": {
+        "opening": "Misaligned garage door tracks cause noisy operation, premature wear, and potential safety hazards. Track alignment isn't just about quiet operation,it's about ensuring your door opens and closes smoothly while protecting your investment in springs, rollers, and other components. Proper alignment extends your door's life and prevents costly repairs.",
+        "whyChoose": "Track alignment requires precision measurement and adjustment of multiple components. Our technicians use specialized tools to check track angles, spacing, and alignment, then make precise adjustments to ensure smooth, quiet operation. We also inspect rollers, hinges, and other components that can be affected by track misalignment.",
+        "closing": "Stop putting up with noisy, jerky door operation. Our track alignment service restores smooth, quiet performance and prevents premature wear on your door system. Schedule your track alignment service today."
+      },
+      "uniqueFaqs": [
+        {
+          "question": "What causes garage door tracks to become misaligned?",
+          "answer": "Tracks can become misaligned due to foundation settling, impact damage, loose mounting bolts, temperature changes affecting building structure, or normal wear over time. Heavy doors or high-use applications may require more frequent track adjustments."
+        },
+        {
+          "question": "How can I tell if my tracks need alignment?",
+          "answer": "Signs include noisy operation, jerky movement, door binding or sticking, visible gaps between rollers and tracks, or if the door doesn't close completely. You may also notice increased wear on rollers or unusual sounds during operation."
+        },
+        {
+          "question": "How often should tracks be checked and aligned?",
+          "answer": "Tracks should be inspected during annual maintenance and aligned as needed. High-use doors may need more frequent checks. We recommend professional track alignment if you notice operation issues, after any impact damage, or as part of regular preventive maintenance."
+        },
+        {
+          "question": "Can misaligned tracks damage other door components?",
+          "answer": "Yes, misaligned tracks can cause premature wear on rollers, strain springs, damage hinges, and affect opener operation. Proper track alignment is essential for protecting your entire door system and preventing costly component failures."
+        },
+        {
+          "question": "How long does track alignment take?",
+          "answer": "Professional track alignment typically takes 1-2 hours including inspection, measurement, adjustment, and testing. We also check related components like rollers and hinges to ensure optimal door performance."
+        }
+      ]
+    },
+    {
+      "id": "panel-replacement",
+      "name": "Panel Replacement",
+      "slug": "panel-replacement",
+      "description": "Garage door panel replacement across the DFW area. Replace damaged, dented, or broken panels to restore your door's appearance and function.",
+      "content": "Damaged garage door panels in North Texas don't mean you need a whole new door. Our panel replacement service can restore your door's appearance and functionality at a fraction of the cost across Bedford, Arlington, and surrounding DFW areas.\n\n## DFW Panel Replacement Services\n\n- Single panel replacement\n- Multiple panel replacement\n- Color matching for DFW homes\n- Style matching for neighborhood consistency\n- Structural panel repair\n\n## Common Panel Issues in North Texas\n\n- Accident damage (vehicle impact)\n- Storm damage from severe weather\n- Rust and corrosion from humidity\n- Wood rot from moisture\n- Cracking or warping from temperature changes\n\n## Benefits of Panel Replacement\n\n- Cost-effective solution\n- Restore curb appeal\n- Maintain door integrity\n- Fix structural issues\n- Match existing style\n\n## Our DFW Process\n\n1. Assess damaged panels\n2. Source matching panels\n3. Remove damaged sections\n4. Install new panels\n5. Adjust and align for North Texas conditions\n6. Test operation",
+      "category": "Repair Services",
+      "duration": "2-4 hours",
+      "priceRange": "$200 - $600+",
+      "isCore": false,
+      "parentService": "garage-door-repair",
+      "features": [
+        "Color Matching",
+        "Style Matching",
+        "Expert Installation",
+        "Quality Panels",
+        "Cost Effective"
+      ],
+      "seo": {
+        "metaTitle": "Panel Replacement | Garage Door Panel Repair | Bedford TX",
+        "metaDescription": "Professional garage door panel replacement in Bedford, Arlington & DFW. Repair damaged panels & restore your door's appearance. Free quote today!",
+        "keywords": "garage door panel replacement, panel repair, damaged panel, Bedford TX, Arlington TX, DFW garage door repair"
+      },
+      "featuredImage": "/assets/images/Mike_s Garage Door Repair Center 25.webp",
+      "gallery": [
+        "/assets/images/Mike_s Garage Door Repair Center 25.webp",
+        "/assets/images/Mike_s Garage Door Repair Center 26.webp",
+        "/assets/images/Mike_s Garage Door Repair Center 27.webp"
+      ],
+      "contentVariations": {
+        "opening": "When garage door panels are damaged by impact, weather, or wear, panel replacement can restore your door's appearance and function without the cost of full replacement. Whether it's a single dented panel or multiple damaged sections, we can match your existing door's style and color for a seamless repair that looks like new.",
+        "whyChoose": "Panel replacement requires precise matching of style, color, and dimensions to maintain your door's appearance and operation. Our technicians are experienced in panel replacement and can often complete the work in a single visit. We ensure proper alignment and operation while maintaining your door's warranty and performance.",
+        "closing": "Don't let damaged panels detract from your home's appearance. Our panel replacement service restores your door's beauty and function with perfectly matched components. Contact us today for a panel replacement quote."
+      },
+      "uniqueFaqs": [
+        {
+          "question": "When should I replace panels instead of the entire door?",
+          "answer": "Panel replacement makes sense when damage is limited to 1-2 panels, your door is less than 10-15 years old, and the overall door system is in good condition. If multiple panels are damaged or the door is very old, full replacement may be more cost-effective."
+        },
+        {
+          "question": "Can you match the exact color and style of my existing door?",
+          "answer": "Yes, we can match most door styles and colors, including custom colors. We take samples from your existing door and work with manufacturers to ensure perfect color matching. Some very old or discontinued door styles may require special ordering or slight variations."
+        },
+        {
+          "question": "How long does panel replacement take?",
+          "answer": "Single panel replacement typically takes 2-4 hours, while multiple panels may require 4-6 hours. The process includes removing damaged panels, installing new ones, adjusting alignment, and testing operation. We work efficiently to minimize disruption to your schedule."
+        },
+        {
+          "question": "Will panel replacement affect my door's warranty?",
+          "answer": "Professional panel replacement using manufacturer-approved parts typically maintains your door's warranty. We use genuine replacement panels and follow manufacturer specifications to ensure warranty compliance."
+        },
+        {
+          "question": "What if my door style is discontinued?",
+          "answer": "For discontinued door styles, we can often find compatible panels or recommend similar styles that will work with your existing door system. In some cases, we may suggest full door replacement if panel options are limited or very expensive."
+        }
+      ]
+    },
+    {
+      "id": "emergency-garage-door-repair",
+      "name": "Emergency Garage Door Repair",
+      "slug": "emergency-garage-door-repair",
+      "description": "24/7 emergency garage door repair services. Fast response for urgent garage door problems and breakdowns.",
+      "content": "When your garage door breaks down unexpectedly, you need fast, reliable emergency repair service. We're available 24/7 to handle urgent garage door issues and get your door working again quickly.\n\n## Emergency Services We Provide\n\n- 24/7 availability\n- Fast response times\n- Door stuck open or closed\n- Broken springs and cables\n- Door off track\n- Opener malfunctions\n- Security issues\n\n## Why Choose Our Emergency Service\n\n- **Fast Response**: Typically on-site within 1-2 hours\n- **Always Available**: 24/7/365 service\n- **Fully Equipped**: Trucks stocked with common parts\n- **Expert Technicians**: Experienced emergency repairs\n- **Fair Pricing**: No hidden emergency fees\n\n## Common Emergency Situations\n\n- Door won't close (security risk)\n- Door stuck in open position\n- Car trapped inside garage\n- Spring broke during operation\n- Door came off tracks\n- Power outage issues",
+      "category": "Repair Services",
+      "duration": "1-4 hours",
+      "priceRange": "$175 - $600+",
+      "isCore": false,
+      "parentService": "garage-door-repair",
+      "features": [
+        "24/7 Availability",
+        "Fast Response",
+        "Expert Service",
+        "Fully Equipped",
+        "Fair Emergency Pricing"
+      ],
+      "seo": {
+        "metaTitle": "24/7 Emergency Garage Door Repair",
+        "metaDescription": "24/7 emergency garage door repair with fast response. Expert technicians available now for urgent repairs in Dallas-Fort Worth, TX.",
+        "keywords": "emergency garage door repair, 24 hour garage door service, urgent repair, Dallas Fort Worth TX, Mike's Garage Door Repair Center"
+      },
+      "featuredImage": "/assets/images/Mike_s Garage Door Repair Center 28.webp",
+      "gallery": [
+        "/assets/images/Mike_s Garage Door Repair Center 28.webp",
+        "/assets/images/Mike_s Garage Door Repair Center 29.webp",
+        "/assets/images/Mike_s Garage Door Repair Center 30.webp"
+      ],
+      "contentVariations": {
+        "opening": "When your garage door breaks at the worst possible moment, emergency repair service gets you back in operation fast. Whether it's a stuck door, broken spring, or security issue, our 24/7 emergency service responds quickly to restore your access and protect your property. We understand that garage door emergencies can't wait for regular business hours.",
+        "whyChoose": "Emergency situations require rapid response, fully-stocked service vehicles, and technicians trained to handle urgent repairs safely and efficiently. Our emergency team carries common parts and can often complete repairs on the first visit. We prioritize safety and security while getting your door working as quickly as possible.",
+        "closing": "Don't let a broken garage door leave you stranded or compromise your security. Our emergency repair service is available 24/7 to get you back in operation quickly and safely. Call now for immediate emergency service."
+      },
+      "uniqueFaqs": [
+        {
+          "question": "What constitutes a garage door emergency?",
+          "answer": "Emergencies include doors stuck open (security risk), doors that won't open (trapping vehicles), broken springs causing dangerous operation, doors that won't close (security vulnerability), or any situation that poses immediate safety or security risks. We prioritize these situations over routine repairs."
+        },
+        {
+          "question": "How quickly can you respond to emergency calls?",
+          "answer": "We typically respond to emergency calls within 1-2 hours during business hours and 2-4 hours for after-hours emergencies. True emergencies (security risks, safety hazards) receive priority response. We maintain emergency service vehicles with common parts for faster repairs."
+        },
+        {
+          "question": "Do you charge extra for emergency service?",
+          "answer": "Emergency service may include after-hours or weekend rates, but we provide upfront pricing before beginning work. The cost depends on the specific repair needed and time of service. We never surprise customers with hidden emergency fees."
+        },
+        {
+          "question": "Can you secure my garage if the door is stuck open?",
+          "answer": "Yes, we can provide temporary security measures including manual locks, temporary barriers, or emergency door closure systems. We'll secure your property immediately and then complete permanent repairs to restore normal operation."
+        },
+        {
+          "question": "What if you can't fix the emergency on the first visit?",
+          "answer": "We carry common emergency parts and can usually complete most emergency repairs on the first visit. If specialized parts are needed, we'll secure your property and return as soon as parts are available, typically within 24-48 hours."
+        }
+      ]
+    },
+    {
+      "id": "garage-door-maintenance",
+      "name": "Garage Door Maintenance",
+      "slug": "garage-door-maintenance",
+      "description": "Preventive garage door maintenance services to extend door life, prevent breakdowns, and ensure safe operation.",
+      "content": "Regular garage door maintenance is essential for reliable operation and longevity. Our comprehensive maintenance services keep your door running smoothly and help prevent costly repairs.\n\n## Our Maintenance Services\n\n### Complete Inspection\n- Visual inspection of all components\n- Safety feature testing\n- Wear assessment\n- Performance evaluation\n\n### Tune-Up Services\n- Lubrication of moving parts\n- Hardware tightening\n- Track cleaning\n- Balance adjustment\n\n### Preventive Care\n- Spring tension check\n- Cable inspection\n- Roller examination\n- Opener maintenance\n\n## Benefits of Regular Maintenance\n\n- **Extended Lifespan**: Doors last 2-3x longer with maintenance\n- **Prevent Breakdowns**: Catch problems before they become major issues\n- **Safety Assurance**: Regular testing of safety features\n- **Smooth Operation**: Keep your door running quietly and efficiently\n- **Save Money**: Prevent costly emergency repairs",
+      "category": "Core Services",
+      "duration": "45-90 minutes",
+      "priceRange": "$89 - $150",
+      "isCore": true,
+      "parentService": null,
+      "features": [
+        "Complete Inspection",
+        "Lubrication Service",
+        "Safety Testing",
+        "Preventive Care",
+        "Performance Report"
+      ],
+      "seo": {
+        "metaTitle": "Garage Door Maintenance in Dallas-Fort Worth, TX",
+        "metaDescription": "Professional garage door maintenance in Dallas-Fort Worth, TX. Extend door life & prevent breakdowns. Comprehensive tune-ups & inspections!",
+        "keywords": "garage door maintenance, tune-up, preventive maintenance, inspection, Dallas Fort Worth TX, Mike's Garage Door Repair Center"
+      },
+      "featuredImage": "/assets/images/Mike_s Garage Door Repair Center 31.webp",
+      "gallery": [
+        "/assets/images/Mike_s Garage Door Repair Center 31.webp",
+        "/assets/images/Mike_s Garage Door Repair Center 32.webp",
+        "/assets/images/Mike_s Garage Door Repair Center 33.webp"
+      ],
+      "contentVariations": {
+        "opening": "Preventive maintenance is the secret to extending your garage door's lifespan from 10 years to 20+ years in North Texas. Just like your car needs oil changes, your garage door needs regular tune-ups to operate smoothly, safely, and quietly through our climate extremes. Our comprehensive maintenance service catches small issues before they become expensive emergencies across the DFW area.",
+        "whyChoose": "Most garage door breakdowns in North Texas are preventable. During our maintenance visits across Bedford, Arlington, and surrounding areas, we've caught countless springs ready to snap, cables beginning to fray, and safety sensors out of alignment, all before they caused problems. Our systematic 21-point inspection examines every component, and our proactive lubrication and adjustment service keeps your door operating like new year after year.",
+        "closing": "Invest in maintenance now to avoid costly repairs later. Our affordable tune-up service provides peace of mind, extends your door's life, and keeps your garage door operating safely for your DFW family. Schedule your maintenance appointment today and join hundreds of homeowners who trust us with their annual service."
+      },
+      "uniqueFaqs": [
+        {
+          "question": "How often should I have my garage door serviced?",
+          "answer": "We recommend professional maintenance once per year for typical residential use (2-4 cycles per day). If you use your garage door more frequently, multiple family members, home business, or 6+ cycles daily, consider twice-yearly service. Annual maintenance typically includes spring and fall tune-ups to prepare for seasonal temperature changes that affect door operation."
+        },
+        {
+          "question": "What's included in your maintenance service?",
+          "answer": "Our comprehensive 21-point maintenance includes: visual inspection of all components, spring tension testing and adjustment, cable examination, track cleaning and alignment check, roller bearing inspection, hinge lubrication, safety sensor testing and alignment, auto-reverse function testing, weather seal inspection, hardware tightening, chain/belt lubrication (opener), and complete operation testing. You'll receive a detailed service report with recommendations."
+        },
+        {
+          "question": "Can maintenance prevent all breakdowns?",
+          "answer": "While maintenance dramatically reduces unexpected failures, garage door springs and other components have finite lifespans (springs: 10,000-30,000 cycles, depending on rating). However, our inspections identify components nearing end-of-life, allowing you to replace them proactively on your schedule rather than during an emergency. This planning approach saves money and prevents inconvenience."
+        },
+        {
+          "question": "Do you offer maintenance plans or contracts?",
+          "answer": "Yes! We offer annual maintenance plans that include scheduled service visits, priority emergency response, and discounts on any needed repairs. Plans range from basic annual service to comprehensive quarterly programs for high-use doors. Our maintenance members also receive reminder calls before each service visit and seasonal preparation tips."
+        },
+        {
+          "question": "What happens if you discover problems during maintenance?",
+          "answer": "We'll immediately inform you of any issues found, explain the problem and its urgency, and provide a clear quote for recommended repairs. You decide what to address immediately versus schedule for later. Many minor issues can be fixed during the maintenance visit with your approval. Our goal is to keep you informed and help you prioritize based on safety and budget."
+        }
+      ]
+    },
+    {
+      "id": "tune-up-and-inspection",
+      "name": "Tune-Up and Inspection",
+      "slug": "tune-up-inspection",
+      "description": "Comprehensive garage door tune-up and inspection service. Keep your door running smoothly and safely.",
+      "content": "Our comprehensive tune-up and inspection service ensures your garage door operates smoothly, safely, and efficiently. We examine every component and make adjustments to optimize performance.\n\n## What's Included\n\n### Visual Inspection\n- Door panels and sections\n- Hardware and fasteners\n- Springs and cables\n- Tracks and rollers\n- Weather sealing\n\n### Mechanical Inspection\n- Spring tension testing\n- Cable condition check\n- Track alignment verification\n- Roller bearing assessment\n- Hinge condition evaluation\n\n### Safety Testing\n- Auto-reverse function\n- Photo-eye sensors\n- Force settings\n- Manual release operation\n- Emergency disconnect\n\n### Tune-Up Services\n- Lubricate all moving parts\n- Tighten loose hardware\n- Adjust spring tension\n- Balance the door\n- Clean tracks and components",
+      "category": "Maintenance Services",
+      "duration": "60-90 minutes",
+      "priceRange": "$89 - $150",
+      "isCore": false,
+      "parentService": "garage-door-maintenance",
+      "features": [
+        "21-Point Inspection",
+        "Complete Tune-Up",
+        "Safety Testing",
+        "Performance Report",
+        "Expert Recommendations"
+      ],
+      "seo": {
+        "metaTitle": "Garage Door Tune-Up & Inspection Bedford TX",
+        "metaDescription": "Professional garage door tune-up & 21-point inspection in Bedford & DFW. Keep your door running smoothly & safely. Expert maintenance. Call (817) 859-8877!",
+        "keywords": "garage door tune-up, garage door inspection, maintenance service Bedford TX, Mike's Garage Door tune-up"
+      },
+      "featuredImage": "/assets/images/Mike_s Garage Door Repair Center 34.webp",
+      "gallery": [
+        "/assets/images/Mike_s Garage Door Repair Center 34.webp",
+        "/assets/images/Mike_s Garage Door Repair Center 35.webp",
+        "/assets/images/Mike_s Garage Door Repair Center 36.webp"
+      ],
+      "contentVariations": {
+        "opening": "Preventive maintenance is the key to extending your garage door's life and avoiding costly emergency repairs in North Texas. Our comprehensive tune-up and inspection service examines every component, identifies potential problems before they become failures, and keeps your door operating smoothly and safely through our climate extremes. Think of it as a health checkup for your garage door.",
+        "whyChoose": "Our tune-up service goes beyond basic lubrication to include detailed inspection of springs, cables, tracks, rollers, and safety systems. We provide a complete service report with recommendations and can address minor issues during the same visit. Regular tune-ups can extend your door's life by years and prevent most unexpected breakdowns across the DFW area.",
+        "closing": "Don't wait for problems to develop. Our tune-up and inspection service keeps your garage door operating at peak performance while preventing costly repairs. Schedule your annual tune-up today and enjoy worry-free operation year-round across Bedford, Arlington, and surrounding areas."
+      },
+      "uniqueFaqs": [
+        {
+          "question": "What's included in a garage door tune-up?",
+          "answer": "Our tune-up includes: visual inspection of all components, spring tension testing, cable examination, track cleaning and alignment, roller bearing inspection, hinge lubrication, safety sensor testing, auto-reverse function testing, weather seal inspection, hardware tightening, and complete operation testing with detailed service report."
+        },
+        {
+          "question": "How often should I have my garage door tuned up?",
+          "answer": "We recommend annual tune-ups for typical residential use (2-4 cycles daily). High-use doors (6+ cycles daily) may benefit from twice-yearly service. Seasonal tune-ups (spring and fall) help prepare doors for temperature changes that affect operation."
+        },
+        {
+          "question": "Can tune-ups prevent all garage door problems?",
+          "answer": "While tune-ups prevent most problems, some components have finite lifespans (springs: 10,000-30,000 cycles). However, our inspections identify components nearing end-of-life, allowing you to replace them proactively rather than during an emergency. This planning approach saves money and prevents inconvenience."
+        },
+        {
+          "question": "What happens if you find problems during tune-up?",
+          "answer": "We'll immediately inform you of any issues, explain their urgency, and provide repair quotes. You decide what to address immediately versus schedule for later. Many minor issues can be fixed during the tune-up visit with your approval."
+        },
+        {
+          "question": "Do you provide a written report after tune-up?",
+          "answer": "Yes, we provide a detailed service report listing all components checked, any issues found, recommendations for future service, and maintenance tips. This helps you track your door's condition and plan for future maintenance needs."
+        }
+      ]
+    },
+    {
+      "id": "lubrication-and-balancing",
+      "name": "Lubrication and Balancing",
+      "slug": "lubrication-balancing",
+      "description": "Professional garage door lubrication and balancing service. Reduce noise, extend life, and improve performance.",
+      "content": "Proper lubrication and balancing are essential for smooth, quiet garage door operation. Our service reduces wear, minimizes noise, and extends the life of your garage door system.\n\n## Lubrication Service\n\n### What We Lubricate\n- Torsion springs\n- Rollers and bearings\n- Hinges and pivot points\n- Track surfaces\n- Lock mechanisms\n- Opener chain/belt/screw\n\n### Benefits of Lubrication\n- Quieter operation\n- Reduced friction and wear\n- Smoother movement\n- Rust prevention\n- Extended component life\n\n## Balancing Service\n\n### Why Balance Matters\n- Prevents opener strain\n- Extends spring life\n- Ensures smooth operation\n- Reduces noise\n- Improves safety\n\n### Our Balancing Process\n1. Disconnect opener\n2. Manually test door movement\n3. Measure door position at rest\n4. Adjust spring tension\n5. Verify proper balance\n6. Reconnect and test opener",
+      "category": "Maintenance Services",
+      "duration": "30-60 minutes",
+      "priceRange": "$75 - $125",
+      "isCore": false,
+      "parentService": "garage-door-maintenance",
+      "features": [
+        "Premium Lubricants",
+        "Professional Balancing",
+        "Noise Reduction",
+        "Extended Life",
+        "Expert Service"
+      ],
+      "seo": {
+        "metaTitle": "Garage Door Lubrication & Balancing Bedford TX",
+        "metaDescription": "Professional lubrication & balancing service in Bedford & DFW. Reduce noise, extend life & improve door performance. Expert service. Call (817) 859-8877!",
+        "keywords": "garage door lubrication, door balancing Bedford TX, maintenance service DFW, Mike's Garage Door lubrication"
+      },
+      "featuredImage": "/assets/images/Mike_s Garage Door Repair Center 37.webp",
+      "gallery": [
+        "/assets/images/Mike_s Garage Door Repair Center 37.webp",
+        "/assets/images/Mike_s Garage Door Repair Center 38.webp",
+        "/assets/images/Mike_s Garage Door Repair Center 39.webp"
+      ],
+      "contentVariations": {
+        "opening": "Proper lubrication and spring balancing are essential for smooth, quiet garage door operation and long component life. Without regular lubrication, metal parts wear prematurely and create friction that strains your entire door system. Spring balancing ensures your door operates with minimal effort while protecting your opener and other components.",
+        "whyChoose": "Lubrication and balancing require specific knowledge of your door's components and the right products for each application. Our technicians use premium lubricants designed for garage door systems and have the expertise to balance springs properly. This specialized service extends component life and improves operation quality.",
+        "closing": "Keep your garage door operating smoothly and quietly with professional lubrication and balancing service. Regular maintenance prevents premature wear and ensures optimal performance. Schedule your lubrication service today."
+      },
+      "uniqueFaqs": [
+        {
+          "question": "What parts of my garage door need lubrication?",
+          "answer": "Key areas include: roller bearings, hinges, spring coils, cable pulleys, and track contact points. We use different lubricants for different components,dry lubricant for tracks, oil for bearings, and grease for springs. Each component has specific lubrication requirements for optimal performance."
+        },
+        {
+          "question": "How often should garage doors be lubricated?",
+          "answer": "Most garage doors need lubrication every 6-12 months, depending on usage and climate. High-use doors or harsh environments may need more frequent lubrication. We can recommend a schedule based on your specific door and usage patterns."
+        },
+        {
+          "question": "What's the difference between lubrication and balancing?",
+          "answer": "Lubrication reduces friction and wear on moving parts, while balancing ensures your door's weight is properly distributed between springs and opener. Proper balancing prevents strain on your opener motor and ensures smooth operation. Both are essential for optimal door performance."
+        },
+        {
+          "question": "Can I lubricate my garage door myself?",
+          "answer": "Basic lubrication of accessible parts is possible, but professional service includes hard-to-reach areas, proper product selection, and spring balancing. Our technicians have the tools and expertise to lubricate all components safely and effectively."
+        },
+        {
+          "question": "What happens if my door isn't properly balanced?",
+          "answer": "Unbalanced doors strain the opener motor, cause uneven wear on components, and may not operate smoothly. This can lead to premature opener failure, spring problems, and increased energy consumption. Proper balancing is essential for long-term door health."
+        }
+      ]
+    },
+    {
+      "id": "preventive-maintenance-plans",
+      "name": "Preventive Maintenance Plans",
+      "slug": "preventive-maintenance",
+      "description": "Annual and seasonal preventive maintenance plans. Keep your garage door in peak condition year-round.",
+      "content": "Our preventive maintenance plans provide scheduled service to keep your garage door operating reliably all year long. Choose from annual or seasonal plans designed to prevent breakdowns and extend door life.\n\n## Maintenance Plan Options\n\n### Annual Plan\n- One comprehensive service per year\n- 21-point inspection\n- Complete lubrication\n- Balance adjustment\n- Safety testing\n- Priority scheduling\n- 10% discount on repairs\n\n### Seasonal Plan (Twice Yearly)\n- Spring and fall service visits\n- All annual plan features\n- Seasonal weather preparation\n- More frequent inspection\n- 15% discount on repairs\n- Priority emergency service\n\n### Premium Plan (Quarterly)\n- Four visits per year\n- Most comprehensive coverage\n- Seasonal adjustments\n- Fastest response time\n- 20% discount on repairs\n- Free minor adjustments\n\n## What's Included in Every Visit\n\n1. Complete door inspection\n2. Lubrication of all moving parts\n3. Hardware tightening\n4. Safety system testing\n5. Balance adjustment\n6. Performance evaluation\n7. Written service report",
+      "category": "Maintenance Services",
+      "duration": "Annual commitment",
+      "priceRange": "$99 - $299/year",
+      "isCore": false,
+      "parentService": "garage-door-maintenance",
+      "features": [
+        "Scheduled Service",
+        "Priority Scheduling",
+        "Repair Discounts",
+        "Prevent Breakdowns",
+        "Peace of Mind"
+      ],
+      "seo": {
+        "metaTitle": "Preventive Maintenance Plans Bedford TX",
+        "metaDescription": "Annual & seasonal preventive maintenance plans in Bedford & DFW. Prevent breakdowns & extend door life. Priority service. Call (817) 859-8877!",
+        "keywords": "garage door maintenance plans, preventive maintenance Bedford TX, annual service DFW, Mike's maintenance plans"
+      },
+      "featuredImage": "/assets/images/Mike_s Garage Door Repair Center 40.webp",
+      "gallery": [
+        "/assets/images/Mike_s Garage Door Repair Center 40.webp",
+        "/assets/images/Mike_s Garage Door Repair Center 41.webp",
+        "/assets/images/Mike_s Garage Door Repair Center 42.webp"
+      ],
+      "contentVariations": {
+        "opening": "Preventive maintenance plans are the smartest investment you can make in your garage door system. Instead of waiting for breakdowns and emergency repairs, our maintenance plans keep your door operating at peak performance while preventing most problems before they occur. It's like having a health insurance plan for your garage door.",
+        "whyChoose": "Our maintenance plans include scheduled service visits, priority emergency response, and discounts on any needed repairs. We track your door's condition over time, provide detailed service reports, and help you plan for future maintenance needs. Members also receive seasonal tips and reminders to keep their doors operating optimally.",
+        "closing": "Join our maintenance plan and enjoy worry-free garage door operation with priority service and peace of mind. Our plans are designed to save you money while keeping your door in top condition. Contact us today to learn about our maintenance plan options."
+      },
+      "uniqueFaqs": [
+        {
+          "question": "What's included in your maintenance plans?",
+          "answer": "Our plans include: scheduled service visits (quarterly or annual), comprehensive 21-point inspections, priority emergency response, discounts on repairs and parts, detailed service reports, seasonal maintenance tips, and reminder calls before service visits. Plans are tailored to your door's usage and needs."
+        },
+        {
+          "question": "How much do maintenance plans cost?",
+          "answer": "Plan costs vary based on service frequency and door complexity, typically ranging from $150-$400 annually. High-use doors or complex systems may cost more, but plans often pay for themselves by preventing emergency repairs and extending door life."
+        },
+        {
+          "question": "Can maintenance plans prevent all breakdowns?",
+          "answer": "While maintenance prevents most problems, some components have finite lifespans. However, our plans identify components nearing end-of-life, allowing you to replace them proactively rather than during emergencies. This planning approach saves money and prevents inconvenience."
+        },
+        {
+          "question": "What if I need emergency service while on a maintenance plan?",
+          "answer": "Maintenance plan members receive priority emergency response, typically within 1-2 hours during business hours. Emergency service is included in most plans, though after-hours service may have additional charges. We prioritize plan members for faster response times."
+        },
+        {
+          "question": "Can I customize my maintenance plan?",
+          "answer": "Yes, we can customize plans based on your door's usage, age, and specific needs. High-use doors may need more frequent service, while newer doors may require less. We'll recommend the best plan for your situation and can adjust it as your needs change."
+        }
+      ]
+    },
+    {
+      "id": "garage-door-openers",
+      "name": "Garage Door Openers",
+      "slug": "garage-door-openers",
+      "description": "Garage door opener installation, repair, and upgrades. Smart openers, belt drive, chain drive, and more.",
+      "content": "Modern garage door openers offer convenience, security, and smart home integration. We install, repair, and upgrade all types of garage door openers to meet your needs.\n\n## Opener Types We Install\n\n### Chain Drive Openers\n- Most affordable option\n- Reliable and durable\n- Best for detached garages\n- Strong lifting capacity\n\n### Belt Drive Openers\n- Quietest operation\n- Ideal for attached garages\n- Smooth performance\n- Low maintenance\n\n### Screw Drive Openers\n- Minimal maintenance\n- Consistent performance\n- Good for varying climates\n- Moderate noise level\n\n### Smart Openers\n- WiFi connectivity\n- Smartphone control\n- Voice assistant integration\n- Real-time notifications\n- Remote access from anywhere\n\n## Our Opener Services\n\n- **Installation**: Professional setup and programming\n- **Repair**: Fix all opener issues\n- **Upgrades**: Modernize your existing system\n- **Smart Integration**: Connect to your smart home",
+      "category": "Core Services",
+      "duration": "2-4 hours",
+      "priceRange": "$250 - $600+",
+      "isCore": true,
+      "parentService": null,
+      "features": [
+        "Professional Installation",
+        "Smart Options Available",
+        "Remote Programming",
+        "Safety Features",
+        "Warranty Included"
+      ],
+      "seo": {
+        "metaTitle": "Garage Door Openers in Dallas-Fort Worth, TX | Smart...",
+        "metaDescription": "Professional garage door opener installation & repair in Dallas-Fort Worth, TX. Smart openers, belt drive, chain drive & more.",
+        "keywords": "garage door opener, smart garage door, opener installation, opener repair, Dallas Fort Worth TX, Mike's Garage Door Repair Center"
+      },
+      "featuredImage": "/assets/images/Mike_s Garage Door Repair Center 43.webp",
+      "gallery": [
+        "/assets/images/Mike_s Garage Door Repair Center 43.webp",
+        "/assets/images/Mike_s Garage Door Repair Center 44.webp",
+        "/assets/images/Mike_s Garage Door Repair Center 45.webp"
+      ],
+      "contentVariations": {
+        "opening": "Modern garage door openers offer far more than just convenience, they're the smart hub of your home's access control. From opening your door with your smartphone from anywhere to receiving alerts when your door is left open, today's openers integrate seamlessly with your connected lifestyle while delivering whisper-quiet, reliable performance.",
+        "whyChoose": "The right garage door opener transforms your daily routine. We specialize in matching opener technology to your specific needs, whether that's ultra-quiet operation for attached garages, heavy-lifting power for large doors, or smart features for connected homes. With certifications from all major manufacturers, we install, program, and integrate openers that work perfectly with your door and lifestyle from day one.",
+        "closing": "Upgrade to modern opener convenience with smartphone control, battery backup, and smart home integration. Whether you're replacing an old opener or adding automation to a manual door, we'll recommend the perfect system for your needs and budget. Schedule your opener consultation today."
+      },
+      "uniqueFaqs": [
+        {
+          "question": "What's the difference between chain, belt, and screw drive openers?",
+          "answer": "Chain drive openers are most affordable and reliable but produce moderate noise, best for detached garages. Belt drive openers operate nearly silently, ideal for attached garages or bedrooms above garages, but cost more. Screw drive openers have the fewest moving parts (lowest maintenance) with moderate noise levels. For most homes with attached garages, we recommend belt drive for comfort and quiet operation."
+        },
+        {
+          "question": "Can I control my garage door opener with my smartphone?",
+          "answer": "Yes! Modern openers with built-in WiFi (like LiftMaster MyQ, Chamberlain MyQ, or Genie Aladdin Connect) allow smartphone control, real-time alerts, and usage history. You can open/close your door remotely, receive notifications when opened, schedule automatic closing, and even grant temporary access to delivery drivers or guests. These smart features typically add $50-150 to the opener cost."
+        },
+        {
+          "question": "How much horsepower do I need for my garage door?",
+          "answer": "Most single-car doors work well with 1/2 HP openers. Standard double-car doors need 1/2 to 3/4 HP. Heavy wooden doors, insulated doors, or oversized garage doors may require 3/4 HP to 1-1/4 HP. However, proper door balance is more important than opener power, a well-balanced door operates smoothly with less power, while an unbalanced door strains even powerful openers."
+        },
+        {
+          "question": "Do garage door openers have battery backup?",
+          "answer": "Many modern openers offer optional or integrated battery backup that keeps your door operational during power outages. This feature is particularly valuable if you park inside and need reliable access during storms or blackouts. Battery backup typically adds $80-150 to the opener cost and provides 20-50 opening cycles per charge, depending on the model."
+        },
+        {
+          "question": "Will a new opener work with my existing garage door?",
+          "answer": "In most cases, yes. Modern openers are designed to work with standard residential garage doors installed in the last 20-30 years. However, very old doors, custom or unusual door designs, or doors with unique track configurations may require adapters or modifications. We'll evaluate compatibility during our consultation and recommend any necessary adjustments for proper installation."
+        }
+      ]
+    },
+    {
+      "id": "opener-installation",
+      "name": "Opener Installation",
+      "slug": "opener-installation",
+      "description": "Professional garage door opener installation. Expert setup for all opener types and brands.",
+      "content": "Professional garage door opener installation ensures safe, reliable operation and optimal performance. Our expert technicians install all types of openers with precision and care.\n\n## Installation Process\n\n### 1. Pre-Installation Assessment\n- Evaluate existing door system\n- Confirm compatibility\n- Recommend appropriate opener\n- Plan electrical requirements\n\n### 2. Professional Installation\n- Remove old opener (if applicable)\n- Install mounting hardware\n- Attach opener to door\n- Wire electrical connections\n- Install safety sensors\n- Mount wall control\n\n### 3. Programming & Testing\n- Program remote controls\n- Set force and limit adjustments\n- Test safety features\n- Verify smooth operation\n- Demonstrate features to customer\n\n## Opener Features We Install\n\n- Battery backup systems\n- WiFi and smart connectivity\n- Motion-activated lighting\n- Vacation lock mode\n- MyQ technology\n- Security+ 2.0 encryption",
+      "category": "Opener Services",
+      "duration": "2-3 hours",
+      "priceRange": "$250 - $600",
+      "isCore": false,
+      "parentService": "garage-door-openers",
+      "features": [
+        "Expert Installation",
+        "All Brands",
+        "Safety Features",
+        "Remote Programming",
+        "Complete Setup"
+      ],
+      "seo": {
+        "metaTitle": "Garage Door Opener Installation | Expert Setup",
+        "metaDescription": "Professional garage door opener installation. Expert setup for all opener types & brands. Schedule Mikes installation today!",
+        "keywords": "opener installation, garage door opener setup, install opener, Mikes Garage Doors"
+      },
+      "featuredImage": "/assets/images/Mike_s Garage Door Repair Center 46.webp",
+      "gallery": [
+        "/assets/images/Mike_s Garage Door Repair Center 46.webp",
+        "/assets/images/Mike_s Garage Door Repair Center 47.webp",
+        "/assets/images/Mike_s Garage Door Repair Center 48.webp"
+      ],
+      "contentVariations": {
+        "opening": "Modern garage door openers offer convenience, security, and smart home integration that transforms how you use your garage. Opener installation isn't just about mounting a motor,it's about creating a seamless, reliable system that connects your garage to your connected lifestyle. From basic chain drives to smart WiFi openers, we help you choose and install the perfect opener for your needs.",
+        "whyChoose": "Opener installation requires electrical expertise, proper mounting techniques, and knowledge of safety systems. Our technicians are certified to install all major opener brands and understand the critical relationship between opener power, door weight, and safety features. We ensure your new opener integrates perfectly with your existing door system.",
+        "closing": "Upgrade to modern opener convenience with professional installation that ensures reliable, safe operation. Whether you're replacing an old opener or adding automation to a manual door, we'll install the perfect system for your lifestyle. Schedule your opener installation today."
+      },
+      "uniqueFaqs": [
+        {
+          "question": "How do I choose the right garage door opener?",
+          "answer": "Consider your door's weight and size, noise requirements (belt drive is quietest), desired features (WiFi, battery backup, smart home integration), and budget. We'll assess your specific needs and recommend the best opener type and horsepower for your door and usage patterns."
+        },
+        {
+          "question": "Can you install openers with existing garage doors?",
+          "answer": "Yes, we can install openers with most existing doors, though very old doors may need modifications. We'll inspect your door system, check compatibility, and make any necessary adjustments to ensure proper opener installation and operation."
+        },
+        {
+          "question": "How long does opener installation take?",
+          "answer": "Most opener installations take 2-4 hours including mounting, wiring, programming, and testing. Complex installations with additional features or electrical work may take longer. We work efficiently to minimize disruption to your schedule."
+        },
+        {
+          "question": "Do you install smart garage door openers?",
+          "answer": "Yes, we install and program smart openers with WiFi connectivity, smartphone control, and smart home integration. We'll help you set up the app, connect to your home network, and show you how to use all the smart features."
+        },
+        {
+          "question": "What safety features are included with new openers?",
+          "answer": "Modern openers include auto-reverse sensors, force adjustment, manual release, and safety beam sensors. We ensure all safety features are properly installed, tested, and explained to you. Safety is our top priority in every opener installation."
+        }
+      ]
+    },
+    {
+      "id": "opener-repair",
+      "name": "Opener Repair",
+      "slug": "opener-repair",
+      "description": "Fast garage door opener repair services. Fix all opener problems quickly and professionally.",
+      "content": "When your garage door opener malfunctions, we provide fast, expert repair service to restore functionality. We repair all makes and models of garage door openers.\n\n## Common Opener Problems We Fix\n\n### Operational Issues\n- Opener runs but door doesn't move\n- Door reverses before closing\n- Remote not working\n- Wall button not responding\n- Intermittent operation\n\n### Mechanical Problems\n- Stripped gears\n- Broken chain or belt\n- Motor issues\n- Trolley problems\n- Carriage assembly failure\n\n### Electrical Issues\n- Circuit board problems\n- Wiring issues\n- Sensor malfunctions\n- Power supply problems\n- Remote frequency issues\n\n## Our Repair Process\n\n1. Diagnose the problem\n2. Explain the issue and solution\n3. Provide upfront pricing\n4. Complete the repair\n5. Test all functions\n6. Verify safety features",
+      "category": "Opener Services",
+      "duration": "1-2 hours",
+      "priceRange": "$125 - $350",
+      "isCore": false,
+      "parentService": "garage-door-openers",
+      "features": [
+        "Expert Diagnosis",
+        "All Makes & Models",
+        "Quality Parts",
+        "Fast Service",
+        "Warranty Included"
+      ],
+      "seo": {
+        "metaTitle": "Garage Door Opener Repair | Fast Service",
+        "metaDescription": "Fast garage door opener repair for all makes & models. Expert diagnosis & quality repairs from Mikes. Get it fixed today!",
+        "keywords": "garage door opener repair, fix opener, opener not working, Mikes Garage Doors"
+      },
+      "featuredImage": "/assets/images/Mike_s Garage Door Repair Center 49.webp",
+      "gallery": [
+        "/assets/images/Mike_s Garage Door Repair Center 49.webp",
+        "/assets/images/Mike_s Garage Door Repair Center 50.webp",
+        "/assets/images/Mike_s Garage Door Repair Center 1.webp"
+      ],
+      "contentVariations": {
+        "opening": "When your garage door opener fails, it's more than an inconvenience,it's a security and access problem that needs immediate attention. Opener repair requires specialized knowledge of electrical systems, motor components, and safety features. Our certified technicians diagnose and fix opener problems quickly, restoring your door's reliable operation.",
+        "whyChoose": "Opener repair involves electrical work, motor diagnostics, and safety system testing that requires professional expertise. Our technicians are trained on all major opener brands and carry common replacement parts. We understand the relationship between opener, door, and safety systems to ensure proper repair and operation.",
+        "closing": "Don't stay locked out of your garage. Our opener repair service restores reliable operation with professional diagnosis and quality repairs. Call now for same-day opener repair service."
+      },
+      "uniqueFaqs": [
+        {
+          "question": "What are the most common garage door opener problems?",
+          "answer": "Common issues include: opener won't respond to remotes, door opens but won't close, opener motor runs but door doesn't move, safety sensors misaligned, opener makes noise but doesn't operate, or opener works intermittently. Most problems are repairable without full replacement."
+        },
+        {
+          "question": "How do you diagnose opener problems?",
+          "answer": "We systematically check: electrical connections, motor operation, safety sensors, remote programming, force settings, and door balance. Our diagnostic process identifies the root cause and determines whether repair or replacement is most cost-effective."
+        },
+        {
+          "question": "Can you repair any brand of garage door opener?",
+          "answer": "Yes, we service and repair all major opener brands including LiftMaster, Chamberlain, Genie, Craftsman, and others. We carry universal parts and can source specialized components when needed. We also work with older or discontinued models."
+        },
+        {
+          "question": "When should I repair vs replace my opener?",
+          "answer": "Repair makes sense if your opener is less than 10-15 years old and the problem is isolated (motor, circuit board, sensors). Replacement may be better if multiple components are failing, the opener is very old, or repair costs approach 50% of replacement cost."
+        },
+        {
+          "question": "How long does opener repair take?",
+          "answer": "Most opener repairs are completed in 1-2 hours, including diagnosis, parts replacement, and testing. Complex repairs or parts ordering may require a return visit. We carry common opener parts to minimize repair time."
+        }
+      ]
+    },
+    {
+      "id": "smart-garage-door-openers",
+      "name": "Smart Garage Door Openers",
+      "slug": "smart-garage-door-openers",
+      "description": "Smart garage door opener installation and upgrades. Control your garage door from anywhere with WiFi connectivity.",
+      "content": "Upgrade to a smart garage door opener and enjoy the convenience of controlling your garage from anywhere. Monitor status, receive alerts, and integrate with your smart home.\n\n## Smart Opener Features\n\n### Remote Access & Control\n- Control from smartphone app\n- Open/close from anywhere\n- Real-time status updates\n- Activity history and logs\n\n### Smart Home Integration\n- Works with Alexa, Google Assistant, Siri\n- IFTTT compatibility\n- Integration with smart locks\n- Compatible with home automation systems\n\n### Security & Notifications\n- Receive alerts when door opens/closes\n- Know if door left open\n- Guest access codes\n- Delivery notifications\n- Vacation mode\n\n### Advanced Features\n- Battery backup\n- Automatic scheduling\n- Geofencing capabilities\n- Timer-to-close function\n- Multi-door control\n\n## Popular Smart Opener Brands\n\n- LiftMaster MyQ\n- Chamberlain MyQ\n- Genie Aladdin Connect\n- Craftsman Smart Control",
+      "category": "Opener Services",
+      "duration": "2-4 hours",
+      "priceRange": "$350 - $600+",
+      "isCore": false,
+      "parentService": "garage-door-openers",
+      "features": [
+        "WiFi Connectivity",
+        "Smartphone Control",
+        "Voice Assistant",
+        "Smart Home Integration",
+        "Real-Time Alerts"
+      ],
+      "seo": {
+        "metaTitle": "Smart Garage Door Openers | Mikes TX",
+        "metaDescription": "Smart garage door opener installation with WiFi connectivity & smartphone control. Upgrade to Mikes smart home integration!",
+        "keywords": "smart garage door opener, wifi garage door, myq opener, smart home, Mikes Garage Doors"
+      },
+      "featuredImage": "/assets/images/Mike_s Garage Door Repair Center 2.webp",
+      "gallery": [
+        "/assets/images/Mike_s Garage Door Repair Center 2.webp",
+        "/assets/images/Mike_s Garage Door Repair Center 3.webp",
+        "/assets/images/Mike_s Garage Door Repair Center 4.webp"
+      ],
+      "contentVariations": {
+        "opening": "Smart garage door openers transform your garage into a connected part of your smart home ecosystem. From opening your door with your smartphone from anywhere to receiving alerts when it's left open, smart openers provide convenience, security, and peace of mind. Whether you're upgrading an existing opener or installing new, we'll integrate smart technology seamlessly into your lifestyle.",
+        "whyChoose": "Smart opener installation requires technical expertise in WiFi setup, app configuration, and smart home integration. Our technicians are trained on all major smart opener systems and can help you choose the right features for your needs. We ensure your smart opener works reliably with your home network and smart home devices.",
+        "closing": "Experience the convenience of smart garage door control with professional installation and setup. From smartphone access to smart home integration, we'll make your garage door part of your connected home. Schedule your smart opener consultation today."
+      },
+      "uniqueFaqs": [
+        {
+          "question": "What features do smart garage door openers offer?",
+          "answer": "Smart openers typically include: smartphone control from anywhere, real-time notifications, usage history, automatic closing timers, guest access codes, smart home integration (Alexa, Google Home), battery backup, and enhanced security features. Features vary by model and manufacturer."
+        },
+        {
+          "question": "Do smart openers work with existing garage doors?",
+          "answer": "Yes, most smart openers can be installed with existing doors, though very old doors may need modifications. We'll assess your door system and make any necessary adjustments to ensure proper smart opener installation and operation."
+        },
+        {
+          "question": "How do you set up smart opener WiFi and apps?",
+          "answer": "We handle the complete setup including: WiFi connection, app installation and configuration, account setup, remote programming, and smart home integration. We'll show you how to use all features and ensure everything works properly with your home network."
+        },
+        {
+          "question": "Are smart openers more expensive than regular openers?",
+          "answer": "Smart openers typically cost $50-200 more than comparable regular openers, depending on features. The convenience and security benefits often justify the additional cost. We can help you choose the right smart features for your budget and needs."
+        },
+        {
+          "question": "What if my WiFi goes down?",
+          "answer": "Smart openers include battery backup and can operate without WiFi for basic functions. You can still use wall buttons and remotes. When WiFi is restored, the opener reconnects automatically. Some models include cellular backup for continuous connectivity."
+        }
+      ]
+    },
+    {
+      "id": "garage-door-replacement",
+      "name": "Garage Door Replacement",
+      "slug": "garage-door-replacement",
+      "description": "Complete garage door replacement services. Upgrade to new steel, wood, glass, or insulated garage doors.",
+      "content": "When it's time to replace your garage door, we offer a wide selection of styles, materials, and features to enhance your home's curb appeal and functionality.\n\n## Why Replace Your Garage Door\n\n- Improve curb appeal and home value\n- Enhance energy efficiency\n- Upgrade security features\n- Eliminate frequent repairs\n- Add modern smart features\n- Update outdated style\n\n## Material Options\n\n### Steel Garage Doors\n- Most popular choice\n- Low maintenance\n- Variety of styles\n- Excellent durability\n- Good insulation options\n\n### Wooden Garage Doors\n- Classic, elegant appearance\n- Natural beauty\n- Customizable designs\n- Traditional craftsmanship\n- Premium option\n\n### Glass & Aluminum Doors\n- Modern, contemporary look\n- Natural light admission\n- Sleek design\n- Low maintenance\n- Commercial or residential\n\n### Insulated Garage Doors\n- Energy efficient\n- Temperature control\n- Noise reduction\n- Durability\n- Year-round comfort",
+      "category": "Core Services",
+      "duration": "1-2 days",
+      "priceRange": "$1,000 - $5,000+",
+      "isCore": true,
+      "parentService": null,
+      "features": [
+        "Wide Selection",
+        "Professional Installation",
+        "Energy Efficient Options",
+        "Custom Designs",
+        "Warranty Included"
+      ],
+      "seo": {
+        "metaTitle": "Garage Door Replacement in Dallas-Fort Worth, TX",
+        "metaDescription": "Complete garage door replacement in Dallas-Fort Worth, TX. Steel, wood, glass & insulated options. Upgrade your home with Mike's Garage Door Repair...",
+        "keywords": "garage door replacement, new garage door, door upgrade, Dallas Fort Worth TX, Mike's Garage Door Repair Center"
+      },
+      "featuredImage": "/assets/images/Mike_s Garage Door Repair Center 5.webp",
+      "gallery": [
+        "/assets/images/Mike_s Garage Door Repair Center 5.webp",
+        "/assets/images/Mike_s Garage Door Repair Center 6.webp",
+        "/assets/images/Mike_s Garage Door Repair Center 7.webp"
+      ],
+      "contentVariations": {
+        "opening": "Replacing your garage door delivers one of the highest returns on home improvement investment, recovering up to 94% of cost in added home value according to Remodeling Magazine. Beyond ROI, a new garage door dramatically improves curb appeal, energy efficiency, security, and daily convenience. If your door is over 15 years old or showing significant wear, replacement might be more economical than ongoing repairs.",
+        "whyChoose": "Choosing when and how to replace a garage door requires expertise. We help you evaluate whether your current door is worth repairing or ready for replacement, guide you through material and style options, and explain how different choices affect performance, maintenance, and home value. Our replacement service includes everything, from removal and disposal of your old door to installation, adjustment, and testing of your complete new system.",
+        "closing": "A new garage door is an investment in your home's value, security, and appearance. With financing options available and professional installation guaranteed, there's never been a better time to upgrade. Request your free replacement consultation and design quote today, we'll help you select the perfect door for your home and budget."
+      },
+      "uniqueFaqs": [
+        {
+          "question": "When should I replace instead of repair my garage door?",
+          "answer": "Consider replacement if: your door is over 15-20 years old, shows significant rust or wood rot, has major structural damage, requires frequent repairs, lacks modern safety features, or doesn't insulate well. Also consider replacement when upgrading home aesthetics, improving energy efficiency, or adding smart technology. If repair costs approach 50% of replacement cost, replacement usually makes better financial sense."
+        },
+        {
+          "question": "What's the best garage door material for my home?",
+          "answer": "Steel doors (60-70% of market) offer the best balance of durability, low maintenance, insulation options, and affordability. Wood doors provide classic beauty but require regular maintenance. Aluminum/glass doors suit modern aesthetics with natural light. Fiberglass works well in coastal areas resistant to salt air. We'll recommend based on your home's style, budget, climate exposure, and maintenance preference."
+        },
+        {
+          "question": "How much does garage door replacement typically cost?",
+          "answer": "Standard steel replacement doors range from $1,000-$2,500 installed for double-car garages, depending on insulation level and style. Custom wood doors run $2,500-$6,000+. Modern aluminum/glass doors cost $2,000-$5,000+. Adding a new opener (if needed) adds $300-$600. We provide detailed quotes including all materials, labor, disposal, and warranty during your free consultation."
+        },
+        {
+          "question": "Can I replace just the panels instead of the whole door?",
+          "answer": "Sometimes yes, especially for newer doors with localized damage. However, panel replacement often costs 40-60% of new door cost, replacement panels may not match faded existing panels perfectly, and you're still left with an aging door system. For doors over 10 years old or with multiple damaged panels, full replacement typically provides better long-term value."
+        },
+        {
+          "question": "How long do new garage doors typically last?",
+          "answer": "With proper maintenance, steel doors last 20-30 years, wood doors 15-25 years (with regular maintenance), and aluminum/fiberglass doors 20-30 years. Lifespan depends on climate exposure, usage frequency, maintenance, and quality of installation. Our professionally-installed doors with regular maintenance often exceed these averages, and we back our work with comprehensive warranties."
+        }
+      ]
+    },
+    {
+      "id": "steel-garage-doors",
+      "name": "Steel Garage Doors",
+      "slug": "steel-garage-doors",
+      "description": "Durable steel garage door installation. Low maintenance, variety of styles, and excellent value.",
+      "content": "Steel garage doors are the most popular choice for homeowners, offering durability, low maintenance, and a wide variety of styles at an excellent value.\n\n## Steel Door Advantages\n\n### Durability & Strength\n- Resistant to warping and cracking\n- Withstands weather extremes\n- Long-lasting performance\n- Impact resistant\n- Won't rot or decay\n\n### Low Maintenance\n- No painting required\n- Easy to clean\n- Resistant to pests\n- Minimal upkeep\n- Factory finish lasts years\n\n### Design Options\n- Traditional raised panel\n- Contemporary flush design\n- Carriage house style\n- Custom window options\n- Wood-look textures\n\n## Insulation Options\n\n- Non-insulated (single layer)\n- Insulated (double layer)\n- Fully insulated (triple layer)\n- R-values from 0 to 18+\n\n## Popular Steel Door Styles\n\n- Traditional short panel\n- Long panel designs\n- Ranch style\n- Carriage house overlay\n- Modern contemporary",
+      "category": "Replacement Services",
+      "duration": "1 day",
+      "priceRange": "$1,000 - $2,500",
+      "isCore": false,
+      "parentService": "garage-door-replacement",
+      "features": [
+        "Durable Construction",
+        "Low Maintenance",
+        "Variety of Styles",
+        "Insulation Options",
+        "Great Value"
+      ],
+      "seo": {
+        "metaTitle": "Steel Garage Doors | Durable Steel Installation",
+        "metaDescription": "Quality steel garage door installation with durable construction & low maintenance. Wide variety of styles. Free Mikes quote!",
+        "keywords": "steel garage door, metal garage door, durable garage door, Mikes Garage Doors"
+      },
+      "featuredImage": "/assets/images/Mike_s Garage Door Repair Center 8.webp",
+      "gallery": [
+        "/assets/images/Mike_s Garage Door Repair Center 8.webp",
+        "/assets/images/Mike_s Garage Door Repair Center 9.webp",
+        "/assets/images/Mike_s Garage Door Repair Center 10.webp"
+      ],
+      "contentVariations": {
+        "opening": "Steel garage doors offer the perfect balance of durability, security, and value for most homeowners. As the most popular garage door material, steel doors provide excellent protection, low maintenance, and a wide variety of styles to match any home. From traditional raised panels to modern flush designs, steel doors deliver reliable performance year after year.",
+        "whyChoose": "Steel doors are built to last with galvanized steel construction that resists rust and corrosion. They offer excellent insulation options, security features, and can be painted to match any color scheme. Our steel door selection includes various gauges, insulation levels, and styles to meet your specific needs and budget.",
+        "closing": "Choose steel for reliable, low-maintenance garage door performance that protects your home and enhances its appearance. With proper care, steel doors can last 20+ years while maintaining their beauty and function. Contact us today to explore our steel door options."
+      },
+      "uniqueFaqs": [
+        {
+          "question": "What are the advantages of steel garage doors?",
+          "answer": "Steel doors offer: excellent durability and longevity, low maintenance requirements, good insulation options, security features, wide variety of styles and colors, resistance to weather and pests, and typically the best value for money. They're the most popular choice for good reason."
+        },
+        {
+          "question": "How long do steel garage doors last?",
+          "answer": "With proper maintenance, steel doors typically last 20-30 years. Lifespan depends on climate, usage, and maintenance. Coastal areas may see shorter lifespans due to salt air, while well-maintained doors in moderate climates can exceed 30 years."
+        },
+        {
+          "question": "Can steel doors be painted or customized?",
+          "answer": "Yes, steel doors can be painted any color to match your home's exterior. They can also be customized with different hardware, window inserts, and decorative elements. We offer hundreds of color options and can match custom colors if needed."
+        },
+        {
+          "question": "What insulation options are available for steel doors?",
+          "answer": "Steel doors offer various insulation levels from basic (R-6) to high-efficiency (R-18+). Insulation helps with energy efficiency, noise reduction, and temperature control. We can recommend the right insulation level based on your climate and energy efficiency goals."
+        },
+        {
+          "question": "How do steel doors compare to other materials?",
+          "answer": "Steel doors offer better durability and lower maintenance than wood, better security than aluminum, and more style options than fiberglass. They typically cost less than wood but more than basic aluminum. Steel provides the best overall value for most homeowners."
+        }
+      ]
+    },
+    {
+      "id": "wooden-garage-doors",
+      "name": "Wooden Garage Doors",
+      "slug": "wooden-garage-doors",
+      "description": "Premium wooden garage door installation. Classic elegance with custom designs and natural beauty.",
+      "content": "Wooden garage doors offer timeless elegance and natural beauty that can't be matched. Perfect for homeowners seeking a premium, custom appearance.\n\n## Wood Door Benefits\n\n### Natural Beauty\n- Authentic wood grain\n- Rich, warm appearance\n- Classic elegance\n- Unique character\n- Premium curb appeal\n\n### Customization Options\n- Custom sizes\n- Unique designs\n- Custom stain colors\n- Window placement\n- Hardware selection\n- Decorative details\n\n## Wood Types Available\n\n### Cedar\n- Natural rot resistance\n- Beautiful grain patterns\n- Lightweight yet strong\n- Natural insect repellent\n\n### Redwood\n- Exceptional durability\n- Rich, deep color\n- Natural weather resistance\n- Premium appearance\n\n### Hemlock\n- Excellent paint retention\n- Smooth, even grain\n- Cost-effective option\n- Versatile styling\n\n### Oak\n- Maximum strength\n- Distinctive grain\n- Traditional appeal\n- Long-lasting durability",
+      "category": "Replacement Services",
+      "duration": "1-2 days",
+      "priceRange": "$2,500 - $6,000+",
+      "isCore": false,
+      "parentService": "garage-door-replacement",
+      "features": [
+        "Natural Wood Beauty",
+        "Custom Designs",
+        "Premium Quality",
+        "Unique Character",
+        "Expert Craftsmanship"
+      ],
+      "seo": {
+        "metaTitle": "Wooden Garage Doors | Custom Wood Installation",
+        "metaDescription": "Premium wooden garage door installation with custom designs & natural beauty. Cedar, redwood & more from Mikes. Custom quote!",
+        "keywords": "wooden garage door, wood garage door, cedar door, custom wood door, Mikes Garage Doors"
+      },
+      "featuredImage": "/assets/images/Mike_s Garage Door Repair Center 11.webp",
+      "gallery": [
+        "/assets/images/Mike_s Garage Door Repair Center 11.webp",
+        "/assets/images/Mike_s Garage Door Repair Center 12.webp",
+        "/assets/images/Mike_s Garage Door Repair Center 13.webp"
+      ],
+      "contentVariations": {
+        "opening": "Wooden garage doors bring timeless beauty and natural warmth to your home's exterior. From classic carriage house designs to modern contemporary styles, wood doors create a stunning focal point that enhances your home's architectural character. While they require more maintenance than other materials, the aesthetic appeal and customization options make wood doors a premium choice for discerning homeowners.",
+        "whyChoose": "Wood doors offer unmatched customization possibilities with various wood species, stains, and finishes. Our wood door specialists understand the unique requirements of wooden doors and can help you choose the right wood type for your climate and maintenance preferences. We also provide guidance on care to maximize your wood door's beauty and longevity.",
+        "closing": "Create a truly stunning entrance with a custom wooden garage door that reflects your home's character and your personal style. While wood requires more care, the beauty and customization options make it a worthwhile investment for many homeowners. Explore our wood door options today."
+      },
+      "uniqueFaqs": [
+        {
+          "question": "What types of wood are used for garage doors?",
+          "answer": "Common wood species include: cedar (naturally weather-resistant), mahogany (premium appearance), oak (traditional strength), and fir (cost-effective option). Each wood type has different characteristics for durability, appearance, and maintenance requirements. We'll help you choose the right wood for your climate and preferences."
+        },
+        {
+          "question": "How much maintenance do wooden garage doors require?",
+          "answer": "Wood doors need regular maintenance including: annual staining or sealing, periodic cleaning, inspection for damage, and protection from moisture. Maintenance frequency depends on climate and wood type. Coastal areas may need more frequent care due to humidity and salt air."
+        },
+        {
+          "question": "Can wooden doors be painted instead of stained?",
+          "answer": "Yes, wood doors can be painted any color, though many homeowners prefer staining to show the wood's natural grain. Paint provides more color options and easier maintenance, while stain enhances the wood's natural beauty. We can help you choose the right finish for your style and maintenance preferences."
+        },
+        {
+          "question": "How long do wooden garage doors last?",
+          "answer": "With proper maintenance, wood doors typically last 15-25 years. Lifespan depends heavily on maintenance, climate, and wood type. Well-maintained cedar doors in moderate climates can last 25+ years, while neglected doors may need replacement in 10-15 years."
+        },
+        {
+          "question": "Are wooden doors more expensive than steel doors?",
+          "answer": "Yes, wood doors typically cost 2-3 times more than comparable steel doors due to material costs and craftsmanship. However, many homeowners find the aesthetic appeal and customization options worth the additional investment. We offer various wood options to fit different budgets."
+        }
+      ]
+    },
+    {
+      "id": "glass-aluminum-garage-doors",
+      "name": "Glass & Aluminum Garage Doors",
+      "slug": "glass-aluminum-garage-doors",
+      "description": "Modern glass and aluminum garage door installation. Contemporary style with natural light and sleek design.",
+      "content": "Glass and aluminum garage doors offer a modern, contemporary aesthetic perfect for modern homes and commercial properties. Bring natural light into your garage with sleek, stylish design.\n\n## Glass & Aluminum Features\n\n### Modern Design\n- Clean, contemporary lines\n- Minimalist appearance\n- Architectural appeal\n- Commercial or residential\n- Customizable layouts\n\n### Natural Light Benefits\n- Bright, well-lit garage\n- Reduce energy costs\n- Showcase vehicles or workspace\n- Connect indoor/outdoor spaces\n- Variety of glass options\n\n## Glass Options\n\n### Clear Glass\n- Maximum light transmission\n- Showcase garage interior\n- Modern transparency\n- Full visibility\n\n### Frosted Glass\n- Privacy with light\n- Soft, diffused glow\n- Contemporary look\n- Reduced glare\n\n### Tinted Glass\n- UV protection\n- Heat reduction\n- Privacy options\n- Variety of colors\n\n### Insulated Glass\n- Energy efficient\n- Temperature control\n- Noise reduction\n- Double or triple pane",
+      "category": "Replacement Services",
+      "duration": "1-2 days",
+      "priceRange": "$2,000 - $5,000+",
+      "isCore": false,
+      "parentService": "garage-door-replacement",
+      "features": [
+        "Contemporary Design",
+        "Natural Light",
+        "Custom Glass Options",
+        "Low Maintenance",
+        "Modern Appeal"
+      ],
+      "seo": {
+        "metaTitle": "Glass & Aluminum Garage Doors | Modern Install",
+        "metaDescription": "Contemporary glass & aluminum garage door installation. Modern design with natural light & custom Mikes options. Get your quote!",
+        "keywords": "glass garage door, aluminum garage door, modern garage door, contemporary door, Mikes Garage Doors"
+      },
+      "featuredImage": "/assets/images/Mike_s Garage Door Repair Center 14.webp",
+      "gallery": [
+        "/assets/images/Mike_s Garage Door Repair Center 14.webp",
+        "/assets/images/Mike_s Garage Door Repair Center 15.webp",
+        "/assets/images/Mike_s Garage Door Repair Center 16.webp"
+      ],
+      "contentVariations": {
+        "opening": "Glass and aluminum garage doors create stunning modern entrances that bring natural light into your garage while making a bold architectural statement. Perfect for contemporary homes and commercial applications, these doors combine sleek aluminum frames with tempered glass panels to create a sophisticated, light-filled space that enhances your property's modern appeal.",
+        "whyChoose": "Glass and aluminum doors offer unique benefits including natural light, contemporary aesthetics, and excellent durability. Our specialists understand the specific requirements of glass door installation and can help you choose the right glass type, frame style, and privacy options for your needs and climate conditions.",
+        "closing": "Transform your garage into a bright, modern space with glass and aluminum doors that make a stunning architectural statement. Whether you want maximum light or privacy options, we'll help you create the perfect contemporary entrance. Explore our glass door options today."
+      },
+      "uniqueFaqs": [
+        {
+          "question": "What types of glass are available for garage doors?",
+          "answer": "Options include: clear tempered glass (maximum light), frosted glass (privacy with light), tinted glass (UV protection), and decorative glass patterns. We can also provide insulated glass options for better energy efficiency. Each type offers different benefits for light, privacy, and energy efficiency."
+        },
+        {
+          "question": "Are glass garage doors secure?",
+          "answer": "Yes, glass garage doors use tempered safety glass that's much stronger than regular glass. The aluminum frames provide structural strength, and we can add security features like locks and reinforced frames. For maximum security, we can recommend privacy glass or additional security measures."
+        },
+        {
+          "question": "How do glass doors handle temperature and energy efficiency?",
+          "answer": "Glass doors can be less energy efficient than insulated steel doors, but we offer insulated glass options and thermal breaks in frames to improve efficiency. In moderate climates, the aesthetic benefits often outweigh energy concerns. We can recommend the right glass and frame options for your climate."
+        },
+        {
+          "question": "Can glass doors be customized with different frame styles?",
+          "answer": "Yes, aluminum frames come in various styles including: minimal frames (maximum glass), traditional frames, and decorative patterns. We can also customize frame colors and finishes to match your home's exterior design and color scheme."
+        },
+        {
+          "question": "How much do glass and aluminum doors cost?",
+          "answer": "Glass doors typically cost $2,000-$5,000+ depending on size, glass type, and frame style. They're more expensive than steel doors but often comparable to high-end wood doors. The unique aesthetic appeal and natural light benefits justify the cost for many homeowners."
+        }
+      ]
+    },
+    {
+      "id": "insulated-garage-doors",
+      "name": "Insulated Garage Doors",
+      "slug": "insulated-garage-doors",
+      "description": "Energy-efficient insulated garage door installation. Temperature control, noise reduction, and year-round comfort.",
+      "content": "Insulated garage doors provide energy efficiency, temperature control, and noise reduction,making them ideal for attached garages, workshops, and climate-controlled spaces.\n\n## Insulation Benefits\n\n### Energy Efficiency\n- Reduce heating/cooling costs\n- Maintain garage temperature\n- Protect stored items\n- Environmental benefits\n- Lower energy bills\n\n### Noise Reduction\n- Quieter operation\n- Sound dampening\n- Peaceful environment\n- Reduced street noise\n\n### Durability & Strength\n- Stronger construction\n- Better impact resistance\n- Longer lifespan\n- Less maintenance\n- Superior performance\n\n## Insulation Types\n\n### Polystyrene Insulation\n- R-value 4-8\n- Lightweight\n- Cost-effective\n- Good insulation\n- Pre-cut panels\n\n### Polyurethane Insulation\n- R-value 12-18+\n- Maximum efficiency\n- Sprayed-in-place\n- Stronger door\n- Best performance\n\n## R-Value Options\n\n- R-0 to R-6: Basic insulation\n- R-6 to R-12: Good insulation\n- R-12 to R-18: Excellent insulation\n- R-18+: Maximum insulation",
+      "category": "Replacement Services",
+      "duration": "1-2 days",
+      "priceRange": "$1,500 - $4,000+",
+      "isCore": false,
+      "parentService": "garage-door-replacement",
+      "features": [
+        "Energy Efficient",
+        "Temperature Control",
+        "Noise Reduction",
+        "Durable Construction",
+        "Year-Round Comfort"
+      ],
+      "seo": {
+        "metaTitle": "Insulated Garage Doors | Energy Efficient | Mikes TX",
+        "metaDescription": "Energy-efficient insulated garage door installation. Temperature control & noise reduction for year-round comfort. Free Mikes quote!",
+        "keywords": "insulated garage door, energy efficient door, garage insulation, Mikes Garage Doors"
+      },
+      "featuredImage": "/assets/images/Mike_s Garage Door Repair Center 17.webp",
+      "gallery": [
+        "/assets/images/Mike_s Garage Door Repair Center 17.webp",
+        "/assets/images/Mike_s Garage Door Repair Center 18.webp",
+        "/assets/images/Mike_s Garage Door Repair Center 19.webp"
+      ],
+      "contentVariations": {
+        "opening": "Insulated garage doors provide superior energy efficiency, noise reduction, and temperature control for your garage and home. Whether you use your garage for storage, as a workshop, or simply want to reduce energy costs, insulated doors create a more comfortable environment while protecting your belongings from extreme temperatures and humidity.",
+        "whyChoose": "Insulated doors offer significant energy savings, especially if your garage is attached to your home. Our insulated door specialists understand the different insulation types and R-values, helping you choose the right level of insulation for your climate and energy efficiency goals. We also explain how proper installation maximizes insulation benefits.",
+        "closing": "Invest in energy efficiency and comfort with insulated garage doors that reduce your energy costs while protecting your belongings. The energy savings often offset the additional cost over time. Contact us today to learn about our insulated door options and potential energy savings."
+      },
+      "uniqueFaqs": [
+        {
+          "question": "What are the benefits of insulated garage doors?",
+          "answer": "Insulated doors provide: better energy efficiency (reduced heating/cooling costs), noise reduction, temperature control, protection for stored items, and improved home comfort. They're especially beneficial for attached garages where temperature affects your home's energy usage."
+        },
+        {
+          "question": "What R-values are available for garage doors?",
+          "answer": "Garage door R-values range from R-6 (basic insulation) to R-18+ (high efficiency). We can recommend the right R-value based on your climate, energy goals, and budget. Higher R-values provide better insulation but cost more initially."
+        },
+        {
+          "question": "How much energy can insulated doors save?",
+          "answer": "Energy savings depend on your climate and garage usage, but insulated doors can reduce energy costs by 10-20% for attached garages. The savings are most significant in extreme climates where temperature differences are greatest. We can estimate potential savings for your specific situation."
+        },
+        {
+          "question": "Are insulated doors worth the extra cost?",
+          "answer": "Insulated doors typically cost $200-800 more than non-insulated doors, but the energy savings often pay for the difference within 3-5 years. Additionally, they provide comfort benefits and protect stored items from temperature extremes."
+        },
+        {
+          "question": "What types of insulation are used in garage doors?",
+          "answer": "Common insulation types include: polystyrene foam (most common), polyurethane foam (highest R-value), and fiberglass. Each type has different characteristics for R-value, cost, and durability. We can explain the differences and help you choose the right insulation for your needs."
+        }
+      ]
+    },
+    {
+      "id": "broken-spring-replacement",
+      "name": "Broken Spring Replacement",
+      "slug": "broken-spring-replacement",
+      "description": "Professional broken spring replacement service for garage doors. Our expert technicians provide fast, safe, and reliable spring replacement to get your garage door working again.",
+      "content": "When your garage door spring breaks, you need immediate professional service. Mike's Garage Door Repair Center provides expert broken spring replacement throughout the Dallas-Fort Worth area.\n\n## Broken Spring Replacement Service\n\n- **Fast Response**: Same-day service available\n- **Expert Technicians**: Trained professionals\n- **Quality Springs**: Premium replacement parts\n- **Safety First**: Proper safety procedures\n\n## Why Choose Our Spring Replacement Service\n\n- Licensed and insured technicians\n- Quality springs with warranty\n- Competitive pricing\n- Emergency service available\n- Free estimates",
+      "category": "Garage Door Repair",
+      "price": "Starting at $150",
+      "duration": "1-2 hours",
+      "seo": {
+        "metaTitle": "Broken Spring Replacement Dallas TX",
+        "metaDescription": "Professional broken spring replacement service in Dallas-Fort Worth. Fast, safe, and reliable spring replacement. Emergency service available.",
+        "keywords": "broken spring replacement, garage door spring repair, spring replacement service"
+      },
+      "services": [
+        "Garage Door Installation",
+        "Garage Door Repair",
+        "Garage Door Maintenance",
+        "Garage Door Openers",
+        "Garage Door Replacement"
+      ],
+      "featuredImage": "/assets/images/Mike_s Garage Door Repair Center 20.webp",
+      "faq": [
+        {
+          "question": "How do I know if my garage door spring is broken?",
+          "answer": "Signs of a broken spring include: the door won't open, the door opens partially and stops, you hear a loud bang or snap, or the door is very heavy to lift manually. If you suspect a broken spring, don't try to open the door - call for professional service immediately."
+        },
+        {
+          "question": "How long does spring replacement take?",
+          "answer": "Spring replacement typically takes 1-2 hours depending on the door type and complexity. We carry common springs in our service vehicles, so most replacements can be completed the same day. Emergency service is available for urgent situations."
+        },
+        {
+          "question": "What is the cost of spring replacement?",
+          "answer": "Spring replacement costs vary based on the door size and spring type. Torsion springs typically cost $150-300 to replace, while extension springs cost $100-200. We provide free estimates and competitive pricing for all spring replacement services."
+        }
+      ]
+    },
+    {
+      "id": "custom-garage-doors",
+      "name": "Custom Garage Doors",
+      "slug": "custom-garage-doors",
+      "description": "Custom garage door design and installation service. Create the perfect garage door for your home with our custom design solutions and expert installation.",
+      "content": "Make your garage door unique with our custom design and installation service. Mike's Garage Door Repair Center creates beautiful, functional custom garage doors tailored to your home's style.\n\n## Custom Garage Door Design\n\n- **Unique Designs**: Tailored to your home\n- **Premium Materials**: Quality construction\n- **Expert Installation**: Professional service\n- **Design Consultation**: Free design help\n\n## Custom Garage Door Options\n\n- Wood doors with custom finishes\n- Steel doors with unique designs\n- Glass and aluminum combinations\n- Insulated options for energy efficiency\n- Smart opener integration",
+      "category": "Garage Door Installation",
+      "price": "Starting at $800",
+      "duration": "1-2 weeks",
+      "seo": {
+        "metaTitle": "Custom Garage Doors Dallas TX",
+        "metaDescription": "Custom garage door design and installation in Dallas-Fort Worth. Unique designs, premium materials, expert installation.",
+        "keywords": "custom garage doors, garage door design, custom garage door installation"
+      },
+      "services": [
+        "Garage Door Installation",
+        "Garage Door Repair",
+        "Garage Door Maintenance",
+        "Garage Door Openers",
+        "Garage Door Replacement"
+      ],
+      "featuredImage": "/assets/images/Mike_s Garage Door Repair Center 23.webp",
+      "faq": [
+        {
+          "question": "What custom garage door options are available?",
+          "answer": "We offer custom wood doors, steel doors with unique designs, glass and aluminum combinations, and insulated options. We can create doors that match your home's architectural style and personal preferences. Our design consultation is free and includes 3D renderings."
+        },
+        {
+          "question": "How long does custom door installation take?",
+          "answer": "Custom door installation typically takes 1-2 weeks from design approval to completion. This includes design time, manufacturing, and installation. We work with you throughout the process to ensure your custom door meets your expectations."
+        },
+        {
+          "question": "What is the cost of custom garage doors?",
+          "answer": "Custom garage doors start at $800 and can range up to $3000+ depending on materials, size, and complexity. Wood doors are typically more expensive than steel, and custom features like windows or unique designs add to the cost. We provide detailed estimates for all custom projects."
+        }
+      ]
+    },
+    {
+      "id": "emergency-garage-door-service",
+      "name": "Emergency Garage Door Service",
+      "slug": "emergency-garage-door-service",
+      "description": "24/7 emergency garage door service for urgent repairs. Our emergency technicians are available around the clock to fix your garage door when you need it most.",
+      "content": "When your garage door breaks down unexpectedly, you need emergency service. Mike's Garage Door Repair Center provides 24/7 emergency garage door service throughout the Dallas-Fort Worth area.\n\n## Emergency Garage Door Service\n\n- **24/7 Availability**: Round-the-clock service\n- **Fast Response**: Quick emergency repairs\n- **Expert Technicians**: Trained professionals\n- **Emergency Repairs**: All types of issues\n\n## Emergency Service Types\n\n- Broken spring replacement\n- Cable repair and replacement\n- Track alignment and repair\n- Opener malfunction repair\n- Door off-track repair\n- Weather-related damage repair",
+      "category": "Garage Door Repair",
+      "price": "Emergency rates apply",
+      "duration": "Same day",
+      "seo": {
+        "metaTitle": "Emergency Garage Door Service Dallas TX",
+        "metaDescription": "24/7 emergency garage door service in Dallas-Fort Worth. Fast response, expert technicians, all types of repairs.",
+        "keywords": "emergency garage door service, 24/7 garage door repair, emergency garage door repair"
+      },
+      "services": [
+        "Garage Door Installation",
+        "Garage Door Repair",
+        "Garage Door Maintenance",
+        "Garage Door Openers",
+        "Garage Door Replacement"
+      ],
+      "featuredImage": "/assets/images/Mike_s Garage Door Repair Center 26.webp",
+      "faq": [
+        {
+          "question": "What constitutes an emergency garage door repair?",
+          "answer": "Emergency repairs include: broken springs, doors off-track, cables snapped, opener malfunctions, or any situation where your garage door is stuck open or closed and poses a security or safety risk. We're available 24/7 for these urgent situations."
+        },
+        {
+          "question": "How quickly can you respond to emergency calls?",
+          "answer": "We typically respond to emergency calls within 1-2 hours during business hours and 2-4 hours for after-hours emergencies. Our emergency service is available 24/7, including weekends and holidays. We prioritize safety and security issues."
+        },
+        {
+          "question": "Do emergency repairs cost more than regular service?",
+          "answer": "Emergency service does have additional charges due to after-hours availability and priority response. However, we keep emergency rates reasonable and transparent. We'll always provide an estimate before beginning work, even for emergency repairs."
+        }
+      ]
+    },
+    {
+      "id": "garage-door-cable-repair",
+      "name": "Garage Door Cable Repair",
+      "slug": "garage-door-cable-repair",
+      "description": "Professional garage door cable repair and replacement service. Our expert technicians provide safe, reliable cable repair to restore your garage door's functionality.",
+      "content": "When your garage door cables break or become damaged, you need professional repair service. Mike's Garage Door Repair Center provides expert cable repair and replacement throughout the Dallas-Fort Worth area.\n\n## Garage Door Cable Repair Service\n\n- **Expert Technicians**: Trained professionals\n- **Quality Cables**: Premium replacement parts\n- **Safe Repairs**: Proper safety procedures\n- **Fast Service**: Same-day repairs available\n\n## Cable Repair Services\n\n- Cable replacement\n- Cable adjustment\n- Cable tensioning\n- Safety cable installation\n- Emergency cable repair\n- Preventive maintenance",
+      "category": "Garage Door Repair",
+      "price": "Starting at $120",
+      "duration": "1-2 hours",
+      "seo": {
+        "metaTitle": "Garage Door Cable Repair Dallas TX",
+        "metaDescription": "Professional garage door cable repair and replacement in Dallas-Fort Worth. Expert technicians, quality cables, safe repairs. Same-day service...",
+        "keywords": "garage door cable repair, cable replacement, garage door cable service"
+      },
+      "services": [
+        "Garage Door Installation",
+        "Garage Door Repair",
+        "Garage Door Maintenance",
+        "Garage Door Openers",
+        "Garage Door Replacement"
+      ],
+      "featuredImage": "/assets/images/Mike_s Garage Door Repair Center 29.webp",
+      "faq": [
+        {
+          "question": "How do I know if my garage door cables need repair?",
+          "answer": "Signs of cable problems include: frayed or broken cables, door not opening smoothly, cables hanging loose, or visible damage to the cable. If you notice any of these issues, don't try to operate the door - call for professional service immediately."
+        },
+        {
+          "question": "How long does cable repair take?",
+          "answer": "Cable repair typically takes 1-2 hours depending on the extent of damage and whether cables need replacement or just adjustment. We carry common cable types in our service vehicles, so most repairs can be completed the same day."
+        },
+        {
+          "question": "What is the cost of cable repair?",
+          "answer": "Cable repair costs vary based on the extent of damage and whether replacement is needed. Simple adjustments start at $60, while cable replacement typically costs $120-200. We provide free estimates and competitive pricing for all cable repair services."
+        }
+      ]
+    },
+    {
+      "id": "garage-door-opener-repair",
+      "name": "Garage Door Opener Repair",
+      "slug": "garage-door-opener-repair",
+      "description": "Professional garage door opener repair service. Our expert technicians diagnose and fix all types of opener problems to restore your garage door's functionality.",
+      "content": "When your garage door opener stops working, you need professional repair service. Mike's Garage Door Repair Center provides expert opener repair throughout the Dallas-Fort Worth area.\n\n## Garage Door Opener Repair Service\n\n- **Expert Diagnosis**: Accurate problem identification\n- **Quality Repairs**: Professional service\n- **All Brands**: We service all opener brands\n- **Fast Service**: Same-day repairs available\n\n## Opener Repair Services\n\n- Motor repair and replacement\n- Remote control programming\n- Safety sensor repair\n- Chain and belt replacement\n- Circuit board repair\n- Emergency release repair",
+      "category": "Garage Door Openers",
+      "price": "Starting at $80",
+      "duration": "1-2 hours",
+      "seo": {
+        "metaTitle": "Garage Door Opener Repair Dallas TX",
+        "metaDescription": "Professional garage door opener repair in Dallas-Fort Worth. Expert technicians, all brands, fast service. Same-day repairs available. Call 817-859-8877!",
+        "keywords": "garage door opener repair, opener repair service, garage door opener service"
+      },
+      "services": [
+        "Garage Door Installation",
+        "Garage Door Repair",
+        "Garage Door Maintenance",
+        "Garage Door Openers",
+        "Garage Door Replacement"
+      ],
+      "featuredImage": "/assets/images/Mike_s Garage Door Repair Center 32.webp",
+      "faq": [
+        {
+          "question": "What are common garage door opener problems?",
+          "answer": "Common opener problems include: motor not running, door not responding to remote, safety sensors not working, chain or belt slipping, and circuit board failures. Our technicians can diagnose and repair all types of opener issues."
+        },
+        {
+          "question": "Do you repair all brands of garage door openers?",
+          "answer": "Yes, we repair all major brands of garage door openers including Chamberlain, LiftMaster, Genie, Craftsman, and others. Our technicians are trained on all brands and carry common replacement parts for most opener models."
+        },
+        {
+          "question": "How long does opener repair take?",
+          "answer": "Most opener repairs can be completed in 1-2 hours. Simple issues like remote programming or sensor alignment take less time, while motor replacement or circuit board repair may take longer. We carry common parts in our service vehicles."
+        }
+      ]
+    }
+  ]
+}

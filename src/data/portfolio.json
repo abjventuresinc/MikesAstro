@@ -1,0 +1,121 @@
+{
+  "stats": {
+    "totalProjects": 500,
+    "happyClients": 450,
+    "yearsExperience": 10,
+    "averageRating": 4.9,
+    "serviceAreas": 44
+  },
+  "projects": [
+    {
+      "id": 1,
+      "title": "Professional Garage Door Installation Project",
+      "category": "Garage Door Installation",
+      "image": "/assets/images/Mike_s Garage Door Repair Center 1.webp",
+      "date": "2024",
+      "location": "Example City, ST",
+      "description": "Complete garage door installation with professional installation and quality materials.",
+      "features": [
+        "Professional Installation",
+        "Quality Materials",
+        "Expert Service",
+        "Customer Satisfaction"
+      ],
+      "client": "Residential Client",
+      "duration": "1-2 Days",
+      "tags": [
+        "Garage Door Installation",
+        "Example City",
+        "ST"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Professional Garage Door Repair Project",
+      "category": "Garage Door Repair",
+      "image": "/assets/images/Mike_s Garage Door Repair Center 4.webp",
+      "date": "2024",
+      "location": "North Town, ST",
+      "description": "Complete garage door repair with professional installation and quality materials.",
+      "features": [
+        "Professional Installation",
+        "Quality Materials",
+        "Expert Service",
+        "Customer Satisfaction"
+      ],
+      "client": "Commercial Client",
+      "duration": "1-2 Days",
+      "tags": [
+        "Garage Door Repair",
+        "North Town",
+        "ST"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Professional Garage Door Maintenance Project",
+      "category": "Garage Door Maintenance",
+      "image": "/assets/images/Mike_s Garage Door Repair Center 8.webp",
+      "date": "2024",
+      "location": "South Town, ST",
+      "description": "Complete garage door maintenance with professional installation and quality materials.",
+      "features": [
+        "Professional Installation",
+        "Quality Materials",
+        "Expert Service",
+        "Customer Satisfaction"
+      ],
+      "client": "Residential Client",
+      "duration": "1-2 Days",
+      "tags": [
+        "Garage Door Maintenance",
+        "South Town",
+        "ST"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Professional Garage Door Openers Project",
+      "category": "Garage Door Openers",
+      "image": "/assets/images/Mike_s Garage Door Repair Center 12.webp",
+      "date": "2024",
+      "location": "East Village, ST",
+      "description": "Complete garage door openers with professional installation and quality materials.",
+      "features": [
+        "Professional Installation",
+        "Quality Materials",
+        "Expert Service",
+        "Customer Satisfaction"
+      ],
+      "client": "Commercial Client",
+      "duration": "1-2 Days",
+      "tags": [
+        "Garage Door Openers",
+        "East Village",
+        "ST"
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Professional Garage Door Replacement Project",
+      "category": "Garage Door Replacement",
+      "image": "/assets/images/Mike_s Garage Door Repair Center 7.webp",
+      "date": "2024",
+      "location": "West Borough, ST",
+      "description": "Complete garage door replacement with professional installation and quality materials.",
+      "features": [
+        "Professional Installation",
+        "Quality Materials",
+        "Expert Service",
+        "Customer Satisfaction"
+      ],
+      "client": "Residential Client",
+      "duration": "1-2 Days",
+      "tags": [
+        "Garage Door Replacement",
+        "West Borough",
+        "ST"
+      ]
+    }
+  ]
+}

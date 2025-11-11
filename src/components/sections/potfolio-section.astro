@@ -1,0 +1,270 @@
+---
+import { ArrowRight, Eye, X, ChevronLeft, ChevronRight } from 'lucide-astro'
+import Button from '../ui/Button.astro'
+
+interface Props {
+  city?: string;
+}
+
+const { city } = Astro.props;
+
+const portfolioItems = [
+  {
+    title: "Custom Garage Door Installation",
+    imageSrc: "/assets/images/Mike_s Garage Door Repair Center 20.webp",
+    imageAlt: "Custom garage door installation by Mike's Garage Door Repair Center in Bedford, TX",
+  },
+  {
+    title: "Modern Garage Door Replacement",
+    imageSrc: "/assets/images/Mike_s Garage Door Repair Center 25.webp",
+    imageAlt: "Modern garage door replacement project in Dallas-Fort Worth area",
+  },
+  {
+    title: "Premium Garage Door Repair",
+    imageSrc: "/assets/images/Mike_s Garage Door Repair Center 30.webp",
+    imageAlt: "Professional garage door repair service in Bedford, TX",
+  },
+  {
+    title: "Residential Garage Door Service",
+    imageSrc: "/assets/images/Mike_s Garage Door Repair Center 35.webp",
+    imageAlt: "Residential garage door installation and repair in Fort Worth",
+  },
+  {
+    title: "Commercial Garage Door Solutions",
+    imageSrc: "/assets/images/Mike_s Garage Door Repair Center 40.webp",
+    imageAlt: "Commercial garage door installation in Dallas-Fort Worth",
+  },
+  {
+    title: "Garage Door Opener Installation",
+    imageSrc: "/assets/images/Mike_s Garage Door Repair Center 45.webp",
+    imageAlt: "Smart garage door opener installation by Mike's team",
+  },
+]
+---
+
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+  <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-6 portfolio-header">
+      <h2 class="text-4xl md:text-5xl font-bold text-foreground mb-8">
+        Our Portfolio{city ? ` in ${city}` : ''}
+      </h2>
+      <p class="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+        See the Mike's difference for yourself. Every project represents our unwavering commitment to quality craftsmanship and customer satisfaction{city ? ` throughout ${city} and the entire Dallas-Fort Worth area` : ' across the Dallas-Fort Worth metroplex'}. These aren't just garage doors, they're security, style, and peace of mind combined.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 portfolio-grid">
+      {portfolioItems.map((item, index) => (
+        <div class="portfolio-item">
+          <button 
+            data-portfolio-index={index}
+            class="group block w-full text-left cursor-pointer portfolio-item-button"
+            aria-label={`View ${item.title} image`}
+          >
+            <div class="relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 group-hover:-translate-y-1">
+              <!-- Image -->
+              <div class="relative h-80 overflow-hidden">
+                <img
+                  src={item.imageSrc}
+                  alt={item.imageAlt}
+                  class="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <!-- Gradient Overlay -->
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                
+                <!-- Eye Icon Overlay -->
+                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div class="bg-white/90 rounded-full p-4">
+                    <Eye class="w-8 h-8 text-primary" />
+                  </div>
+                </div>
+                
+                <!-- Service Name -->
+                <div class="absolute bottom-0 left-0 right-0 p-6">
+                  <h3 class="text-2xl font-bold text-white drop-shadow-lg group-hover:text-primary transition-colors">
+                    {item.title}
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </button>
+        </div>
+      ))}
+    </div>
+
+    <div class="text-center mt-16 portfolio-cta">
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <Button size="lg" href="/portfolio" class="group gap-2">
+          <Eye class="w-4 h-4" />
+          View Full Portfolio
+          <ArrowRight class="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+        </Button>
+        <Button variant="outline" size="lg" href="/contact">
+          Start Your Project
+        </Button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox-modal" class="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4 hidden" role="dialog" aria-modal="true" aria-label="Image lightbox">
+    <!-- Close Button -->
+    <button
+      id="lightbox-close"
+      class="absolute top-4 right-4 z-10 p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+      aria-label="Close lightbox"
+    >
+      <X class="w-6 h-6 text-white" />
+    </button>
+
+    <!-- Previous Button -->
+    <button
+      id="lightbox-prev"
+      class="absolute left-4 z-10 p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+      aria-label="Previous image"
+    >
+      <ChevronLeft class="w-8 h-8 text-white" />
+    </button>
+
+    <!-- Next Button -->
+    <button
+      id="lightbox-next"
+      class="absolute right-4 z-10 p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+      aria-label="Next image"
+    >
+      <ChevronRight class="w-8 h-8 text-white" />
+    </button>
+
+    <!-- Image Container -->
+    <div class="relative max-w-7xl max-h-[90vh] w-full h-full flex flex-col items-center justify-center">
+      <div class="relative w-full h-full">
+        <img
+          id="lightbox-image"
+          src=""
+          alt=""
+          class="object-contain w-full h-full"
+        />
+      </div>
+      
+      <!-- Image Title -->
+      <div class="mt-4 text-center">
+        <h3 id="lightbox-title" class="text-2xl font-bold text-white">
+        </h3>
+      </div>
+
+      <!-- Image Counter -->
+      <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/50 px-4 py-2 rounded-full">
+        <p id="lightbox-counter" class="text-white text-sm">
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script define:vars={{ portfolioItems }}>
+  (function() {
+    const portfolioData = portfolioItems;
+    let selectedImage: number | null = null;
+    
+    const modal = document.getElementById('lightbox-modal');
+    const closeBtn = document.getElementById('lightbox-close');
+    const prevBtn = document.getElementById('lightbox-prev');
+    const nextBtn = document.getElementById('lightbox-next');
+    const lightboxImage = document.getElementById('lightbox-image') as HTMLImageElement;
+    const lightboxTitle = document.getElementById('lightbox-title');
+    const lightboxCounter = document.getElementById('lightbox-counter');
+    const portfolioButtons = document.querySelectorAll('.portfolio-item-button');
+
+    function openLightbox(index: number) {
+      selectedImage = index;
+      updateLightbox();
+      modal?.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      selectedImage = null;
+      modal?.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    function updateLightbox() {
+      if (selectedImage === null || !lightboxImage || !lightboxTitle || !lightboxCounter) return;
+      
+      const item = portfolioData[selectedImage];
+      lightboxImage.src = item.imageSrc;
+      lightboxImage.alt = item.imageAlt;
+      lightboxTitle.textContent = item.title;
+      lightboxCounter.textContent = `${selectedImage + 1} / ${portfolioData.length}`;
+    }
+
+    function handlePrevious() {
+      if (selectedImage === null) return;
+      selectedImage = selectedImage === 0 ? portfolioData.length - 1 : selectedImage - 1;
+      updateLightbox();
+    }
+
+    function handleNext() {
+      if (selectedImage === null) return;
+      selectedImage = selectedImage === portfolioData.length - 1 ? 0 : selectedImage + 1;
+      updateLightbox();
+    }
+
+    function handleKeyDown(e: KeyboardEvent) {
+      if (selectedImage === null) return;
+      if (e.key === 'ArrowLeft') handlePrevious();
+      if (e.key === 'ArrowRight') handleNext();
+      if (e.key === 'Escape') closeLightbox();
+    }
+
+    // Event listeners
+    portfolioButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const index = parseInt(btn.getAttribute('data-portfolio-index') || '0');
+        openLightbox(index);
+      });
+    });
+
+    closeBtn?.addEventListener('click', closeLightbox);
+    prevBtn?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      handlePrevious();
+    });
+    nextBtn?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      handleNext();
+    });
+
+    modal?.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener('keydown', handleKeyDown);
+  })();
+</script>
+
+<style>
+  .portfolio-header {
+    opacity: 1;
+  }
+
+  .portfolio-grid {
+    opacity: 1;
+  }
+
+  .portfolio-cta {
+    opacity: 1;
+  }
+
+  #lightbox-modal {
+    transition: opacity 0.3s ease;
+  }
+
+  #lightbox-modal:not(.hidden) {
+    display: flex;
+  }
+</style>

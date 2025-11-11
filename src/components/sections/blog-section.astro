@@ -1,0 +1,123 @@
+---
+import { Calendar, Clock, ArrowRight, BookOpen } from 'lucide-astro'
+import Button from '../ui/Button.astro'
+import blogPosts from '@/data/blog-posts.json'
+
+interface Props {
+  city?: string;
+}
+
+const { city } = Astro.props;
+
+// Get the 3 most recent blog posts (sorted by publishedAt)
+const recentPosts = blogPosts.blogPosts
+  .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
+  .slice(0, 3)
+
+// Helper function to format date
+const formatDate = (dateString: string) => {
+  return new Date(dateString).toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  })
+}
+---
+
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20 lg:py-24">
+  <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-20 blog-header">
+      <h2 class="text-4xl md:text-5xl font-bold text-foreground mb-8">
+        Recent Blog Posts{city ? ` from ${city}` : ''}
+      </h2>
+      <p class="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+        {city
+          ? `Stay informed with our latest insights on maintenance, installation tips, and industry trends specific to ${city} properties. Our expert team shares valuable local knowledge to help you maintain safe, functional systems.`
+          : `Stay informed with our latest insights on maintenance, installation tips, and industry trends. Our expert team shares valuable tips and techniques to help you maintain safe, functional systems.`
+        }
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-16 blog-grid">
+      {recentPosts.map((post) => (
+        <a href={`/${post.category.slug}/${post.slug}`} class="group block">
+          <article class="bg-card rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group-hover:-translate-y-2">
+            <div class="relative h-48 overflow-hidden">
+              <img
+                src={post.image.url}
+                alt={post.image.alt}
+                class="object-cover transition-transform duration-500 group-hover:scale-105"
+                style="position: absolute; height: 100%; width: 100%; inset: 0px;"
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div class="absolute top-4 left-4">
+                <span class="bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-medium">
+                  {post.category.name}
+                </span>
+              </div>
+            </div>
+            
+            <div class="p-6">
+              <div class="flex items-center gap-4 text-sm text-muted-foreground mb-3">
+                <div class="flex items-center gap-1">
+                  <Calendar class="w-4 h-4" />
+                  {formatDate(post.publishedAt)}
+                </div>
+                <div class="flex items-center gap-1">
+                  <Clock class="w-4 h-4" />
+                  {post.readTime}
+                </div>
+              </div>
+              
+              <h3 class="text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors line-clamp-2">
+                {post.title}
+              </h3>
+              
+              <p class="text-muted-foreground line-clamp-3">
+                {post.excerpt}
+              </p>
+            </div>
+          </article>
+        </a>
+      ))}
+    </div>
+
+    <div class="text-center mt-8 blog-cta">
+      <a href="/blog/" class="inline-flex items-center justify-center whitespace-nowrap hover:scale-105 text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 transition-all duration-200 ease-out shadow-sm hover:shadow-lg active:scale-[0.98] active:shadow-md transform-gpu bg-primary text-primary-foreground hover:bg-primary/90 h-11 rounded-md px-8 group">
+        <BookOpen class="w-4 h-4 mr-2" />
+        View All Blog Posts
+        <ArrowRight class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .blog-header {
+    opacity: 1;
+  }
+
+  .blog-grid {
+    opacity: 1;
+  }
+
+  .blog-cta {
+    opacity: 1;
+  }
+
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>

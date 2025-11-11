@@ -1,0 +1,141 @@
+---
+import Button from "@/components/ui/Button.astro";
+import BenefitCard from "@/components/ui/BenefitCard.astro";
+import { ArrowRight, Zap, Award, DollarSign, ThumbsUp, Clock, CheckCircle } from "lucide-astro";
+
+const benefits = [
+  {
+    icon: Zap,
+    title: "Lightning-Fast Response",
+    description:
+      "The truth is, garage door emergencies don't wait for business hours. That’s why we’re available from 7 AM to 11 PM, every single day. Your urgent call? Our immediate priority."
+  },
+  {
+    icon: Award,
+    title: "Unmatched Expertise",
+    description:
+      "Besides having years of hands-on experience, our technicians stay current with every garage door system on the market — from vintage models to cutting-edge smart openers."
+  },
+  {
+    icon: DollarSign,
+    title: "Honest, Upfront Pricing",
+    description:
+      "We believe in transparency. No hidden fees, no surprise charges — just clear, competitive pricing you can trust. You’ll know the cost before we start any work."
+  },
+  {
+    icon: ThumbsUp,
+    title: "Satisfaction Guaranteed",
+    description:
+      "Every repair and installation comes backed by our rock-solid guarantee. We don’t just fix garage doors — we build lasting relationships through quality work that stands the test of time."
+  },
+  {
+    icon: Clock,
+    title: "Same-Day Service Available",
+    description:
+      "Got a garage door stuck halfway open at 6 PM? We get it — life doesn’t pause. That’s why we offer same-day service for most repairs. One call, and we’re on our way."
+  },
+  {
+    icon: CheckCircle,
+    title: "All Brands, All Models",
+    description:
+      "Whether it’s a Clopay, LiftMaster, CHI, or any other brand, we service them all. Plus, we work with top manufacturers to ensure your new garage door perfectly matches your home’s style."
+  }
+];
+---
+
+<section class="why-choose-section py-16 sm:py-20 lg:py-24 bg-white">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Header -->
+    <div class="text-center max-w-3xl mx-auto mb-12 lg:mb-16">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+        Why Bedford Trusts Mike’s
+      </h2>
+      <p class="text-lg sm:text-xl text-gray-600 leading-relaxed">
+        Not just another garage door company, we’re your neighbors, committed to keeping every home in our community safe, secure, and running smoothly.
+      </p>
+    </div>
+
+    <!-- Benefits Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+      {benefits.map((benefit) => (
+        <BenefitCard {...benefit} />
+      ))}
+    </div>
+
+    <!-- CTA -->
+    <div class="mt-12 lg:mt-16 text-center">
+      <div class="inline-flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-8 bg-gradient-to-r from-[#dbeafe] via-[#e0e7ff] to-[#dbeafe] rounded-2xl p-6 sm:p-8 border border-[#c7d2fe] shadow-md hover:shadow-lg transition-all duration-300">
+        <div class="text-left">
+          <p class="text-gray-900 font-semibold text-lg mb-1">
+            Ready to experience the Mike’s difference?
+          </p>
+          <p class="text-gray-600">Let’s get your garage door working perfectly again.</p>
+        </div>
+
+        <Button
+          variant="default"
+          size="lg"
+          href="/contact"
+          class="bg-[#4B6FFF] hover:bg-[#3B5DE8] text-white font-semibold text-lg px-8 py-4 shadow-md hover:shadow-xl transition-all duration-300 whitespace-nowrap"
+        >
+          Get Free Quote
+          <ArrowRight class="w-5 h-5" />
+        </Button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<style>
+  /* Benefit Card */
+  .benefit-card {
+    background: linear-gradient(to bottom right, white, rgb(249 250 251));
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 1px 3px rgb(0 0 0 / 0.05);
+    border: 1px solid rgb(243 244 246);
+    transition: all 0.3s ease;
+  }
+
+  .benefit-card:hover {
+    box-shadow: 0 10px 15px rgb(0 0 0 / 0.1);
+    border-color: hsl(var(--primary) / 0.3);
+    transform: translateY(-4px);
+  }
+
+  .benefit-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    background: hsl(var(--primary) / 0.1);
+    color: hsl(var(--primary));
+    border-radius: 0.75rem;
+    margin-bottom: 1.25rem;
+    transition: all 0.3s ease;
+  }
+
+  .benefit-card:hover .benefit-icon {
+    background: hsl(var(--primary));
+    color: white;
+  }
+
+  .benefit-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: rgb(17 24 39);
+    margin-bottom: 0.75rem;
+    transition: color 0.3s ease;
+  }
+
+  .benefit-card:hover .benefit-title {
+    color: hsl(var(--primary));
+  }
+
+  .benefit-description {
+    color: rgb(75 85 99);
+    line-height: 1.75;
+  }
+</style>

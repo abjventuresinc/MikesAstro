@@ -1,0 +1,45 @@
+---
+const { 
+  variant = "default", 
+  size = "default", 
+  href, 
+  class: extraClass = "", 
+  ...attrs 
+} = Astro.props;
+
+// Base classes
+let base =
+  "inline-flex items-center justify-center whitespace-nowrap rounded-md hover:scale-105 text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 transition-all duration-200 ease-out shadow-sm hover:shadow-lg active:scale-[0.98] active:shadow-md transform-gpu";
+
+// Variants
+const variants = {
+  default: "bg-primary text-primary-foreground hover:bg-primary/90",
+  destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
+  outline:
+    "border border-input border-2 bg-background text-primary border-primary/80 hover:bg-accent hover:border-accent/80 hover:text-accent-foreground",
+  secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
+  ghost: "hover:bg-accent hover:text-accent-foreground",
+  link: "text-primary underline-offset-4 hover:underline shadow-none",
+};
+
+// Sizes
+const sizes = {
+  default: "h-10 px-4 py-2",
+  sm: "h-9 rounded-md px-3",
+  lg: "h-11 rounded-md px-8",
+  icon: "h-10 w-10",
+};
+
+// Combine everything
+const classes = `${base} ${variants[variant] || ""} ${sizes[size] || ""} ${extraClass}`;
+---
+
+{href ? (
+  <a href={href} class={classes} {...attrs}>
+    <slot />
+  </a>
+) : (
+  <button class={classes} {...attrs}>
+    <slot />
+  </button>
+)}

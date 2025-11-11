@@ -1,0 +1,26 @@
+export function generateMetadataFromConfig(path) {
+  return {
+    title: "Mike's Garage Door Repair Center",
+    description: "Professional garage door repair and installation services across DFW, Texas.",
+  };
+}
+
+export function generateStructuredData(path) {
+  return [
+    {
+      id: "organization-schema",
+      type: "application/ld+json",
+      children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Mike's Garage Door Repair Center",
+        "url": "https://example.com",
+        "logo": "https://example.com/logo.png",
+        "sameAs": [
+          "https://www.facebook.com/",
+          "https://www.instagram.com/"
+        ]
+      }),
+    },
+  ];
+}

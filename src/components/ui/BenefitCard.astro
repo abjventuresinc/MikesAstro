@@ -1,0 +1,58 @@
+---
+const { icon: Icon, title, description } = Astro.props;
+---
+
+<div class="benefit-card group">
+  <div class="benefit-icon group-hover:bg-primary group-hover:text-white transition-all duration-300">
+    <Icon class="w-6 h-6" />
+  </div>
+
+  <h3 class="benefit-title group-hover:text-primary transition-colors">
+    {title}
+  </h3>
+
+  <p class="benefit-description">
+    {description}
+  </p>
+</div>
+
+<style>
+  .benefit-card {
+    background: linear-gradient(to bottom right, white, rgb(249 250 251));
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 1px 3px rgb(0 0 0 / 0.05);
+    border: 1px solid rgb(243 244 246);
+    transition: all 0.3s ease;
+  }
+
+  .benefit-card:hover {
+    box-shadow: 0 10px 15px rgb(0 0 0 / 0.1);
+    border-color: hsl(var(--primary) / 0.3);
+    transform: translateY(-4px);
+  }
+
+  .benefit-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    background: hsl(var(--primary) / 0.1);
+    color: hsl(var(--primary));
+    border-radius: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .benefit-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: rgb(17 24 39);
+    margin-bottom: 0.75rem;
+  }
+
+  .benefit-description {
+    color: rgb(75 85 99);
+    line-height: 1.75;
+  }
+</style>
