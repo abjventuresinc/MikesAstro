@@ -1,0 +1,210 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { generateDynamicMetadata, generateDynamicStructuredData } from "../lib/seo-metadata.js";
+import { siteConfig } from "../lib/seo-config.js";
+import blogData from '@/data/blog-posts.json';
+import citiesData from '@/data/cities.json';
+import servicesData from '@/data/services.json';
+import ServicePage from "../templates/services/ServicePage.astro";
+import CityPage from "../templates/cities/CityPage.astro";
+import BlogCategoryIndex from "../components/blog/BlogCategoryIndex.astro";
+
+interface Props {
+  slug: string;
+}
+
+export async function getStaticPaths() {
+  // Add blog category routes
+  const blogCategoryParams = blogData.categories.map((category) => ({
+    params: { slug: category.slug },
+  }));
+
+  // Add old blog post routes for redirects
+  const oldBlogParams = blogData.blogPosts.map((post) => ({
+    params: { slug: post.slug },
+  }));
+
+  // Add city routes
+  const cityParams = citiesData.cities.map((city) => ({
+    params: { slug: city.slug },
+  }));
+
+  // Add service routes (all services: core + subservices)
+  const serviceParams = servicesData.services.map((service) => ({
+    params: { slug: service.slug },
+  }));
+
+  return [...blogCategoryParams, ...oldBlogParams, ...cityParams, ...serviceParams];
+}
+
+const { slug } = Astro.params;
+
+// Check for service routes first
+const service = servicesData.services.find((s) => s.slug === slug);
+if (service) {
+  // Generate FAQs for schema
+  const faqs = [
+    {
+      question: `How long does ${service.name.toLowerCase()} take?`,
+      answer: `Typically, our ${service.name.toLowerCase()} service takes ${service.duration}. However, the exact timeline depends on the specific requirements and complexity of your project.`
+    },
+    {
+      question: "What is included in the service?",
+      answer: `Our ${service.name.toLowerCase()} includes: comprehensive service, and more. We provide comprehensive solutions tailored to your needs.`
+    },
+    {
+      question: "Do you offer warranties?",
+      answer: "Yes, we stand behind our work with comprehensive warranties. All our services come with a satisfaction guarantee and quality workmanship warranty."
+    },
+    {
+      question: "How do I get started?",
+      answer: "Getting started is easy! Simply contact us for a free consultation. We'll discuss your needs, provide a detailed quote, and schedule your service at your convenience."
+    }
+  ];
+
+  // Generate metadata
+  const keywords = service.seo.keywords?.split(',').map(k => k.trim()) || service.features;
+  const metadata = generateDynamicMetadata(`/${slug}/`, {
+    title: service.seo.metaTitle,
+    description: service.seo.metaDescription,
+    content: service.description,
+    keywords: keywords,
+  });
+
+  // Generate structured data
+  const structuredData = generateDynamicStructuredData(`/${slug}/`, {
+    serviceData: {
+      name: service.name,
+      description: service.description,
+      url: `${siteConfig.url}/${slug}/`,
+      category: service.category,
+      price: service.priceRange,
+      serviceType: service.category,
+      areaServed: ['Example City', 'North Town', 'South Town', 'East Village'],
+    },
+    faqData: {
+      questions: faqs
+    },
+    breadcrumbs: [
+      { name: 'Home', url: siteConfig.url },
+      { name: 'Services', url: `${siteConfig.url}/services/` },
+      { name: service.name, url: `${siteConfig.url}/${slug}/` },
+    ],
+  });
+
+  return (
+    <BaseLayout metadata={metadata}>
+      {structuredData.map((script) => (
+        <script
+          type={script.type}
+          set:html={script.children}
+        />
+      ))}
+      <ServicePage slug={slug} />
+    </BaseLayout>
+  );
+}
+
+// Check for blog category routes
+const blogCategory = blogData.categories.find((category) => category.slug === slug);
+if (blogCategory) {
+  const postsInCategory = blogData.blogPosts
+    .filter(post => post.category.slug === slug)
+    .map(post => ({
+      ...post,
+      category: blogCategory
+    }));
+  const featuredPosts = postsInCategory.filter(post => post.featured);
+  const regularPosts = postsInCategory.filter(post => !post.featured);
+
+  // Generate metadata
+  const keywords = ['blog', 'articles', blogCategory.name.toLowerCase(), 'garage door tips', 'garage door maintenance', 'garage door repair'];
+  const metadata = generateDynamicMetadata(`/${slug}/`, {
+    title: `${blogCategory.name} Articles | ${siteConfig.name}`,
+    description: `Expert ${blogCategory.name.toLowerCase()} tips, guides, and insights for maintaining beautiful garage doors and garage door systems.`,
+    content: blogCategory.description,
+    keywords: keywords,
+  });
+
+  // Generate structured data
+  const structuredData = generateDynamicStructuredData(`/${slug}/`, {
+    breadcrumbs: [
+      { name: 'Home', url: siteConfig.url },
+      { name: 'Blog', url: `${siteConfig.url}/blog/` },
+      { name: blogCategory.name, url: `${siteConfig.url}/${slug}/` },
+    ],
+  });
+
+  return (
+    <BaseLayout metadata={metadata}>
+      {structuredData.map((script) => (
+        <script
+          type={script.type}
+          set:html={script.children}
+        />
+      ))}
+      <BlogCategoryIndex
+        category={blogCategory}
+        posts={postsInCategory}
+        featuredPosts={featuredPosts}
+        regularPosts={regularPosts}
+        allCategories={blogData.categories}
+        allTags={blogData.tags}
+      />
+    </BaseLayout>
+  );
+}
+
+// Check for old blog post URLs and redirect to new structure
+const oldBlogPost = blogData.blogPosts.find((post) => post.slug === slug);
+if (oldBlogPost) {
+  // Redirect to new category-based URL structure
+  return Astro.redirect(`/${oldBlogPost.category.slug}/${oldBlogPost.slug}`, 301);
+}
+
+// Check for city routes
+const city = citiesData.cities.find((c) => c.slug === slug);
+if (city) {
+  // Generate metadata
+  const keywords = city.seo.keywords?.split(',').map(k => k.trim()) || [city.name, 'garage doors', 'garage door services', 'garage door repair'];
+  const metadata = generateDynamicMetadata(`/${slug}/`, {
+    title: city.seo.metaTitle,
+    description: city.seo.metaDescription,
+    content: city.description,
+    keywords: keywords,
+  });
+
+  // Generate structured data
+  const structuredData = generateDynamicStructuredData(`/${slug}/`, {
+    cityData: {
+      name: city.name,
+      state: city.state,
+      description: city.description,
+      latitude: city.coordinates?.latitude?.toString() ?? "",
+      longitude: city.coordinates?.longitude?.toString() ?? "",
+      servicesOffered: city.services,
+    },
+    breadcrumbs: [
+      { name: 'Home', url: siteConfig.url },
+      { name: 'Service Areas', url: `${siteConfig.url}/service-areas/` },
+      { name: `${city.name}, ${city.state}`, url: `${siteConfig.url}/${slug}/` },
+    ],
+  });
+
+  return (
+    <BaseLayout metadata={metadata}>
+      {structuredData.map((script) => (
+        <script
+          type={script.type}
+          set:html={script.children}
+        />
+      ))}
+      <CityPage slug={slug} />
+    </BaseLayout>
+  );
+}
+
+// Not found
+return Astro.redirect('/404', 404);
+---
+

@@ -1,0 +1,325 @@
+---
+import { 
+  Wrench, 
+  FileText,
+  Settings,
+  Hammer,
+  Key,
+  Home,
+  ListCheck,
+  Users
+} from 'lucide-astro';
+
+interface Props {
+  coreServices: Array<{
+    id: string;
+    name: string;
+    slug: string;
+    description?: string;
+    features?: string[];
+  }>;
+}
+
+const { coreServices } = Astro.props;
+
+// Icon mapping for different service types
+const serviceIcons = [
+  Settings,
+  Hammer,
+  Wrench,
+  Key,
+  Home,
+];
+
+// Map services with icons
+const services = coreServices.map((service, index) => ({
+  title: service.name,
+  href: `/${service.slug}`,
+  description: service.features?.[0] || service.description || '',
+  icon: serviceIcons[index % serviceIcons.length]
+}));
+
+const aboutServices = [
+  {
+    title: "Blogs",
+    href: "/blog",
+    description: "Read our latest insights and tips",
+    icon: FileText
+  },
+  {
+    title: "FAQ",
+    href: "/faq",
+    description: "Find answers to frequently asked questions",
+    icon: FileText
+  }
+];
+---
+
+<nav class="relative z-50 flex max-w-max flex-1 items-center justify-center">
+  <ul class="group flex flex-1 list-none items-center justify-center space-x-1">
+    <!-- Service Areas -->
+    <li>
+      <a
+        href="/service-areas/"
+        class="group inline-flex h-9 w-max items-center justify-center rounded-md bg-transparent px-4 py-2 text-sm font-semibold tracking-wide uppercase transition-colors duration-200 text-gray-900 hover:bg-primary/10 hover:text-primary"
+      >
+        Service Areas
+      </a>
+    </li>
+
+    <!-- Services Dropdown -->
+    <li class="relative group/services">
+      <button
+        id="services-trigger"
+        class="group inline-flex h-9 w-max items-center justify-center rounded-md bg-transparent px-4 py-2 text-sm font-semibold tracking-wide uppercase transition-colors duration-200 text-gray-900 hover:bg-primary/10 hover:text-primary data-[state=open]:bg-primary/10 data-[state=open]:text-primary"
+        aria-expanded="false"
+        aria-haspopup="true"
+      >
+        Services
+        <svg class="relative top-[1px] ml-1 h-3 w-3 transition duration-300 group-data-[state=open]:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+      <div
+        id="services-content"
+        class="absolute left-0 top-full mt-1.5 w-full overflow-hidden rounded-md border bg-white text-gray-900 shadow-lg hidden group-hover/services:block"
+        style="width: 800px; max-width: 90vw;"
+      >
+        <ul class="grid gap-3 p-4 md:w-[500px] lg:w-[800px] lg:grid-cols-2 lg:grid-rows-2">
+          <li class="row-span-3">
+            <a
+              href="/services/"
+              class="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-gray-50 to-gray-100 p-6 no-underline outline-none transition-all duration-200 hover:shadow-lg hover:scale-[1.02] relative overflow-hidden"
+            >
+              <div class="absolute inset-0 bg-black/80 z-0"></div>
+              <div class="relative z-10">
+                <div class="mb-2 mt-4 text-lg font-medium flex items-center gap-2 text-white">
+                  <ListCheck class="h-5 w-5" />
+                  All Services
+                </div>
+                <p class="text-sm leading-tight text-white/90">
+                  View all our professional services and solutions.
+                </p>
+              </div>
+              <img
+                src="/assets/images/Mike_s Garage Door Repair Center 1.webp"
+                alt="All Services"
+                class="absolute inset-0 object-cover opacity-30 z-0"
+                loading="lazy"
+                decoding="async"
+              />
+            </a>
+          </li>
+          {services.map((service) => {
+            const IconComponent = service.icon;
+            return (
+              <li>
+                <a
+                  href={service.href}
+                  class="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-gray-100 focus:bg-gray-100"
+                >
+                  <div class="text-sm font-medium leading-none flex items-center gap-2">
+                    <IconComponent class="h-4 w-4" />
+                    {service.title}
+                  </div>
+                  <p class="line-clamp-2 text-sm leading-snug text-gray-600 mt-2">
+                    {service.description}
+                  </p>
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    </li>
+
+    <!-- About Us Dropdown -->
+    <li class="relative group/about">
+      <button
+        id="about-trigger"
+        class="group inline-flex h-9 w-max items-center justify-center rounded-md bg-transparent px-4 py-2 text-sm font-semibold tracking-wide uppercase transition-colors duration-200 text-gray-900 hover:bg-primary/10 hover:text-primary data-[state=open]:bg-primary/10 data-[state=open]:text-primary"
+        aria-expanded="false"
+        aria-haspopup="true"
+      >
+        About Us
+        <svg class="relative top-[1px] ml-1 h-3 w-3 transition duration-300 group-data-[state=open]:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+      <div
+        id="about-content"
+        class="absolute left-0 top-full mt-1.5 w-full overflow-hidden rounded-md border bg-white text-gray-900 shadow-lg hidden group-hover/about:block"
+        style="width: 600px; max-width: 90vw;"
+      >
+        <ul class="grid gap-3 p-4 md:w-[500px] lg:w-[600px] lg:grid-cols-[.75fr_1fr]">
+          <li class="row-span-3">
+            <a
+              href="/about/"
+              class="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-gray-50 to-gray-100 p-6 no-underline outline-none transition-all duration-200 hover:shadow-lg hover:scale-[1.02] relative overflow-hidden"
+            >
+              <div class="absolute inset-0 bg-black/80 z-0"></div>
+              <div class="relative z-10">
+                <div class="mb-2 mt-4 text-lg font-medium flex items-center gap-2 text-white">
+                  <Users class="h-5 w-5" />
+                  About Us
+                </div>
+                <p class="text-sm leading-tight text-white/90">
+                  Learn more about our company, team, and mission.
+                </p>
+              </div>
+              <img
+                src="/assets/images/Mike_s Garage Door Repair Center 3.webp"
+                alt="About Us"
+                class="absolute inset-0 object-cover opacity-30 z-0"
+                loading="lazy"
+                decoding="async"
+              />
+            </a>
+          </li>
+          {aboutServices.map((service) => {
+            const IconComponent = service.icon;
+            return (
+              <li>
+                <a
+                  href={service.href}
+                  class="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-gray-100 focus:bg-gray-100"
+                >
+                  <div class="text-sm font-medium leading-none flex items-center gap-2">
+                    <IconComponent class="h-4 w-4" />
+                    {service.title}
+                  </div>
+                  <p class="line-clamp-2 text-sm leading-snug text-gray-600 mt-2">
+                    {service.description}
+                  </p>
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    </li>
+
+    <!-- Portfolio -->
+    <li>
+      <a
+        href="/portfolio"
+        class="group inline-flex h-9 w-max items-center justify-center rounded-md bg-transparent px-4 py-2 text-sm font-semibold tracking-wide uppercase transition-colors duration-200 text-gray-900 hover:bg-primary/10 hover:text-primary"
+      >
+        Portfolio
+      </a>
+    </li>
+
+    <!-- Contact Us -->
+    <li>
+      <a
+        href="/contact"
+        class="group inline-flex h-9 w-max items-center justify-center rounded-md bg-transparent px-4 py-2 text-sm font-semibold tracking-wide uppercase transition-colors duration-200 text-gray-900 hover:bg-primary/10 hover:text-primary"
+      >
+        Contact Us
+      </a>
+    </li>
+  </ul>
+</nav>
+
+<script>
+  // Handle keyboard navigation and focus management for dropdowns
+  (function() {
+    const servicesTrigger = document.getElementById('services-trigger');
+    const servicesContent = document.getElementById('services-content');
+    const aboutTrigger = document.getElementById('about-trigger');
+    const aboutContent = document.getElementById('about-content');
+
+    function showServices() {
+      servicesContent?.classList.remove('hidden');
+      servicesTrigger?.setAttribute('aria-expanded', 'true');
+    }
+
+    function hideServices() {
+      servicesContent?.classList.add('hidden');
+      servicesTrigger?.setAttribute('aria-expanded', 'false');
+    }
+
+    function showAbout() {
+      aboutContent?.classList.remove('hidden');
+      aboutTrigger?.setAttribute('aria-expanded', 'true');
+    }
+
+    function hideAbout() {
+      aboutContent?.classList.add('hidden');
+      aboutTrigger?.setAttribute('aria-expanded', 'false');
+    }
+
+    // Mouse events
+    servicesTrigger?.addEventListener('mouseenter', showServices);
+    servicesTrigger?.addEventListener('mouseleave', () => {
+      // Delay to allow moving to content
+      setTimeout(() => {
+        if (!servicesContent?.matches(':hover')) {
+          hideServices();
+        }
+      }, 100);
+    });
+    
+    servicesContent?.addEventListener('mouseenter', showServices);
+    servicesContent?.addEventListener('mouseleave', hideServices);
+
+    aboutTrigger?.addEventListener('mouseenter', showAbout);
+    aboutTrigger?.addEventListener('mouseleave', () => {
+      setTimeout(() => {
+        if (!aboutContent?.matches(':hover')) {
+          hideAbout();
+        }
+      }, 100);
+    });
+    
+    aboutContent?.addEventListener('mouseenter', showAbout);
+    aboutContent?.addEventListener('mouseleave', hideAbout);
+
+    // Keyboard events
+    servicesTrigger?.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        if (servicesContent?.classList.contains('hidden')) {
+          showServices();
+        } else {
+          hideServices();
+        }
+      } else if (e.key === 'Escape') {
+        hideServices();
+      }
+    });
+
+    aboutTrigger?.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        if (aboutContent?.classList.contains('hidden')) {
+          showAbout();
+        } else {
+          hideAbout();
+        }
+      } else if (e.key === 'Escape') {
+        hideAbout();
+      }
+    });
+
+    // Close on click outside
+    document.addEventListener('click', (e) => {
+      if (servicesContent && servicesTrigger && !servicesTrigger.contains(e.target) && !servicesContent.contains(e.target)) {
+        hideServices();
+      }
+      if (aboutContent && aboutTrigger && !aboutTrigger.contains(e.target) && !aboutContent.contains(e.target)) {
+        hideAbout();
+      }
+    });
+  })();
+</script>
+
+<style>
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>
+

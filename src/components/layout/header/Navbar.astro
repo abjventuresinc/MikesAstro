@@ -1,0 +1,361 @@
+---
+import servicesData from '@/data/services.json';
+import { BUSINESS_INFO } from '@/lib/business-config.js';
+import NavigationMenuDemo from './NavigationMenuDemo.astro';
+import { Menu, X, Phone } from 'lucide-astro';
+
+// Get core services from services.json (same as old site)
+const coreServices = servicesData.services.filter(service => service.isCore);
+---
+
+<header 
+  id="navbar"
+  class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-200"
+>
+  <div class="mx-auto flex max-w-8xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
+    <!-- Logo -->
+    <a href="/" class="flex items-center space-x-2" aria-label={`${BUSINESS_INFO.name} Home`}>
+      <img
+        src="/assets/config/logo.png"
+        alt={`${BUSINESS_INFO.name} - Garage Door Services`}
+        width={200}
+        height={60}
+        class="h-12 w-auto md:h-16 lg:h-20"
+        loading="eager"
+        decoding="async"
+      />
+    </a>
+    
+    <!-- Desktop Navigation with Dropdown Menu -->
+    <nav class="hidden xl:block" role="navigation" aria-label="Main navigation">
+      <NavigationMenuDemo coreServices={coreServices} />
+    </nav>
+    
+    <!-- Desktop CTA Buttons -->
+    <div class="hidden xl:flex xl:items-center xl:gap-3">
+      <a
+        href="tel:8178598877"
+        aria-label="Call for garage door services"
+        class="inline-flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium bg-primary text-primary-foreground hover:bg-primary-hover rounded-md transition-colors duration-200"
+      >
+        <Phone class="w-4 h-4" />
+        Call Now
+      </a>
+      <a
+        href="/contact"
+        aria-label="Get a free consultation for garage door services"
+        class="inline-flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium bg-white text-primary border border-primary rounded-md hover:bg-gray-50 transition-colors duration-200"
+      >
+        Free Consultation
+      </a>
+    </div>
+    
+    <!-- Mobile Menu Button -->
+    <button
+      id="mobile-menu-button"
+      class="xl:hidden p-3 text-gray-900 hover:bg-gray-100 rounded-md transition-colors duration-200"
+      aria-label="Open mobile menu"
+      aria-expanded="false"
+    >
+      <Menu id="menu-icon" class="h-5 w-5" />
+      <X id="close-icon" class="h-5 w-5 hidden" />
+    </button>
+  </div>
+
+  <!-- Mobile Menu Overlay -->
+  <div
+    id="mobile-menu-overlay"
+    class="xl:hidden fixed inset-0 bg-black/50 z-[55] hidden"
+  ></div>
+
+  <!-- Mobile Menu Sidebar -->
+  <div
+    id="mobile-menu-sidebar"
+    class="xl:hidden fixed top-0 right-0 h-screen w-80 max-w-[85vw] bg-white shadow-2xl transform transition-transform duration-300 ease-in-out z-[60] translate-x-full"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Mobile navigation menu"
+  >
+    <div class="flex flex-col h-full">
+      <!-- Header - Fixed -->
+      <div class="flex items-center justify-between p-4 border-b border-gray-200 bg-white/95 backdrop-blur-sm">
+        <a href="/" class="flex items-center space-x-2" id="mobile-menu-close-link">
+          <img
+            src="/assets/config/logo.png"
+            alt={`${BUSINESS_INFO.name} - Garage Door Services`}
+            width={150}
+            height={60}
+            class="h-12 w-auto"
+            loading="eager"
+            decoding="async"
+          />
+        </a>
+        <button
+          id="mobile-menu-close-button"
+          class="p-3 text-gray-900 hover:bg-gray-100 rounded-lg"
+          aria-label="Close mobile navigation menu"
+        >
+          <X class="h-5 w-5" />
+        </button>
+      </div>
+
+      <!-- Scrollable Navigation Content -->
+      <div class="flex-1 overflow-y-auto scrollbar-hide">
+        <nav class="p-4 space-y-2" role="navigation" aria-label="Mobile navigation menu">
+          <!-- Home -->
+          <a
+            href="/"
+            class="block text-sm font-medium text-gray-700 hover:text-primary transition-colors duration-200 py-3 px-2 rounded-lg hover:bg-gray-50 mobile-menu-link"
+          >
+            Home
+          </a>
+
+          <!-- Service Areas -->
+          <div class="space-y-1">
+            <button
+              data-section="areas"
+              class="flex items-center justify-between w-full text-left text-sm font-semibold text-gray-900 uppercase tracking-wide py-4 px-2 rounded-lg hover:bg-gray-100 transition-colors mobile-menu-section-toggle"
+              aria-expanded="false"
+              aria-controls="areas-section"
+              aria-label="Toggle service areas section"
+            >
+              <span>Service Areas</span>
+              <svg class="h-4 w-4 text-gray-600 chevron-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+            <div id="areas-section" class="hidden ml-4 space-y-1 border-l-2 border-primary/40 pl-4" role="region" aria-label="Service areas navigation">
+              <a
+                href="/service-areas/"
+                class="block text-sm font-semibold text-primary hover:text-primary-hover transition-colors duration-200 py-3 px-3 rounded-lg hover:bg-primary/5 mobile-menu-link"
+              >
+                View All Service Areas →
+              </a>
+            </div>
+          </div>
+
+          <!-- Services -->
+          <div class="space-y-1">
+            <button
+              data-section="services"
+              class="flex items-center justify-between w-full text-left text-sm font-semibold text-gray-900 uppercase tracking-wide py-4 px-2 rounded-lg hover:bg-gray-100 transition-colors mobile-menu-section-toggle"
+              aria-expanded="false"
+              aria-controls="services-section"
+              aria-label="Toggle services section"
+            >
+              <span>Services</span>
+              <svg class="h-4 w-4 text-gray-600 chevron-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+            <div id="services-section" class="hidden ml-4 space-y-1 border-l-2 border-primary/40 pl-4" role="region" aria-label="Services section navigation">
+              <a
+                href="/services/"
+                class="block text-sm font-medium text-gray-700 hover:text-primary transition-colors duration-200 py-3 px-3 rounded-lg hover:bg-gray-50 mobile-menu-link"
+              >
+                All Services
+              </a>
+              {coreServices.map((service) => (
+                <a
+                  key={service.id}
+                  href={`/${service.slug}`}
+                  class="block text-sm font-medium text-gray-700 hover:text-primary transition-colors duration-200 py-3 px-3 rounded-lg hover:bg-gray-50 mobile-menu-link"
+                >
+                  {service.name}
+                </a>
+              ))}
+            </div>
+          </div>
+
+          <!-- About Us -->
+          <div class="space-y-1">
+            <button
+              data-section="about"
+              class="flex items-center justify-between w-full text-left text-sm font-semibold text-gray-900 uppercase tracking-wide py-4 px-2 rounded-lg hover:bg-gray-100 transition-colors mobile-menu-section-toggle"
+              aria-expanded="false"
+              aria-controls="about-section"
+              aria-label="Toggle about section"
+            >
+              <span>About Us</span>
+              <svg class="h-4 w-4 text-gray-600 chevron-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+            <div id="about-section" class="hidden ml-4 space-y-1 border-l-2 border-primary/40 pl-4" role="region" aria-label="About section navigation">
+              <a
+                href="/about/"
+                class="block text-sm font-medium text-gray-700 hover:text-primary transition-colors duration-200 py-3 px-3 rounded-lg hover:bg-gray-50 mobile-menu-link"
+              >
+                About Us
+              </a>
+              <a
+                href="/blog/"
+                class="block text-sm font-medium text-gray-700 hover:text-primary transition-colors duration-200 py-3 px-3 rounded-lg hover:bg-gray-50 mobile-menu-link"
+              >
+                Blogs
+              </a>
+              <a
+                href="/faq/"
+                class="block text-sm font-medium text-gray-700 hover:text-primary transition-colors duration-200 py-3 px-3 rounded-lg hover:bg-gray-50 mobile-menu-link"
+              >
+                FAQ
+              </a>
+            </div>
+          </div>
+
+          <!-- Portfolio -->
+          <a
+            href="/portfolio"
+            class="block text-sm font-medium text-gray-700 hover:text-primary transition-colors duration-200 py-3 px-2 rounded-lg hover:bg-gray-50 mobile-menu-link"
+          >
+            Portfolio
+          </a>
+
+          <!-- Contact Us -->
+          <a
+            href="/contact"
+            class="block text-sm font-medium text-gray-700 hover:text-primary transition-colors duration-200 py-3 px-2 rounded-lg hover:bg-gray-50 mobile-menu-link"
+          >
+            Contact Us
+          </a>
+        </nav>
+      </div>
+
+      <!-- Action Buttons - Fixed at Bottom -->
+      <div class="p-4 border-t border-gray-200 bg-white/95 backdrop-blur-sm space-y-3">
+        <a
+          href="tel:8178598877"
+          aria-label="Call for garage door services"
+          class="inline-flex items-center justify-center w-full gap-2 px-4 py-2 text-sm font-medium bg-primary text-primary-foreground hover:bg-primary-hover rounded-md transition-colors mobile-menu-link"
+        >
+          <Phone class="w-4 h-4" />
+          Call Now
+        </a>
+        <a
+          href="/contact/"
+          aria-label="Request free consultation"
+          class="inline-flex items-center justify-center w-full gap-2 px-4 py-2 text-sm font-medium bg-white text-primary border border-primary rounded-md hover:bg-gray-50 transition-colors mobile-menu-link"
+        >
+          Free Consultation
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  (function() {
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+    const mobileMenuSidebar = document.getElementById('mobile-menu-sidebar');
+    const mobileMenuCloseButton = document.getElementById('mobile-menu-close-button');
+    const mobileMenuCloseLink = document.getElementById('mobile-menu-close-link');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+    const sectionToggles = document.querySelectorAll('.mobile-menu-section-toggle');
+    
+    let isMobileMenuOpen = false;
+    const expandedSections = new Set();
+
+    function openMobileMenu() {
+      isMobileMenuOpen = true;
+      mobileMenuSidebar?.classList.remove('translate-x-full');
+      mobileMenuOverlay?.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+      mobileMenuButton?.setAttribute('aria-expanded', 'true');
+      menuIcon?.classList.add('hidden');
+      closeIcon?.classList.remove('hidden');
+    }
+
+    function closeMobileMenu() {
+      isMobileMenuOpen = false;
+      mobileMenuSidebar?.classList.add('translate-x-full');
+      mobileMenuOverlay?.classList.add('hidden');
+      document.body.style.overflow = '';
+      mobileMenuButton?.setAttribute('aria-expanded', 'false');
+      menuIcon?.classList.remove('hidden');
+      closeIcon?.classList.add('hidden');
+      // Close all expanded sections
+      expandedSections.clear();
+      document.querySelectorAll('[id$="-section"]').forEach(section => {
+        section.classList.add('hidden');
+      });
+      sectionToggles.forEach(toggle => {
+        toggle.setAttribute('aria-expanded', 'false');
+        const chevron = toggle.querySelector('.chevron-icon');
+        if (chevron) {
+          chevron.style.transform = 'rotate(0deg)';
+        }
+      });
+    }
+
+    function toggleSection(sectionName: string) {
+      const section = document.getElementById(`${sectionName}-section`);
+      const toggle = document.querySelector(`[data-section="${sectionName}"]`);
+      const chevron = toggle?.querySelector('.chevron-icon');
+      
+      if (!section || !toggle) return;
+
+      if (expandedSections.has(sectionName)) {
+        expandedSections.delete(sectionName);
+        section.classList.add('hidden');
+        toggle.setAttribute('aria-expanded', 'false');
+        if (chevron) {
+          chevron.style.transform = 'rotate(0deg)';
+        }
+      } else {
+        expandedSections.add(sectionName);
+        section.classList.remove('hidden');
+        toggle.setAttribute('aria-expanded', 'true');
+        if (chevron) {
+          chevron.style.transform = 'rotate(90deg)';
+        }
+      }
+    }
+
+    // Event listeners
+    mobileMenuButton?.addEventListener('click', () => {
+      if (isMobileMenuOpen) {
+        closeMobileMenu();
+      } else {
+        openMobileMenu();
+      }
+    });
+
+    mobileMenuCloseButton?.addEventListener('click', closeMobileMenu);
+    mobileMenuCloseLink?.addEventListener('click', closeMobileMenu);
+    mobileMenuOverlay?.addEventListener('click', closeMobileMenu);
+
+    mobileMenuLinks.forEach(link => {
+      link.addEventListener('click', closeMobileMenu);
+    });
+
+    sectionToggles.forEach(toggle => {
+      toggle.addEventListener('click', () => {
+        const sectionName = toggle.getAttribute('data-section');
+        if (sectionName) {
+          toggleSection(sectionName);
+        }
+      });
+    });
+
+    // Close on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && isMobileMenuOpen) {
+        closeMobileMenu();
+      }
+    });
+  })();
+</script>
+
+<style>
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+</style>
+

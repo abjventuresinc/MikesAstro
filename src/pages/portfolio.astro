@@ -1,0 +1,419 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { generateMetadataFromConfig, generateStructuredData } from "../lib/seo-metadata.js";
+import portfolioData from '@/data/portfolio.json';
+import { Grid3x3, Phone, Award, ZoomIn, ArrowRight, X, ChevronLeft, ChevronRight } from 'lucide-astro';
+
+// Generate metadata
+const metadata = generateMetadataFromConfig('/portfolio/');
+const structuredData = generateStructuredData('/portfolio/');
+
+const { projects: portfolioProjects, stats } = portfolioData;
+---
+
+<BaseLayout metadata={metadata}>
+  <!-- Structured Data -->
+  {structuredData.map((script) => (
+    <script
+      type={script.type}
+      set:html={script.children}
+    />
+  ))}
+
+  <!-- Hero Section -->
+  <section class="relative min-h-[70vh] flex items-center justify-center overflow-hidden pt-32 pb-20">
+    <div class="absolute inset-0 bg-gradient-to-br from-primary via-secondary to-primary"></div>
+    
+    <div class="absolute inset-0 opacity-10">
+      <div style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'0.3\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E'); background-size: 60px 60px; height: 100%;"></div>
+    </div>
+
+    <div class="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div>
+        <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md rounded-full px-5 py-2 mb-8 border border-white/20">
+          <Grid3x3 class="w-5 h-5 text-white" />
+          <span class="font-semibold text-white">Our Work Speaks for Itself</span>
+        </div>
+
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 leading-tight">
+          Project Gallery
+          <br />
+          <span class="bg-gradient-to-r from-white via-primary-200 to-white bg-clip-text text-transparent">
+            Real Transformations
+          </span>
+        </h1>
+
+        <p class="text-xl md:text-2xl text-white/90 mb-12 max-w-4xl mx-auto">
+          The truth is, seeing is believing. Browse our portfolio of completed projects across 
+          Dallas-Fort Worth and see the quality craftsmanship that makes us the area's most trusted 
+          garage door company.
+        </p>
+
+        <!-- Stats -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+          <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
+            <div class="text-4xl font-black text-white mb-2">{stats.totalProjects}+</div>
+            <div class="text-sm text-white/80">Projects Completed</div>
+          </div>
+          <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
+            <div class="text-4xl font-black text-white mb-2">{stats.serviceAreas}+</div>
+            <div class="text-sm text-white/80">Cities Served</div>
+          </div>
+          <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
+            <div class="text-4xl font-black text-white mb-2">{stats.yearsExperience}+</div>
+            <div class="text-sm text-white/80">Years Experience</div>
+          </div>
+          <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
+            <div class="text-4xl font-black text-white mb-2">{stats.averageRating}</div>
+            <div class="text-sm text-white/80">Average Rating</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filter Section -->
+  <section class="py-12 bg-white border-b border-gray-200 sticky top-20 z-40 backdrop-blur-md bg-white/95" id="filter-section">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-wrap justify-center gap-3" id="category-filters">
+        <!-- Categories will be populated by script -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Grid -->
+  <section class="py-20 bg-gradient-to-br from-gray-50 to-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="portfolio-grid">
+          {portfolioProjects.map((project, index) => (
+            <div
+              key={project.id}
+              data-project-index={index}
+              data-category={project.category}
+              class="group relative bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 cursor-pointer portfolio-item"
+            >
+              <div class="relative overflow-hidden aspect-[4/3]">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  width={400}
+                  height={300}
+                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                
+                <!-- Category Badge -->
+                <div class="absolute top-4 left-4">
+                  <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">
+                    {project.category}
+                  </span>
+                </div>
+                
+                <!-- Zoom Button -->
+                <div class="absolute top-4 right-4">
+                  <div class="bg-black/50 hover:bg-black/70 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 hover:scale-110">
+                    <ZoomIn class="w-5 h-5" />
+                  </div>
+                </div>
+                
+                <!-- Project Info Overlay -->
+                <div class="absolute bottom-0 left-0 right-0 p-6 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <h3 class="text-xl font-bold mb-2">
+                    {project.title}
+                  </h3>
+                  <p class="text-sm text-white/90 mb-2">
+                    {project.location} • {project.date}
+                  </p>
+                  <div class="flex items-center gap-2 text-sm text-white/80">
+                    <Award class="w-4 h-4" />
+                    <span>Professional Installation</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div id="no-projects-message" class="hidden text-center py-20">
+          <Grid3x3 class="w-16 h-16 text-gray-400 mx-auto mb-4" />
+          <h3 class="text-2xl font-bold text-gray-900 mb-2">No Projects Found</h3>
+          <p class="text-gray-600 mb-6">Try selecting a different category to see more projects.</p>
+          <button
+            id="view-all-btn"
+            class="bg-primary hover:bg-primary-hover text-white px-6 py-3 rounded-lg font-semibold transition-colors"
+          >
+            View All Projects
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-4xl md:text-5xl font-black text-gray-900 mb-6">
+          Ready to Start Your Project?
+        </h2>
+        <p class="text-xl text-gray-600 mb-8">
+          Join hundreds of satisfied customers who chose Mike's Garage Door Repair Center 
+          for their garage door needs. Let's discuss your project today!
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="tel:+18178598877"
+            class="inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-hover text-white px-10 py-6 text-lg font-bold rounded-xl shadow-lg transition-colors"
+          >
+            <Phone class="w-6 h-6" />
+            Call 817-859-8877
+          </a>
+          <a
+            href="/contact/"
+            class="inline-flex items-center justify-center gap-2 border-2 border-gray-300 hover:border-primary px-10 py-6 text-lg font-bold rounded-xl transition-colors"
+          >
+            Get Free Quote
+            <ArrowRight class="w-6 h-6" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Image Modal -->
+  <div
+    id="image-modal"
+    class="fixed inset-0 z-50 flex items-center justify-center p-4 hidden bg-black/95"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Image lightbox"
+  >
+    <!-- Close Button -->
+    <button
+      id="modal-close"
+      class="absolute top-4 right-4 z-10 p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+      aria-label="Close lightbox"
+    >
+      <X class="w-6 h-6 text-white" />
+    </button>
+
+    <!-- Previous Button -->
+    <button
+      id="modal-prev"
+      class="absolute left-4 z-10 p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+      aria-label="Previous image"
+    >
+      <ChevronLeft class="w-8 h-8 text-white" />
+    </button>
+
+    <!-- Next Button -->
+    <button
+      id="modal-next"
+      class="absolute right-4 z-10 p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+      aria-label="Next image"
+    >
+      <ChevronRight class="w-8 h-8 text-white" />
+    </button>
+
+    <!-- Image Container -->
+    <div class="relative max-w-7xl max-h-[90vh] w-full h-full flex flex-col items-center justify-center">
+      <div class="relative w-full h-full">
+        <img
+          id="modal-image"
+          src=""
+          alt=""
+          class="object-contain w-full h-full max-h-[80vh] rounded-lg"
+        />
+      </div>
+      
+      <!-- Image Info -->
+      <div id="modal-info" class="mt-4 text-center">
+        <h3 id="modal-title" class="text-xl font-bold text-white mb-2"></h3>
+        <p id="modal-description" class="text-white/90 text-sm"></p>
+      </div>
+
+      <!-- Image Counter -->
+      <div id="modal-counter" class="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/50 text-white px-4 py-2 rounded-full text-sm hidden">
+        <span id="current-index">1</span> of <span id="total-count">1</span>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<script define:vars={{ portfolioProjects }}>
+  (function() {
+    const projects = portfolioProjects;
+    let selectedCategory = 'All';
+    let currentImageIndex = 0;
+    let filteredProjects = projects;
+
+    // Get unique categories
+    const categories = ['All', ...Array.from(new Set(projects.map(p => p.category)))];
+
+    // Populate category filters
+    const filterContainer = document.getElementById('category-filters');
+    if (filterContainer) {
+      filterContainer.innerHTML = categories.map(category => `
+        <button
+          data-category="${category}"
+          class="px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
+            selectedCategory === category
+              ? 'bg-primary text-white shadow-lg scale-105'
+              : 'bg-gray-100 text-gray-700 hover:bg-gray-200 hover:scale-105'
+          }"
+        >
+          ${category}
+        </button>
+      `).join('');
+
+      // Add click handlers
+      filterContainer.querySelectorAll('button').forEach(btn => {
+        btn.addEventListener('click', () => {
+          selectedCategory = btn.getAttribute('data-category') || 'All';
+          filterProjects();
+          updateFilterButtons();
+        });
+      });
+    }
+
+    function updateFilterButtons() {
+      filterContainer?.querySelectorAll('button').forEach(btn => {
+        const category = btn.getAttribute('data-category');
+        if (category === selectedCategory) {
+          btn.className = 'px-6 py-3 rounded-full font-semibold transition-all duration-300 bg-primary text-white shadow-lg scale-105';
+        } else {
+          btn.className = 'px-6 py-3 rounded-full font-semibold transition-all duration-300 bg-gray-100 text-gray-700 hover:bg-gray-200 hover:scale-105';
+        }
+      });
+    }
+
+    function filterProjects() {
+      filteredProjects = selectedCategory === 'All' 
+        ? projects 
+        : projects.filter(p => p.category === selectedCategory);
+
+      const portfolioGrid = document.getElementById('portfolio-grid');
+      const noProjectsMessage = document.getElementById('no-projects-message');
+      
+      if (!portfolioGrid) return;
+
+      // Show/hide projects
+      portfolioGrid.querySelectorAll('.portfolio-item').forEach((item, index) => {
+        const project = projects[index];
+        if (selectedCategory === 'All' || project.category === selectedCategory) {
+          item.classList.remove('hidden');
+        } else {
+          item.classList.add('hidden');
+        }
+      });
+
+      // Show/hide no projects message
+      const visibleCount = portfolioGrid.querySelectorAll('.portfolio-item:not(.hidden)').length;
+      if (visibleCount === 0 && noProjectsMessage) {
+        noProjectsMessage.classList.remove('hidden');
+      } else if (noProjectsMessage) {
+        noProjectsMessage.classList.add('hidden');
+      }
+    }
+
+    // Image modal functionality
+    const modal = document.getElementById('image-modal');
+    const modalImage = document.getElementById('modal-image');
+    const modalTitle = document.getElementById('modal-title');
+    const modalDescription = document.getElementById('modal-description');
+    const modalCounter = document.getElementById('modal-counter');
+    const currentIndexSpan = document.getElementById('current-index');
+    const totalCountSpan = document.getElementById('total-count');
+    const modalClose = document.getElementById('modal-close');
+    const modalPrev = document.getElementById('modal-prev');
+    const modalNext = document.getElementById('modal-next');
+
+    function openModal(index) {
+      currentImageIndex = index;
+      updateModal();
+      modal?.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      modal?.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    function updateModal() {
+      if (!modalImage || !modalTitle || !modalDescription) return;
+      
+      const project = filteredProjects[currentImageIndex];
+      if (!project) return;
+
+      modalImage.src = project.image;
+      modalImage.alt = project.title;
+      modalTitle.textContent = project.title;
+      modalDescription.textContent = `${project.description} • ${project.location} • ${project.date}`;
+
+      if (filteredProjects.length > 1 && modalCounter && currentIndexSpan && totalCountSpan) {
+        modalCounter.classList.remove('hidden');
+        currentIndexSpan.textContent = String(currentImageIndex + 1);
+        totalCountSpan.textContent = String(filteredProjects.length);
+      } else if (modalCounter) {
+        modalCounter.classList.add('hidden');
+      }
+    }
+
+    function handlePrevious() {
+      currentImageIndex = currentImageIndex === 0 ? filteredProjects.length - 1 : currentImageIndex - 1;
+      updateModal();
+    }
+
+    function handleNext() {
+      currentImageIndex = currentImageIndex === filteredProjects.length - 1 ? 0 : currentImageIndex + 1;
+      updateModal();
+    }
+
+    // Event listeners
+    document.querySelectorAll('.portfolio-item').forEach((item, index) => {
+      item.addEventListener('click', () => {
+        const projectIndex = parseInt(item.getAttribute('data-project-index') || '0');
+        const filteredIndex = filteredProjects.findIndex(p => p.id === projects[projectIndex].id);
+        if (filteredIndex !== -1) {
+          openModal(filteredIndex);
+        }
+      });
+    });
+
+    modalClose?.addEventListener('click', closeModal);
+    modalPrev?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      handlePrevious();
+    });
+    modalNext?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      handleNext();
+    });
+
+    modal?.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (modal?.classList.contains('hidden')) return;
+      
+      if (e.key === 'Escape') closeModal();
+      if (e.key === 'ArrowLeft') handlePrevious();
+      if (e.key === 'ArrowRight') handleNext();
+    });
+
+    // View all button
+    document.getElementById('view-all-btn')?.addEventListener('click', () => {
+      selectedCategory = 'All';
+      filterProjects();
+      updateFilterButtons();
+    });
+  })();
+</script>
+

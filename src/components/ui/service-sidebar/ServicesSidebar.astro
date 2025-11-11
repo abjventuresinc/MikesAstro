@@ -1,0 +1,249 @@
+---
+import servicesData from '@/data/services.json';
+
+interface Props {
+  currentSlug?: string;
+}
+
+const { currentSlug } = Astro.props;
+
+// Get services structure from services.json (same as old site)
+const coreServices = servicesData.services.filter(service => service.isCore);
+
+// Build hierarchical structure
+const servicesStructure = coreServices.map(coreService => {
+  const subservices = servicesData.services
+    .filter(service => service.parentService === coreService.id)
+    .map(subservice => ({
+      title: subservice.name,
+      slug: subservice.slug
+    }));
+  
+  return {
+    title: coreService.name,
+    slug: coreService.slug,
+    children: subservices.length > 0 ? subservices : undefined
+  };
+});
+---
+
+<div class="bg-white rounded-xl shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300">
+  <!-- Header -->
+  <div class="px-6 py-4 border-b border-gray-200 bg-gray-50 rounded-t-xl">
+    <div class="flex items-center justify-between">
+      <p class="text-lg font-semibold text-gray-900 flex items-center">
+        <svg class="w-5 h-5 mr-2 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+        </svg>
+        Our Services
+      </p>
+      <button
+        id="sidebar-toggle"
+        class="p-2 hover:bg-gray-200 rounded-lg transition-all duration-300"
+        aria-label="Collapse services"
+      >
+        <svg
+          id="sidebar-chevron"
+          class="w-4 h-4 transition-all duration-300 text-gray-500 hover:text-gray-700 rotate-180"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+    </div>
+  </div>
+  
+  <!-- Services List -->
+  <div class="p-4" id="services-list">
+    <nav class="space-y-2">
+      <ul class="space-y-2">
+        {servicesStructure.map((item) => {
+          const hasChildren = item.children && item.children.length > 0;
+          const isActive = currentSlug === item.slug;
+          
+          return (
+            <li key={item.slug} class="mb-1">
+              <div class="flex items-center gap-1">
+                {hasChildren ? (
+                  <>
+                    <a
+                      href={`/${item.slug}`}
+                      class={`flex-1 px-3 py-2.5 rounded-lg text-sm transition-all duration-300 ${
+                        isActive
+                          ? 'bg-primary text-primary-foreground font-medium shadow-md'
+                          : 'text-gray-700 hover:bg-gray-100 hover:text-gray-900 font-medium'
+                      }`}
+                    >
+                      {item.title}
+                    </a>
+                    <button
+                      data-service-toggle={item.slug}
+                      class="p-2 rounded-lg hover:bg-gray-100 transition-colors"
+                      aria-label={`Expand ${item.title}`}
+                    >
+                      <svg
+                        data-service-icon={item.slug}
+                        class="w-4 h-4 transition-all duration-300 text-gray-500 rotate-90"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                      </svg>
+                    </button>
+                  </>
+                ) : (
+                  <a
+                    href={`/${item.slug}`}
+                    class={`flex-1 px-3 py-2.5 rounded-lg text-sm transition-all duration-300 ${
+                      isActive
+                        ? 'bg-primary text-primary-foreground font-medium shadow-md'
+                        : 'text-gray-700 hover:bg-gray-100 hover:text-gray-900 font-medium'
+                    }`}
+                  >
+                    {item.title}
+                  </a>
+                )}
+              </div>
+              {hasChildren && item.children && (
+                <div
+                  data-service-children={item.slug}
+                  class="overflow-hidden transition-all duration-500 ease-in-out max-h-96 opacity-100"
+                >
+                  <ul class="mt-2 space-y-1 ml-2 transform transition-all duration-300">
+                    {item.children.map((child) => {
+                      const childActive = currentSlug === child.slug;
+                      return (
+                        <li key={child.slug} class="mb-1">
+                          <a
+                            href={`/${child.slug}`}
+                            class={`block px-3 py-2.5 rounded-lg text-sm transition-all duration-300 ml-4 ${
+                              childActive
+                                ? 'bg-primary text-primary-foreground font-medium shadow-md'
+                                : 'text-gray-600 hover:bg-gray-50 hover:text-gray-800'
+                            }`}
+                          >
+                            {child.title}
+                          </a>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
+              )}
+            </li>
+          );
+        })}
+      </ul>
+    </nav>
+  </div>
+  
+  <!-- Call to Action -->
+  <div class="px-6 py-4 border-t border-gray-200 bg-gray-50 rounded-b-xl">
+    <div class="text-center">
+      <p class="text-sm font-medium text-gray-700 mb-3">
+        Anything you need, we've got you covered!
+      </p>
+      <a
+        href="/contact"
+        class="inline-flex items-center justify-center w-full bg-primary text-primary-foreground hover:bg-primary/90 py-2.5 px-4 rounded-lg text-sm font-medium transition-all duration-300 transform hover:scale-105 hover:shadow-md"
+      >
+        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+        </svg>
+        Call Now
+      </a>
+    </div>
+  </div>
+</div>
+
+<script define:vars={{ currentSlug, servicesStructure }}>
+  (function() {
+    let isExpanded = true;
+    const expandedItems = new Set();
+    
+    // Auto-expand items based on current slug
+    if (currentSlug) {
+      servicesStructure.forEach(item => {
+        if (item.slug === currentSlug) {
+          expandedItems.add(item.slug);
+        }
+        if (item.children) {
+          item.children.forEach(child => {
+            if (child.slug === currentSlug) {
+              expandedItems.add(item.slug);
+            }
+          });
+        }
+      });
+    } else {
+      // Expand all main categories by default
+      servicesStructure.forEach(item => {
+        expandedItems.add(item.slug);
+      });
+    }
+
+    // Toggle sidebar collapse
+    const sidebarToggle = document.getElementById('sidebar-toggle');
+    const servicesList = document.getElementById('services-list');
+    const sidebarChevron = document.getElementById('sidebar-chevron');
+    
+    sidebarToggle?.addEventListener('click', () => {
+      isExpanded = !isExpanded;
+      if (servicesList) {
+        if (isExpanded) {
+          servicesList.classList.remove('hidden');
+          if (sidebarChevron) sidebarChevron.classList.add('rotate-180');
+        } else {
+          servicesList.classList.add('hidden');
+          if (sidebarChevron) sidebarChevron.classList.remove('rotate-180');
+        }
+      }
+    });
+
+    // Toggle service items
+    document.querySelectorAll('[data-service-toggle]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const slug = btn.getAttribute('data-service-toggle');
+        if (!slug) return;
+        
+        const children = document.querySelector(`[data-service-children="${slug}"]`);
+        const icon = document.querySelector(`[data-service-icon="${slug}"]`);
+        
+        if (children && icon) {
+          if (expandedItems.has(slug)) {
+            expandedItems.delete(slug);
+            children.classList.remove('max-h-96', 'opacity-100');
+            children.classList.add('max-h-0', 'opacity-0');
+            icon.classList.remove('rotate-90');
+            icon.classList.add('rotate-0');
+          } else {
+            expandedItems.add(slug);
+            children.classList.remove('max-h-0', 'opacity-0');
+            children.classList.add('max-h-96', 'opacity-100');
+            icon.classList.remove('rotate-0');
+            icon.classList.add('rotate-90');
+          }
+        }
+      });
+    });
+
+    // Initialize expanded state
+    servicesStructure.forEach(item => {
+      if (expandedItems.has(item.slug)) {
+        const children = document.querySelector(`[data-service-children="${item.slug}"]`);
+        const icon = document.querySelector(`[data-service-icon="${item.slug}"]`);
+        if (children) {
+          children.classList.remove('max-h-0', 'opacity-0');
+          children.classList.add('max-h-96', 'opacity-100');
+        }
+        if (icon) {
+          icon.classList.add('rotate-90');
+        }
+      }
+    });
+  })();
+</script>
+

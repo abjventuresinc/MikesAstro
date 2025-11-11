@@ -1,6 +1,22 @@
 ---
 // src/layouts/BaseLayout.astro
 import "../styles/global.css";
+import Navbar from "../components/layout/header/Navbar.astro";
+
+interface Props {
+  metadata?: {
+    title?: string;
+    description?: string;
+    keywords?: string[];
+    openGraph?: {
+      title?: string;
+      description?: string;
+      images?: Array<{ url: string }>;
+    };
+  };
+}
+
+const { metadata } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -8,12 +24,27 @@ import "../styles/global.css";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mike's Garage Door Repair</title>
-    <meta name="description" content="Reliable garage door repair services in Texas. Available 24/7 for emergency repairs." />
+    <title>{metadata?.title || "Mike's Garage Door Repair"}</title>
+    <meta name="description" content={metadata?.description || "Reliable garage door repair services in Texas. Available 24/7 for emergency repairs."} />
+    {metadata?.keywords && metadata.keywords.length > 0 && (
+      <meta name="keywords" content={metadata.keywords.join(', ')} />
+    )}
     <link rel="icon" href="/favicon.svg" />
+    {metadata?.openGraph && (
+      <>
+        <meta property="og:title" content={metadata.openGraph.title || metadata?.title} />
+        <meta property="og:description" content={metadata.openGraph.description || metadata?.description} />
+        {metadata.openGraph.images && metadata.openGraph.images.length > 0 && (
+          <meta property="og:image" content={metadata.openGraph.images[0].url} />
+        )}
+      </>
+    )}
   </head>
 
   <body class="bg-background text-foreground antialiased">
-    <slot /> <!-- ✅ This replaces `{children}` -->
+    <Navbar />
+    <main class="flex-grow pt-20">
+      <slot /> <!-- ✅ This replaces `{children}` -->
+    </main>
   </body>
 </html>

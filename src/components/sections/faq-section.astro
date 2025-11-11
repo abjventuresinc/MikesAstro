@@ -1,0 +1,86 @@
+---
+import { ChevronDown, ChevronUp } from 'lucide-astro';
+
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+interface Props {
+  faqs: FAQItem[];
+  title?: string;
+}
+
+const { faqs, title = "Frequently Asked Questions" } = Astro.props;
+---
+
+<div class="bg-white rounded-xl p-6 sm:p-8 shadow-md">
+  <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-8">
+    {title}
+  </h2>
+  <div class="space-y-4">
+    {faqs.map((faq, index) => (
+      <div key={index} class="border border-gray-200 rounded-lg overflow-hidden">
+        <button
+          data-faq-toggle={index}
+          class="w-full px-6 py-4 text-left bg-gray-50 hover:bg-gray-100 transition-colors duration-200 flex items-center justify-between"
+        >
+          <h3 class="text-lg font-semibold text-gray-900 leading-relaxed pr-4">
+            {faq.question}
+          </h3>
+          <div class="flex-shrink-0">
+            <ChevronDown
+              data-faq-icon={index}
+              class="w-5 h-5 text-gray-500"
+            />
+          </div>
+        </button>
+        <div
+          data-faq-content={index}
+          class="overflow-hidden transition-all duration-300 ease-in-out max-h-0 opacity-0"
+        >
+          <div class="px-6 py-4 bg-white">
+            <p class="text-gray-600 leading-relaxed text-base">
+              {faq.answer}
+            </p>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
+
+<script>
+  (function() {
+    const expandedItems = new Set();
+    
+    document.querySelectorAll('[data-faq-toggle]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const index = parseInt(btn.getAttribute('data-faq-toggle') || '0');
+        const content = document.querySelector(`[data-faq-content="${index}"]`);
+        const icon = document.querySelector(`[data-faq-icon="${index}"]`);
+        
+        if (!content || !icon) return;
+        
+        if (expandedItems.has(index)) {
+          expandedItems.delete(index);
+          content.classList.remove('max-h-96', 'opacity-100');
+          content.classList.add('max-h-0', 'opacity-0');
+          icon.classList.remove('rotate-180');
+        } else {
+          expandedItems.add(index);
+          content.classList.remove('max-h-0', 'opacity-0');
+          content.classList.add('max-h-96', 'opacity-100');
+          icon.classList.add('rotate-180');
+        }
+      });
+    });
+  })();
+</script>
+
+<style>
+  .rotate-180 {
+    transform: rotate(180deg);
+  }
+</style>
+

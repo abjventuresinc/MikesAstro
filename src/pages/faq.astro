@@ -1,0 +1,420 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { generateMetadataFromConfig, generateDynamicStructuredData } from "../lib/seo-metadata.js";
+import faqData from '@/data/faq.json';
+import servicesData from '@/data/services.json';
+import { HelpCircle, Phone, Star, Clock, Shield, Award, Search, ChevronDown, ChevronUp, ArrowRight } from 'lucide-astro';
+
+// Generate metadata
+const metadata = generateMetadataFromConfig('/faq/');
+
+// Generate service-specific FAQs (same as old site)
+const serviceFAQs = servicesData.services.map(service => [
+  {
+    id: `service-${service.id}-1`,
+    category: service.name,
+    question: `How long does ${service.name.toLowerCase()} take?`,
+    answer: `Typically, our ${service.name.toLowerCase()} service takes ${service.duration}. However, the exact timeline depends on the specific requirements and complexity of your project.`
+  },
+  {
+    id: `service-${service.id}-2`,
+    category: service.name,
+    question: "What is included in the service?",
+    answer: `Our ${service.name.toLowerCase()} includes: comprehensive service, and more. We provide comprehensive solutions tailored to your needs.`
+  },
+  {
+    id: `service-${service.id}-3`,
+    category: service.name,
+    question: "Do you offer warranties?",
+    answer: "Yes, we stand behind our work with comprehensive warranties. All our services come with a satisfaction guarantee and quality workmanship warranty."
+  },
+  {
+    id: `service-${service.id}-4`,
+    category: service.name,
+    question: "How do I get started?",
+    answer: "Getting started is easy! Simply contact us for a free consultation. We'll discuss your needs, provide a detailed quote, and schedule your service at your convenience."
+  }
+]).flat();
+
+// Combine general FAQs with service-specific FAQs (same as old site)
+const allFAQs = [
+  ...faqData.faqs.map(faq => ({ ...faq, id: faq.id.toString() })),
+  ...serviceFAQs
+];
+
+// Generate structured data
+const structuredData = generateDynamicStructuredData('/faq/', {
+  faqData: {
+    questions: faqData.faqs.map(faq => ({
+      question: faq.question,
+      answer: faq.answer
+    }))
+  }
+});
+
+// Group FAQs by category (excluding Services)
+const faqCategories = [
+  {
+    category: "General",
+    icon: "HelpCircle",
+    faqs: faqData.faqs.filter(faq => faq.category === "General")
+  },
+  {
+    category: "Pricing",
+    icon: "Award",
+    faqs: faqData.faqs.filter(faq => faq.category === "Pricing")
+  },
+  {
+    category: "Scheduling",
+    icon: "Clock",
+    faqs: faqData.faqs.filter(faq => faq.category === "Scheduling")
+  }
+];
+---
+
+<BaseLayout metadata={metadata}>
+  <!-- Structured Data -->
+  {structuredData.map((script) => (
+    <script
+      type={script.type}
+      set:html={script.children}
+    />
+  ))}
+
+  <!-- Hero Section -->
+  <section class="relative min-h-[60vh] flex items-center justify-center overflow-hidden pt-32 pb-20">
+    <div class="absolute inset-0 bg-gradient-to-br from-primary via-secondary to-primary"></div>
+    
+    <div class="absolute inset-0 opacity-10">
+      <div style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'0.3\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E'); background-size: 60px 60px; height: 100%;"></div>
+    </div>
+
+    <div class="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div>
+        <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md rounded-full px-5 py-2 mb-8 border border-white/20">
+          <HelpCircle class="w-5 h-5 text-white" />
+          <span class="font-semibold text-white">Questions? We Have Answers!</span>
+        </div>
+
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 leading-tight">
+          Frequently Asked
+          <br />
+          <span class="bg-gradient-to-r from-white via-primary-200 to-white bg-clip-text text-transparent">
+            Questions
+          </span>
+        </h1>
+
+        <p class="text-xl md:text-2xl text-white/90 mb-12 max-w-4xl mx-auto">
+          Everything you need to know about garage door services, repairs, and installations
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Stats -->
+  <section class="py-12 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div class="text-center bg-gradient-to-br from-gray-50 to-white rounded-2xl p-6 border border-gray-200">
+          <div class="text-primary mb-3 flex justify-center">
+            <HelpCircle class="w-8 h-8" />
+          </div>
+          <div class="text-3xl font-black text-gray-900 mb-1">{faqData.faqs.length}</div>
+          <div class="text-sm text-gray-600">FAQs</div>
+        </div>
+        <div class="text-center bg-gradient-to-br from-gray-50 to-white rounded-2xl p-6 border border-gray-200">
+          <div class="text-primary mb-3 flex justify-center">
+            <Clock class="w-8 h-8" />
+          </div>
+          <div class="text-3xl font-black text-gray-900 mb-1">24/7</div>
+          <div class="text-sm text-gray-600">Support</div>
+        </div>
+        <div class="text-center bg-gradient-to-br from-gray-50 to-white rounded-2xl p-6 border border-gray-200">
+          <div class="text-primary mb-3 flex justify-center">
+            <Star class="w-8 h-8" />
+          </div>
+          <div class="text-3xl font-black text-gray-900 mb-1">5-Star</div>
+          <div class="text-sm text-gray-600">Rated</div>
+        </div>
+        <div class="text-center bg-gradient-to-br from-gray-50 to-white rounded-2xl p-6 border border-gray-200">
+          <div class="text-primary mb-3 flex justify-center">
+            <Shield class="w-8 h-8" />
+          </div>
+          <div class="text-3xl font-black text-gray-900 mb-1">100%</div>
+          <div class="text-sm text-gray-600">Guaranteed</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Search Bar -->
+  <div class="max-w-2xl mx-auto mb-12 px-4">
+    <div class="relative">
+      <Search class="absolute left-4 top-1/2 -translate-y-1/2 w-6 h-6 text-gray-400" />
+      <input
+        type="text"
+        id="faq-search"
+        placeholder="Search questions..."
+        class="w-full pl-14 pr-6 py-4 rounded-xl bg-white/10 backdrop-blur-md border-2 border-white/20 text-white placeholder-white/60 focus:outline-none focus:border-white/40 text-lg"
+      />
+    </div>
+  </div>
+
+  <!-- FAQ Categories -->
+  <section class="py-20 bg-gradient-to-br from-gray-50 to-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-5xl mx-auto">
+        <!-- Search Results (hidden by default) -->
+        <div id="search-results" class="hidden space-y-4">
+          <h2 class="text-3xl font-black text-gray-900 mb-8">
+            Search Results (<span id="search-count">0</span>)
+          </h2>
+          <div id="search-results-list" class="space-y-4"></div>
+        </div>
+
+        <!-- Category View -->
+        <div id="category-view" class="space-y-12">
+          {faqCategories.map((category, catIdx) => {
+            const globalStartIdx = faqCategories
+              .slice(0, catIdx)
+              .reduce((acc, cat) => acc + cat.faqs.length, 0);
+            
+            return (
+              <div>
+                <div class="flex items-center gap-3 mb-6">
+                  <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
+                    {category.icon === "HelpCircle" && <HelpCircle class="w-6 h-6" />}
+                    {category.icon === "Award" && <Award class="w-6 h-6" />}
+                    {category.icon === "Clock" && <Clock class="w-6 h-6" />}
+                  </div>
+                  <h2 class="text-3xl font-black text-gray-900">{category.category}</h2>
+                </div>
+
+                <div class="space-y-4">
+                  {category.faqs.map((faq, faqIdx) => {
+                    const globalIdx = globalStartIdx + faqIdx;
+                    return (
+                      <div
+                        key={faq.id}
+                        data-faq-id={globalIdx}
+                        class="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden hover:shadow-xl transition-shadow faq-item"
+                      >
+                        <button
+                          data-faq-toggle={globalIdx}
+                          class="w-full text-left p-6 hover:bg-gray-50 transition-colors flex items-center justify-between group"
+                        >
+                          <h3 class="text-lg font-bold text-gray-900 pr-8 group-hover:text-primary transition-colors">
+                            {faq.question}
+                          </h3>
+                          <ChevronDown
+                            data-faq-icon={globalIdx}
+                            class="w-6 h-6 text-gray-400 group-hover:text-primary flex-shrink-0 transition-colors"
+                          />
+                        </button>
+                        <div
+                          data-faq-content={globalIdx}
+                          class="hidden px-6 pb-6 text-gray-600 leading-relaxed text-lg border-t border-gray-100 pt-4"
+                        >
+                          {faq.answer}
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Still Have Questions CTA -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto text-center">
+        <HelpCircle class="w-20 h-20 text-primary mx-auto mb-6" />
+        <h2 class="text-4xl md:text-5xl font-black text-gray-900 mb-6">
+          Still Have Questions?
+        </h2>
+        <p class="text-xl text-gray-600 mb-8">
+          We're here to help! Give us a call and we'll answer any questions you have.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="tel:+18178598877"
+            class="inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-hover text-white px-10 py-6 text-lg font-bold rounded-xl shadow-lg transition-colors"
+          >
+            <Phone class="w-6 h-6" />
+            Call 817-859-8877
+          </a>
+          <a
+            href="/contact/"
+            class="inline-flex items-center justify-center gap-2 border-2 border-gray-300 hover:border-primary px-10 py-6 text-lg font-bold rounded-xl transition-colors"
+          >
+            Contact Us
+            <ArrowRight class="w-6 h-6" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="relative py-20 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-primary via-secondary to-primary"></div>
+    
+    <div
+      class="absolute inset-0 opacity-10"
+      style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'0.3\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E'); background-size: 60px 60px;"
+    ></div>
+
+    <div class="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-4xl md:text-5xl font-black text-white mb-6">
+        Ready to Get Started?
+      </h2>
+      <p class="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
+        Whether you need installation, repair, or maintenance, we're here to help!
+      </p>
+      <a
+        href="tel:+18178598877"
+        class="inline-flex items-center justify-center gap-3 bg-white text-secondary hover:bg-gray-100 px-12 py-6 text-xl font-black rounded-xl shadow-2xl transition-colors"
+      >
+        <Phone class="w-6 h-6" />
+        817-859-8877
+      </a>
+    </div>
+  </section>
+</BaseLayout>
+
+<script define:vars={{ allFAQs, faqCategories }}>
+  (function() {
+    const faqs = allFAQs;
+    const categories = faqCategories;
+    let openFAQ = null;
+    let searchTerm = '';
+
+    // FAQ toggle functionality
+    function toggleFAQ(index) {
+      const content = document.querySelector(`[data-faq-content="${index}"]`);
+      const icon = document.querySelector(`[data-faq-icon="${index}"]`);
+      
+      if (!content || !icon) return;
+
+      if (openFAQ === index) {
+        content.classList.add('hidden');
+        icon.classList.remove('rotate-180');
+        icon.classList.add('rotate-0');
+        openFAQ = null;
+      } else {
+        // Close previously open FAQ
+        if (openFAQ !== null) {
+          const prevContent = document.querySelector(`[data-faq-content="${openFAQ}"]`);
+          const prevIcon = document.querySelector(`[data-faq-icon="${openFAQ}"]`);
+          if (prevContent) prevContent.classList.add('hidden');
+          if (prevIcon) {
+            prevIcon.classList.remove('rotate-180');
+            prevIcon.classList.add('rotate-0');
+          }
+        }
+        
+        content.classList.remove('hidden');
+        icon.classList.remove('rotate-0');
+        icon.classList.add('rotate-180');
+        openFAQ = index;
+      }
+    }
+
+    // Add click handlers to FAQ toggles
+    document.querySelectorAll('[data-faq-toggle]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const index = parseInt(btn.getAttribute('data-faq-toggle') || '0');
+        toggleFAQ(index);
+      });
+    });
+
+    // Search functionality
+    const searchInput = document.getElementById('faq-search');
+    const searchResults = document.getElementById('search-results');
+    const searchResultsList = document.getElementById('search-results-list');
+    const searchCount = document.getElementById('search-count');
+    const categoryView = document.getElementById('category-view');
+
+    function performSearch() {
+      searchTerm = searchInput?.value.toLowerCase() || '';
+      
+      if (!searchTerm.trim()) {
+        searchResults?.classList.add('hidden');
+        categoryView?.classList.remove('hidden');
+        return;
+      }
+
+      const filtered = faqs.filter(faq =>
+        faq.question.toLowerCase().includes(searchTerm) ||
+        faq.answer.toLowerCase().includes(searchTerm)
+      );
+
+      if (searchResults && searchResultsList && searchCount && categoryView) {
+        searchCount.textContent = String(filtered.length);
+        categoryView.classList.add('hidden');
+        searchResults.classList.remove('hidden');
+
+        searchResultsList.innerHTML = filtered.map((faq, idx) => {
+          const uniqueId = `search-${idx}`;
+          return `
+            <div class="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden faq-item">
+              <button
+                data-search-toggle="${uniqueId}"
+                class="w-full text-left p-6 hover:bg-gray-50 transition-colors flex items-center justify-between group"
+              >
+                <h3 class="text-lg font-bold text-gray-900 pr-8 group-hover:text-primary transition-colors">
+                  ${faq.question}
+                </h3>
+                <svg class="w-6 h-6 text-gray-400 group-hover:text-primary flex-shrink-0 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" data-search-icon="${uniqueId}">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div
+                data-search-content="${uniqueId}"
+                class="hidden px-6 pb-6 text-gray-600 leading-relaxed text-lg border-t border-gray-100 pt-4"
+              >
+                ${faq.answer}
+              </div>
+            </div>
+          `;
+        }).join('');
+
+        // Add click handlers to search results
+        searchResultsList.querySelectorAll('[data-search-toggle]').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const id = btn.getAttribute('data-search-toggle');
+            const content = searchResultsList.querySelector(`[data-search-content="${id}"]`);
+            const icon = searchResultsList.querySelector(`[data-search-icon="${id}"]`);
+            
+            if (content && icon) {
+              if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                icon.classList.add('rotate-180');
+              } else {
+                content.classList.add('hidden');
+                icon.classList.remove('rotate-180');
+              }
+            }
+          });
+        });
+      }
+    }
+
+    searchInput?.addEventListener('input', performSearch);
+  })();
+</script>
+
+<style>
+  .rotate-180 {
+    transform: rotate(180deg);
+  }
+  .rotate-0 {
+    transform: rotate(0deg);
+  }
+</style>
+

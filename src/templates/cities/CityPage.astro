@@ -1,0 +1,60 @@
+---
+import citiesData from '@/data/cities.json';
+import { SimpleHero } from "@/components/home/hero-template/SimpleHero.astro";
+import BrandsCarouselSection from "@/components/sections/brands-carousel-section.astro";
+import OurServicesSection from "@/components/sections/services-section.astro";
+import ProcessStepsSection from "@/components/sections/process-steps-section.astro";
+import WhatSetsUsApartSection from "@/components/sections/what-sets-apart-section.astro";
+import AboutUsSimpleSection from "@/components/sections/about-us-simple-section.astro";
+import OurPortfolioSection from "@/components/sections/potfolio-section.astro";
+import RecentBlogsSection from "@/components/sections/blog-section.astro";
+import TestimonialsSection from "@/components/sections/testimonial-section/testimonials-section.astro";
+import CTASection from "@/components/sections/cta-section.astro";
+import ServiceAreasThinSection from "@/components/sections/service-areas-thin-section.astro";
+
+interface Props {
+  slug: string;
+}
+
+const { slug } = Astro.props;
+
+const city = citiesData.cities.find((c) => c.slug === slug);
+
+if (!city) {
+  return Astro.redirect('/404', 404);
+}
+
+const cityName = `${city.name}, ${city.state}`;
+---
+
+<div>
+  <!-- Hero Section -->
+  <SimpleHero
+    title={city.heroTitle || `Professional Garage Door Services in ${cityName}`}
+    subtitle={`Expert garage door installation, repair, and maintenance services tailored to ${cityName}'s unique needs. Quality garage door work you can trust.`}
+    cta1Text="Get Free Quote"
+    cta1Link="/contact"
+    cta2Text="View Our Work"
+    cta2Link="/portfolio"
+    backgroundImage={city.featuredImage || "/assets/images/Mike_s Garage Door Repair Center 1.webp"}
+  />
+
+  <!-- Services Section -->
+  <OurServicesSection city={cityName} cityData={city} />
+
+  <!-- Process Steps -->
+  <ProcessStepsSection city={cityName} cityData={city} />
+
+  <!-- What Sets Us Apart -->
+  <WhatSetsUsApartSection city={cityName} cityData={city} />
+
+  <!-- Simple About Us -->
+  <AboutUsSimpleSection city={cityName} />
+
+  <!-- General CTA Section -->
+  <CTASection city={cityName} cityData={city} />
+
+  <!-- Service Areas (Thin) -->
+  <ServiceAreasThinSection />
+</div>
+

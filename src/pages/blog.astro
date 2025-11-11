@@ -1,0 +1,584 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { generateMetadataFromConfig, generateStructuredData } from "../lib/seo-metadata.js";
+import blogData from '@/data/blog-posts.json';
+import DynamicHeader from '@/components/global/DynamicHeader.astro';
+import { Search, Filter, Clock, ArrowRight, Calendar } from 'lucide-astro';
+
+// Generate metadata
+const metadata = generateMetadataFromConfig('/blog/');
+const structuredData = generateStructuredData('/blog/');
+
+const { blogPosts, categories } = blogData;
+
+const formatDate = (dateString: string) => {
+  return new Date(dateString).toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  });
+};
+
+const POSTS_PER_PAGE = 5;
+---
+
+<BaseLayout metadata={metadata}>
+  <!-- Structured Data -->
+  {structuredData.map((script) => (
+    <script
+      type={script.type}
+      set:html={script.children}
+    />
+  ))}
+
+  <!-- Header -->
+  <DynamicHeader title="Feature Blog" />
+
+  <!-- Main Content -->
+  <section class="py-16 bg-bg-secondary">
+    <div class="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
+        
+        <!-- Search & Filters - Left Sidebar -->
+        <div class="col-span-1 order-2 lg:order-1">
+          <div class="bg-card rounded-2xl shadow-lg p-4 sm:p-6 sticky top-8 border border-border">
+            
+            <!-- Search -->
+            <div class="mb-8">
+              <h3 class="text-lg font-semibold text-foreground mb-4 flex items-center">
+                <Search class="w-5 h-5 mr-2 text-primary" />
+                Search Articles
+              </h3>
+              <div class="relative">
+                <input
+                  type="text"
+                  id="blog-search"
+                  placeholder="Search by title, content, or tags..."
+                  class="w-full px-4 py-3 bg-muted border border-border text-foreground placeholder-muted-foreground rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200"
+                  aria-label="Search articles"
+                />
+                <div id="search-loading" class="absolute right-3 top-1/2 transform -translate-y-1/2 hidden">
+                  <div class="w-4 h-4 border-2 border-primary border-t-transparent rounded-full animate-spin"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Category Filter -->
+            <div class="mb-8">
+              <h3 class="text-lg font-semibold text-foreground mb-4 flex items-center">
+                <Filter class="w-5 h-5 mr-2 text-primary" />
+                Categories
+              </h3>
+              <div class="space-y-2 flex flex-row flex-wrap gap-2">
+                <button
+                  data-category="all"
+                  class="category-filter w-auto text-left px-3 py-2 rounded-lg transition-all duration-200 font-medium bg-primary text-primary-foreground shadow-sm"
+                  aria-pressed="true"
+                >
+                  All Categories
+                </button>
+                {categories.map((category) => (
+                  <button
+                    key={category.id}
+                    data-category={category.slug}
+                    class="category-filter w-auto text-left px-3 py-2 rounded-lg transition-all duration-200 font-medium bg-secondary text-secondary-foreground hover:bg-secondary-hover"
+                    aria-pressed="false"
+                  >
+                    {category.name}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <!-- Featured Articles -->
+            <div>
+              <h3 class="text-lg font-semibold text-foreground mb-4">Featured Articles</h3>
+              <div class="space-y-4">
+                {blogPosts.slice(0, 3).map((blog) => (
+                  <a
+                    key={blog.id}
+                    href={`/${blog.category.slug}/${blog.slug}`}
+                    class="block group p-3 rounded-lg hover:bg-muted transition-all duration-200"
+                    aria-label={`Read ${blog.title}`}
+                  >
+                    <div class="flex items-center space-x-3">
+                      <div class="relative w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
+                        <img
+                          src={blog.image?.url || '/assets/images/Mike_s Garage Door Repair Center 21.webp'}
+                          alt={blog.title}
+                          width={64}
+                          height={64}
+                          class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                          loading="lazy"
+                          decoding="async"
+                        />
+                      </div>
+                      <div class="flex-1 min-w-0">
+                        <h4 class="text-sm font-semibold text-foreground group-hover:text-primary transition-colors line-clamp-2">
+                          {blog.title}
+                        </h4>
+                        <p class="text-xs text-muted-foreground mt-1">{formatDate(blog.publishedAt)}</p>
+                      </div>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Blog Articles - Right Side -->
+        <div class="col-span-1 lg:col-span-2 order-1 lg:order-2">
+          <div class="mb-8">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+              <div>
+                <h2 class="text-2xl font-bold text-foreground mb-2">
+                  <span id="article-count">{blogPosts.length}</span> Article<span id="article-plural">s</span> Found
+                </h2>
+                <p class="text-muted-foreground">
+                  Showing <span id="showing-count">{Math.min(POSTS_PER_PAGE, blogPosts.length)}</span> of <span id="total-count">{blogPosts.length}</span> articles
+                  <span id="page-info" class="hidden"> (Page <span id="current-page">1</span> of <span id="total-pages">1</span>)</span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Blog Posts Container -->
+          <div id="blog-posts-container" class="space-y-8">
+            {blogPosts.slice(0, POSTS_PER_PAGE).map((blog) => (
+              <a
+                key={blog.id}
+                href={`/${blog.category.slug}/${blog.slug}`}
+                class="group block blog-post-item"
+                data-category={blog.category.slug}
+                aria-label={`Read ${blog.title}`}
+              >
+                <article class="bg-card rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-border overflow-hidden">
+                  <div class="md:flex">
+                    <div class="md:w-1/3">
+                      <div class="relative h-48 md:h-full overflow-hidden">
+                        <img
+                          src={blog.image?.url || '/assets/images/Mike_s Garage Door Repair Center 21.webp'}
+                          alt={blog.title}
+                          class="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
+                          loading="lazy"
+                          decoding="async"
+                        />
+                      </div>
+                    </div>
+
+                    <div class="md:w-2/3 p-6">
+                      <div class="flex items-center justify-between text-sm text-muted-foreground mb-3">
+                        <span class="bg-secondary px-3 py-1 rounded-full text-xs font-medium text-secondary-foreground">
+                          {blog.category.name}
+                        </span>
+                        <div class="flex items-center space-x-2">
+                          <Clock class="w-4 h-4" />
+                          <span>{blog.readTime}</span>
+                        </div>
+                      </div>
+
+                      <h3 class="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
+                        {blog.title}
+                      </h3>
+
+                      <p class="text-muted-foreground mb-4 leading-relaxed line-clamp-3">
+                        {blog.excerpt}
+                      </p>
+
+                      <div class="flex items-center justify-between">
+                        <span class="text-sm text-muted-foreground">{formatDate(blog.publishedAt)}</span>
+                        <div class="flex items-center text-primary font-semibold text-sm group-hover:text-primary/80 transition-colors">
+                          <span>Read More</span>
+                          <ArrowRight class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              </a>
+            ))}
+          </div>
+
+          <!-- Pagination Controls -->
+          <nav id="pagination" class="flex justify-center items-center space-x-2 mt-12 hidden" aria-label="Pagination">
+            <button
+              id="prev-page"
+              class="px-4 py-2 bg-secondary text-secondary-foreground rounded-lg hover:bg-secondary-hover disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 font-medium"
+              aria-label="Previous page"
+            >
+              Previous
+            </button>
+            
+            <div id="page-numbers" class="flex space-x-1"></div>
+            
+            <button
+              id="next-page"
+              class="px-4 py-2 bg-secondary text-secondary-foreground rounded-lg hover:bg-secondary-hover disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 font-medium"
+              aria-label="Next page"
+            >
+              Next
+            </button>
+          </nav>
+
+          <!-- No Results Message -->
+          <div id="no-results" class="hidden text-center py-16">
+            <div class="text-muted-foreground mb-6">
+              <Search class="w-20 h-20 mx-auto opacity-50" />
+            </div>
+            <h3 class="text-2xl font-semibold text-foreground mb-3">No articles found</h3>
+            <p class="text-muted-foreground mb-6 max-w-md mx-auto">
+              Try adjusting your search terms or category filter to find what you're looking for.
+            </p>
+            <button
+              id="clear-filters"
+              class="px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary-hover transition-all duration-200 font-medium"
+            >
+              Clear Filters
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Signup -->
+  <div class="bg-gradient-to-r from-primary to-primary-hover py-20">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold text-primary-foreground mb-4">Stay Updated</h2>
+      <p class="text-xl text-primary-foreground/80 mb-8 max-w-2xl mx-auto">
+        Get the latest garage door maintenance tips, design ideas, and seasonal guides delivered to your inbox.
+      </p>
+      <div class="max-w-md mx-auto flex gap-4">
+        <input 
+          type="email" 
+          placeholder="Enter your email"
+          class="flex-1 px-4 py-3 rounded-lg text-foreground bg-background border border-border focus:outline-none focus:ring-2 focus:ring-primary-foreground/20 focus:border-primary-foreground/30 transition-all duration-200"
+          aria-label="Email address for newsletter subscription"
+        />
+        <button class="bg-background text-primary-foreground px-6 py-3 rounded-lg font-medium hover:bg-bg-secondary transition-all duration-200 shadow-sm">
+          Subscribe
+        </button>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<script define:vars={{ blogPosts, categories, POSTS_PER_PAGE }}>
+  (function() {
+    const posts = blogPosts;
+    const cats = categories;
+    const postsPerPage = POSTS_PER_PAGE;
+    const SEARCH_DEBOUNCE_DELAY = 500;
+
+    let searchTerm = '';
+    let debouncedSearchTerm = '';
+    let selectedCategory = 'all';
+    let currentPage = 1;
+    let searchTimeout = null;
+
+    // Debounce search
+    const searchInput = document.getElementById('blog-search');
+    searchInput?.addEventListener('input', (e) => {
+      searchTerm = e.target.value.toLowerCase();
+      
+      if (searchTimeout) clearTimeout(searchTimeout);
+      
+      const loadingIndicator = document.getElementById('search-loading');
+      if (loadingIndicator) loadingIndicator.classList.remove('hidden');
+      
+      searchTimeout = setTimeout(() => {
+        debouncedSearchTerm = searchTerm;
+        if (loadingIndicator) loadingIndicator.classList.add('hidden');
+        filterAndRender();
+      }, SEARCH_DEBOUNCE_DELAY);
+    });
+
+    // Category filter
+    document.querySelectorAll('.category-filter').forEach(btn => {
+      btn.addEventListener('click', () => {
+        selectedCategory = btn.getAttribute('data-category') || 'all';
+        currentPage = 1;
+        updateCategoryButtons();
+        filterAndRender();
+      });
+    });
+
+    function updateCategoryButtons() {
+      document.querySelectorAll('.category-filter').forEach(btn => {
+        const category = btn.getAttribute('data-category');
+        if (category === selectedCategory) {
+          btn.className = 'category-filter w-auto text-left px-3 py-2 rounded-lg transition-all duration-200 font-medium bg-primary text-primary-foreground shadow-sm';
+          btn.setAttribute('aria-pressed', 'true');
+        } else {
+          btn.className = 'category-filter w-auto text-left px-3 py-2 rounded-lg transition-all duration-200 font-medium bg-secondary text-secondary-foreground hover:bg-secondary-hover';
+          btn.setAttribute('aria-pressed', 'false');
+        }
+      });
+    }
+
+    function filterAndRender() {
+      // Filter posts
+      let filtered = posts;
+
+      // Search filter
+      if (debouncedSearchTerm) {
+        filtered = filtered.filter(blog =>
+          blog.title.toLowerCase().includes(debouncedSearchTerm) ||
+          blog.excerpt.toLowerCase().includes(debouncedSearchTerm) ||
+          blog.tags.some(tag => tag.toLowerCase().includes(debouncedSearchTerm))
+        );
+      }
+
+      // Category filter
+      if (selectedCategory !== 'all') {
+        filtered = filtered.filter(blog => blog.category.slug === selectedCategory);
+      }
+
+      // Sort by date
+      filtered = filtered.sort((a, b) => 
+        new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+      );
+
+      // Paginate
+      const totalPages = Math.ceil(filtered.length / postsPerPage);
+      const startIndex = (currentPage - 1) * postsPerPage;
+      const endIndex = startIndex + postsPerPage;
+      const paginated = filtered.slice(startIndex, endIndex);
+
+      // Update UI
+      updateCounts(filtered.length, paginated.length);
+      renderPosts(paginated);
+      renderPagination(totalPages);
+      showNoResults(filtered.length === 0);
+    }
+
+    function updateCounts(total, showing) {
+      const articleCount = document.getElementById('article-count');
+      const articlePlural = document.getElementById('article-plural');
+      const showingCount = document.getElementById('showing-count');
+      const totalCount = document.getElementById('total-count');
+      
+      if (articleCount) articleCount.textContent = String(total);
+      if (articlePlural) articlePlural.textContent = total !== 1 ? 's' : '';
+      if (showingCount) showingCount.textContent = String(showing);
+      if (totalCount) totalCount.textContent = String(total);
+    }
+
+    function renderPosts(paginatedPosts) {
+      const container = document.getElementById('blog-posts-container');
+      if (!container) return;
+
+      if (paginatedPosts.length === 0) {
+        container.innerHTML = '';
+        return;
+      }
+
+      const formatDate = (dateString) => {
+        return new Date(dateString).toLocaleDateString('en-US', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric'
+        });
+      };
+
+      container.innerHTML = paginatedPosts.map(blog => `
+        <a
+          href="/${blog.category.slug}/${blog.slug}"
+          class="group block blog-post-item"
+          data-category="${blog.category.slug}"
+          aria-label="Read ${blog.title}"
+        >
+          <article class="bg-card rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-border overflow-hidden">
+            <div class="md:flex">
+              <div class="md:w-1/3">
+                <div class="relative h-48 md:h-full overflow-hidden">
+                  <img
+                    src="${blog.image?.url || '/assets/images/Mike_s Garage Door Repair Center 21.webp'}"
+                    alt="${blog.title}"
+                    class="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+              </div>
+              <div class="md:w-2/3 p-6">
+                <div class="flex items-center justify-between text-sm text-muted-foreground mb-3">
+                  <span class="bg-secondary px-3 py-1 rounded-full text-xs font-medium text-secondary-foreground">
+                    ${blog.category.name}
+                  </span>
+                  <div class="flex items-center space-x-2">
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span>${blog.readTime}</span>
+                  </div>
+                </div>
+                <h3 class="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
+                  ${blog.title}
+                </h3>
+                <p class="text-muted-foreground mb-4 leading-relaxed line-clamp-3">
+                  ${blog.excerpt}
+                </p>
+                <div class="flex items-center justify-between">
+                  <span class="text-sm text-muted-foreground">${formatDate(blog.publishedAt)}</span>
+                  <div class="flex items-center text-primary font-semibold text-sm group-hover:text-primary/80 transition-colors">
+                    <span>Read More</span>
+                    <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </a>
+      `).join('');
+    }
+
+    function renderPagination(totalPages) {
+      const pagination = document.getElementById('pagination');
+      const pageInfo = document.getElementById('page-info');
+      const currentPageSpan = document.getElementById('current-page');
+      const totalPagesSpan = document.getElementById('total-pages');
+      const pageNumbers = document.getElementById('page-numbers');
+      const prevBtn = document.getElementById('prev-page');
+      const nextBtn = document.getElementById('next-page');
+
+      if (totalPages <= 1) {
+        if (pagination) pagination.classList.add('hidden');
+        if (pageInfo) pageInfo.classList.add('hidden');
+        return;
+      }
+
+      if (pagination) pagination.classList.remove('hidden');
+      if (pageInfo) {
+        pageInfo.classList.remove('hidden');
+        if (currentPageSpan) currentPageSpan.textContent = String(currentPage);
+        if (totalPagesSpan) totalPagesSpan.textContent = String(totalPages);
+      }
+
+      // Update buttons
+      if (prevBtn) {
+        prevBtn.disabled = currentPage === 1;
+      }
+      if (nextBtn) {
+        nextBtn.disabled = currentPage === totalPages;
+      }
+
+      // Render page numbers
+      if (pageNumbers) {
+        const maxPages = Math.min(5, totalPages);
+        let startPage;
+        
+        if (totalPages <= 5) {
+          startPage = 1;
+        } else if (currentPage <= 3) {
+          startPage = 1;
+        } else if (currentPage >= totalPages - 2) {
+          startPage = totalPages - 4;
+        } else {
+          startPage = currentPage - 2;
+        }
+
+        pageNumbers.innerHTML = Array.from({ length: maxPages }, (_, i) => {
+          const pageNum = startPage + i;
+          return `
+            <button
+              data-page="${pageNum}"
+              class="page-number px-3 py-2 rounded-lg transition-all duration-200 font-medium ${
+                currentPage === pageNum
+                  ? 'bg-primary text-primary-foreground shadow-sm'
+                  : 'bg-secondary text-secondary-foreground hover:bg-secondary-hover'
+              }"
+              aria-label="Go to page ${pageNum}"
+              ${currentPage === pageNum ? 'aria-current="page"' : ''}
+            >
+              ${pageNum}
+            </button>
+          `;
+        }).join('');
+
+        // Add click handlers
+        pageNumbers.querySelectorAll('.page-number').forEach(btn => {
+          btn.addEventListener('click', () => {
+            currentPage = parseInt(btn.getAttribute('data-page') || '1');
+            filterAndRender();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          });
+        });
+      }
+    }
+
+    function showNoResults(show) {
+      const noResults = document.getElementById('no-results');
+      if (noResults) {
+        if (show) {
+          noResults.classList.remove('hidden');
+        } else {
+          noResults.classList.add('hidden');
+        }
+      }
+    }
+
+    // Pagination button handlers
+    document.getElementById('prev-page')?.addEventListener('click', () => {
+      if (currentPage > 1) {
+        currentPage--;
+        filterAndRender();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    });
+
+    document.getElementById('next-page')?.addEventListener('click', () => {
+      const filtered = getFilteredPosts();
+      const totalPages = Math.ceil(filtered.length / postsPerPage);
+      if (currentPage < totalPages) {
+        currentPage++;
+        filterAndRender();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    });
+
+    function getFilteredPosts() {
+      let filtered = posts;
+      if (debouncedSearchTerm) {
+        filtered = filtered.filter(blog =>
+          blog.title.toLowerCase().includes(debouncedSearchTerm) ||
+          blog.excerpt.toLowerCase().includes(debouncedSearchTerm) ||
+          blog.tags.some(tag => tag.toLowerCase().includes(debouncedSearchTerm))
+        );
+      }
+      if (selectedCategory !== 'all') {
+        filtered = filtered.filter(blog => blog.category.slug === selectedCategory);
+      }
+      return filtered.sort((a, b) => 
+        new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+      );
+    }
+
+    // Clear filters
+    document.getElementById('clear-filters')?.addEventListener('click', () => {
+      searchTerm = '';
+      debouncedSearchTerm = '';
+      selectedCategory = 'all';
+      currentPage = 1;
+      if (searchInput) searchInput.value = '';
+      updateCategoryButtons();
+      filterAndRender();
+    });
+
+    // Initial render
+    filterAndRender();
+  })();
+</script>
+
+<style>
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>
+
